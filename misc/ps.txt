@@ -1,0 +1,35 @@
+Tested OK
+
+pm disable com.amazon.ags.app
+pm disable com.amazon.avod
+pm disable com.amazon.bueller.music
+pm disable com.amazon.bueller.photos
+pm disable com.amazon.client.metrics
+pm disable com.amazon.device.crashmanager
+pm disable com.amazon.device.logmanager
+pm disable com.amazon.device.messaging
+pm disable com.amazon.imp
+pm disable com.amazon.kindle.cms
+pm disable com.amazon.kso.blackbird
+pm disable com.amazon.ods.kindleconnect
+pm disable com.amazon.platform.fdrw
+pm disable com.amazon.precog
+pm disable com.amazon.sharingservice.android.client.proxy
+pm disable com.amazon.shoptv.client
+pm disable com.amazon.ssm
+pm disable com.amazon.storm.lightning.services
+pm disable com.amazon.storm.lightning.tutorial
+pm disable com.amazon.sync.provider.ipc
+pm disable com.amazon.tcomm
+pm disable com.amazon.tmm.tutorial
+pm disable com.amazon.tv.aiv.support
+pm disable com.amazon.tv.csapp
+pm disable com.amazon.tv.legal.notices
+pm disable com.amazon.tv.oobe
+pm disable com.amazon.venezia
+pm disable com.amazon.videoads.app
+pm disable com.amazon.visualonawv
+pm disable com.amazon.vizzini
+pm disable com.amazon.whisperlink.core.android
+
+
