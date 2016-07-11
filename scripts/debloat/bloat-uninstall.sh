@@ -74,7 +74,7 @@ pm uninstall com.amazon.tmm.tutorial
 pm uninstall com.amazon.tv.csapp
 pm uninstall com.amazon.tv.fw.metrics
 #pm uninstall com.amazon.tv.ime
-pm uninstall com.amazon.tv.intentsupport
+#pm uninstall com.amazon.tv.intentsupport
 #pm uninstall com.amazon.tv.launcher
 pm uninstall com.amazon.tv.legal.notices
 pm uninstall com.amazon.tv.oobe
@@ -96,3 +96,5 @@ pm uninstall com.amazon.whisperplay.service.install
 
 pm uninstall com.svox.pico
 pm uninstall com.android.captiveportallogin
+
+

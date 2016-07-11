@@ -74,7 +74,7 @@ pm unhide com.amazon.tmm.tutorial
 pm unhide com.amazon.tv.csapp
 pm unhide com.amazon.tv.fw.metrics
 #pm unhide com.amazon.tv.ime
-pm unhide com.amazon.tv.intentsupport
+#pm unhide com.amazon.tv.intentsupport
 #pm unhide com.amazon.tv.launcher
 pm unhide com.amazon.tv.legal.notices
 pm unhide com.amazon.tv.oobe
@@ -97,24 +97,7 @@ pm unhide com.amazon.whisperplay.service.install
 pm unhide com.svox.pico
 pm unhide com.android.captiveportallogin
 
-# Home may kill enough by itself (untested)
-pm unhide com.amazon.tv.launcher/.ui.HomeActivity
+pm unhide com.amazon.tv.launcher
+pm unhide com.amazon.tv.settings
 
-pm unhide com.amazon.tv.launcher/.ui.ItemLoadingActivity
-pm unhide com.amazon.tv.launcher/.primefreetrial.PrimeFreeTrialActivity
-pm unhide com.amazon.tv.launcher/.ui.purchase.OffDeviceSubscriptionActivity
-pm unhide com.amazon.tv.launcher/.ui.Channel1DActivity
-pm unhide com.amazon.tv.launcher/.ui.TVActivity
-pm unhide com.amazon.tv.launcher/.ui.SearchMenuActivity
-pm unhide com.amazon.tv.launcher/.ui.MoviesActivity
-pm unhide com.amazon.tv.launcher/.ui.YoursToWatchActivity
 
-pm unhide com.amazon.tv.launcher/.ui.ReleaseNotesActivity
-pm unhide com.amazon.tv.launcher/.ui.purchase.VideoItemPurchaseActivity
-pm unhide com.amazon.tv.launcher/.content.ComradeReceiver
-pm unhide com.amazon.tv.launcher/.demo.DemoPackageAddedReceiver
-pm unhide com.amazon.tv.launcher/.ads.AdRefreshReceiver
-pm unhide com.amazon.tv.launcher/.util.CategorySearchReceiver
-pm unhide com.amazon.tv.launcher/.util.LauncherPreloaderReceiver
-pm unhide com.amazon.tv.launcher/.parentalcontrols.PCONPermissionsReceiver
-pm unhide com.amazon.tv.launcher/com.amazon.tv.mediabrowse.service.MediaBrowseServiceImpl

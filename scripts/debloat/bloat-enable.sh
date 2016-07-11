@@ -27,11 +27,11 @@ pm enable com.amazon.cpl
 pm enable com.amazon.dcp
 pm enable com.amazon.dcp.contracts.framework.library
 pm enable com.amazon.dcp.contracts.library
-#pm enable com.amazon.device.bluetoothdfu
-#pm enable com.amazon.device.controllermanager
+pm enable com.amazon.device.bluetoothdfu
+pm enable com.amazon.device.controllermanager
 pm enable com.amazon.device.crashmanager
 pm enable com.amazon.device.logmanager
-#pm enable com.amazon.device.lowstoragemanager
+pm enable com.amazon.device.lowstoragemanager
 pm enable com.amazon.device.messaging
 pm enable com.amazon.device.messaging.sdk.internal.library
 pm enable com.amazon.device.messaging.sdk.library
@@ -43,12 +43,12 @@ pm enable com.amazon.device.sync
 pm enable com.amazon.device.sync.sdk.internal
 pm enable com.amazon.devicecontrol
 pm enable com.amazon.dp.logger
-#pm enable com.amazon.fireinputdevices
+pm enable com.amazon.fireinputdevices
 pm enable com.amazon.identity.auth.device.authorization
 pm enable com.amazon.imp
 pm enable com.amazon.kindle.cms
 pm enable com.amazon.kindle.devicecontrols
-#pm enable com.amazon.kindleautomatictimezone
+pm enable com.amazon.kindleautomatictimezone
 pm enable com.amazon.kso.blackbird
 pm enable com.amazon.metrics.api
 pm enable com.amazon.ods.kindleconnect
@@ -73,17 +73,17 @@ pm enable com.amazon.tcomm.client
 pm enable com.amazon.tmm.tutorial
 pm enable com.amazon.tv.csapp
 pm enable com.amazon.tv.fw.metrics
-#pm enable com.amazon.tv.ime
-#pm enable com.amazon.tv.intentsupport
-#pm enable com.amazon.tv.launcher
+pm enable com.amazon.tv.ime
+pm enable com.amazon.tv.intentsupport
+pm enable com.amazon.tv.launcher
 pm enable com.amazon.tv.legal.notices
 pm enable com.amazon.tv.oobe
 pm enable com.amazon.tv.parentalcontrols
-#pm enable com.amazon.tv.resolutioncycler
-#pm enable com.amazon.tv.settings
+pm enable com.amazon.tv.resolutioncycler
+pm enable com.amazon.tv.settings
 pm enable com.amazon.tv.support
 pm enable com.amazon.tz.webcryptotzservice
-#pm enable com.amazon.unifiedshare.actionchooser
+pm enable com.amazon.unifiedshare.actionchooser
 pm enable com.amazon.venezia
 pm enable com.amazon.videoads.app
 pm enable com.amazon.visualonawv
@@ -128,11 +128,15 @@ pm enable com.amazon.tv.settings/.tv.AlexaSettingsActivity
 pm enable com.amazon.tv.settings/.auth.BuellerSettingsMAPInformationProvider
 pm enable com.amazon.tv.settings/.PCONPermissionsReceiver
 
-# Enable Sleep Screen (Hold HOME Button)
+# enable Sleep Screen (Hold HOME Button)
 pm enable com.amazon.tv.settings/.hud.HomeLongPressReceiver
 
 pm enable com.amazon.tv.settings/.tv.usb.AppScanReceiver
 pm enable com.amazon.tv.settings.tv.usb.PackageMovedLocation
 
 pm enable com.amazon.settings.systemupdates/.OTAEventReceiver
+
+# enable Factory Rest Option
+pm enable com.amazon.tv.settings/com.amazon.tv.settings.tv.FactoryResetActivity
+
 

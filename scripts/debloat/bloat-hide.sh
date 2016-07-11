@@ -74,7 +74,7 @@ pm hide com.amazon.tmm.tutorial
 pm hide com.amazon.tv.csapp
 pm hide com.amazon.tv.fw.metrics
 #pm hide com.amazon.tv.ime
-pm hide com.amazon.tv.intentsupport
+#pm hide com.amazon.tv.intentsupport
 #pm hide com.amazon.tv.launcher
 pm hide com.amazon.tv.legal.notices
 pm hide com.amazon.tv.oobe
@@ -96,3 +96,6 @@ pm hide com.amazon.whisperplay.service.install
 
 pm hide com.svox.pico
 pm hide com.android.captiveportallogin
+
+
+
