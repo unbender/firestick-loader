@@ -164,7 +164,7 @@ echo.
 echo Press B to install busybox
 echo.
 echo Press A to disable Amazon Bloatware
-echo Press E to enable Amazon Bloatware
+echo Press E to remove Amazon Bloatware
 echo.
 echo Press C to clear caches on device
 echo.
@@ -200,8 +200,10 @@ if %dgchoice%==S goto doSU
 if %dgchoice%==s goto doSU
 if %dgchoice%==A set bloatAction=disable&&goto bloatBuster
 if %dgchoice%==a set bloatAction=disable&&goto bloatBuster
-if %dgchoice%==E set bloatAction=enable&&goto bloatBuster
-if %dgchoice%==e set bloatAction=enable&&goto bloatBuster
+::if %dgchoice%==E set bloatAction=enable&&goto bloatBuster
+::if %dgchoice%==e set bloatAction=enable&&goto bloatBuster
+if %dgchoice%==E goto bloatRemover
+if %dgchoice%==e goto bloatRemover
 if %dgchoice%==C goto clearCaches
 if %dgchoice%==c goto clearCaches
 if %dgchoice%==P goto superSU
@@ -837,7 +839,7 @@ echo.
 
 %adbWait%
 
-%sleep% 10
+%sleep% 30
 
 ::%adbWait%
 
@@ -1108,6 +1110,25 @@ cls
 %push% "%~dp0scripts\debloat\bloat-disable.sh" /data/local/tmp/
 %shell% "su -c chmod 755 /data/local/tmp/bloat-disable.sh"
 %shell% "su -c sh /data/local/tmp/bloat-disable.sh"
+
+goto menu
+
+
+:bloatRemover
+
+cls
+echo Making sure FireStarter is installed as a HOME Menu....
+echo.
+echo.
+echo.
+
+%install% "%~dp0apps\system\firestopper.apk"
+
+
+cls
+%push% "%~dp0scripts\debloat\full-debloat.sh" /data/local/tmp/
+%shell% "su -c chmod 755 /data/local/tmp/full-debloat.sh"
+%shell% "su -c sh /data/local/tmp/full-debloat.sh"
 
 goto menu
 
