@@ -1272,8 +1272,8 @@ echo.
 
 %shell% "su -c pm %bloatAction% com.amazon.settings.systemupdates/.OTAEventReceiver"
 
-:: Disable Factory Rest Option
-%shell% "su -c pm %bloatAction% com.amazon.tv.settings/com.amazon.tv.settings.tv.FactoryResetActivity
+:: Disable Factory Reset Option
+::%shell% "su -c pm %bloatAction% com.amazon.tv.settings/com.amazon.tv.settings.tv.FactoryResetActivity
 
 %sleep% 3
 
