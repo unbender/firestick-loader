@@ -137,6 +137,6 @@ pm disable com.amazon.tv.settings/.PCONPermissionsReceiver
 pm disable com.amazon.settings.systemupdates/.OTAEventReceiver
 
 # Disable Factory Rest Option
-pm disable com.amazon.tv.settings/com.amazon.tv.settings.tv.FactoryResetActivity
+#pm disable com.amazon.tv.settings/com.amazon.tv.settings.tv.FactoryResetActivity
 
 
