@@ -114,6 +114,28 @@ echo.
 
 cls
 %_color% 0e
+set appName=NetFlix
+set apk=
+echo.
+echo.
+echo Installing %appName%...
+echo.
+%install% "apps\media\netflix.apk"
+
+
+cls
+%_color% 0e
+set appName=Hulu
+set apk=
+echo.
+echo.
+echo Installing %appName%...
+echo.
+%install% "apps\media\hulu.apk"
+
+
+cls
+%_color% 0e
 set appName=Movian
 set apk=
 echo.

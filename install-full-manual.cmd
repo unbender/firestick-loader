@@ -175,7 +175,7 @@ echo.
 %_color% 0b
 echo Requirements: NONE
 echo.
-echo Info: Mobdro
+echo Info: Live TV App
 echo.
 set /p choice=
 if %choice%==1 (
@@ -185,6 +185,56 @@ echo Installing %appName%...
 echo.
 
 %install% "apps\media\mobdro.apk"
+)
+
+
+cls
+%_color% 0e
+set appName=NetFlix
+set apk=
+echo Install %appName%?
+echo.
+echo 1) Yes   2) No
+echo.
+echo.
+%_color% 0b
+echo Requirements: NONE
+echo.
+echo Info: Media Streaming Service
+echo.
+set /p choice=
+if %choice%==1 (
+echo.
+echo.
+echo Installing %appName%...
+echo.
+
+%install% "apps\media\netflix.apk"
+)
+
+
+cls
+%_color% 0e
+set appName=Hulu
+set apk=
+echo Install %appName%?
+echo.
+echo 1) Yes   2) No
+echo.
+echo.
+%_color% 0b
+echo Requirements: NONE
+echo.
+echo Info: Media Streaming Service
+echo.
+set /p choice=
+if %choice%==1 (
+echo.
+echo.
+echo Installing %appName%...
+echo.
+
+%install% "apps\media\hulu.apk"
 )
 
 
