@@ -134,8 +134,8 @@ set returnTo=menu
 
 :menu
 
-%adbKill%
-%adbStart%
+::%adbKill%
+::%adbStart%
 
 %_color% 0e
 
@@ -164,7 +164,7 @@ echo.
 echo Press B to install busybox
 echo.
 echo Press A to disable Amazon Bloatware
-echo Press E to enable Amazon Bloatware
+echo Press E to remove Amazon Bloatware
 echo.
 echo Press C to clear caches on device
 echo.
@@ -200,8 +200,10 @@ if %dgchoice%==S goto doSU
 if %dgchoice%==s goto doSU
 if %dgchoice%==A set bloatAction=disable&&goto bloatBuster
 if %dgchoice%==a set bloatAction=disable&&goto bloatBuster
-if %dgchoice%==E set bloatAction=enable&&goto bloatBuster
-if %dgchoice%==e set bloatAction=enable&&goto bloatBuster
+::if %dgchoice%==E set bloatAction=enable&&goto bloatBuster
+::if %dgchoice%==e set bloatAction=enable&&goto bloatBuster
+if %dgchoice%==E goto bloatRemover
+if %dgchoice%==e goto bloatRemover
 if %dgchoice%==C goto clearCaches
 if %dgchoice%==c goto clearCaches
 if %dgchoice%==P goto superSU
@@ -508,7 +510,7 @@ cls
 echo KingRoot should be rooting device!
 echo.
 echo.
-echo After it is finished, press ENTER....
+echo When you see the "Security Index 78" screen, press ENTER....
 echo.
 echo.
 echo If this is not the case, close script and any active apps, then re-run script!
@@ -517,10 +519,12 @@ echo.
 echo *** IF IT REBOOTS, DO NOT CONTINUE UNTIL A PASS/FAIL MESSAGE IS SEEN!! ***
 echo.
 echo.
-echo *** IF THE ROOTING FAILS, OR GETS STUCK, PRESS ENTER TO RETURN TO MENU AND TRY AGAIN ***
+echo *** IF THE ROOTING FAILS, OR GETS STUCK, 
+echo PRESS ENTER TO RETURN TO MENU AND TRY AGAIN ***
 echo.
 echo.
-echo *** YOU MAY SPAWN A NEW CMD WINDOW AND ISSUE AN "ADB SHELL" and "SU" COMMAND AROUND 30% ***
+echo *** YOU MAY SPAWN A NEW CMD WINDOW AND ISSUE AN 
+echo "ADB SHELL" and "SU" COMMAND AROUND 27%% ***
 echo.
 echo.
 
@@ -837,7 +841,7 @@ echo.
 
 %adbWait%
 
-%sleep% 10
+%sleep% 30
 
 ::%adbWait%
 
@@ -882,7 +886,7 @@ echo.
 %adb% reboot
 
 cls
-echo Waiting For Return To Home Screen....
+echo Waiting For Home Screen To Finish Loading....
 echo.
 echo.
 echo.
@@ -986,7 +990,7 @@ echo.
 
 pause
 
-%sleep% 5
+::%sleep% 2
 
 ::%keyBack%
 %sleep% 2
@@ -1022,12 +1026,18 @@ cls
 echo Launching FireStopper....
 echo.
 echo.
+echo *** BE SURE TO ALLOW ALL PERMISSIONS ***
+echo.
+echo.
 %shell% am start -a de.belu.firestopper/.gui.MainActivity -n de.belu.firestopper/.gui.MainActivity
 
 goto menu
 
 
 :unrootKing
+
+set teamViewerSuRequest=0
+set removeTeamViewer=0
 
 cls
 echo Preparing Files....
@@ -1036,21 +1046,52 @@ echo.
 
 %install% "%~dp0apps\web\teamviewer.apk"
 
-%sleep% 5
+::%sleep% 5
 
 %teamviewer%
 
+%sleep% 3
+
+:retryTV
+
+if %removeTeamViewer%==1 %uninstall% com.teamviewer.quicksupport.market
+if %removeTeamViewer%==1 %sleep% 3
+if %removeTeamViewer%==1 %install% "%~dp0apps\web\teamviewer.apk"
+if %removeTeamViewer%==1 taskkill /f /im teamviewer.exe
+set removeTeamViewer=0
+
+%shell% am start -a android.intent.action.MAIN -n com.teamviewer.quicksupport.market/com.teamviewer.quicksupport.ui.QSActivity
+
+
 :: Launch Teamviewer
 cls
-echo Teamviewer on PC should be open!
+echo Teamviewer on PC and FireStick should be open!
 echo.
 echo.
-echo Open TeamViewer on stick and press ENTER....
 echo.
+echo *** YOU MUST ACT FAST TO ALLOW SU PERMISSIONS ***
+echo.
+echo *** YOU WILL NEED TO PRESS RIGHT AND ENTER TO ALLOW PERMISSIONS ***
+echo.
+echo.
+echo *** IF TEAMVIEWER GETS DENIED SU PERMISSIONS, PRESS R TO RETRY ***
+echo.
+echo.
+echo.
+echo Login to FireStick from PC, press Allow for Client and then SU Request
+echo.
+echo Once you have remote control access, press ENTER to continue....
 echo.
 echo.
 
-pause
+set /p teamViewerSuRequest=
+
+if %teamViewerSuRequest%==R set removeTeamViewer=1
+if %teamViewerSuRequest%==r set removeTeamViewer=1
+
+if %teamViewerSuRequest%==R goto retryTV
+if %teamViewerSuRequest%==r goto retryTV
+
 
 
 cls
@@ -1079,9 +1120,14 @@ echo.
 echo From there, proceeed to uninstall/unroot option
 echo.
 echo.
+echo When unrooting is finished, press ENTER....
+echo.
+echo.
 
 
 pause
+
+taskkill /f /im teamviewer.exe
 
 goto menu
 
@@ -1101,6 +1147,25 @@ cls
 %push% "%~dp0scripts\debloat\bloat-disable.sh" /data/local/tmp/
 %shell% "su -c chmod 755 /data/local/tmp/bloat-disable.sh"
 %shell% "su -c sh /data/local/tmp/bloat-disable.sh"
+
+goto menu
+
+
+:bloatRemover
+
+cls
+echo Making sure FireStarter is installed as a HOME Menu....
+echo.
+echo.
+echo.
+
+%install% "%~dp0apps\system\firestopper.apk"
+
+
+cls
+%push% "%~dp0scripts\debloat\full-debloat.sh" /data/local/tmp/
+%shell% "su -c chmod 755 /data/local/tmp/full-debloat.sh"
+%shell% "su -c sh /data/local/tmp/full-debloat.sh"
 
 goto menu
 
@@ -1241,6 +1306,9 @@ echo.
 ::pm disable com.amazon.tv.settings.tv.usb.PackageMovedLocation
 
 %shell% "su -c pm %bloatAction% com.amazon.settings.systemupdates/.OTAEventReceiver"
+
+:: Disable Factory Reset Option
+::%shell% "su -c pm %bloatAction% com.amazon.tv.settings/com.amazon.tv.settings.tv.FactoryResetActivity
 
 %sleep% 3
 

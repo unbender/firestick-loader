@@ -510,7 +510,7 @@ cls
 echo KingRoot should be rooting device!
 echo.
 echo.
-echo After it is finished, press ENTER....
+echo When you see the "Security Index 78" screen, press ENTER....
 echo.
 echo.
 echo If this is not the case, close script and any active apps, then re-run script!
@@ -524,7 +524,7 @@ echo PRESS ENTER TO RETURN TO MENU AND TRY AGAIN ***
 echo.
 echo.
 echo *** YOU MAY SPAWN A NEW CMD WINDOW AND ISSUE AN 
-echo "ADB SHELL" and "SU" COMMAND AROUND 30%% ***
+echo "ADB SHELL" and "SU" COMMAND AROUND 27%% ***
 echo.
 echo.
 
@@ -886,7 +886,7 @@ echo.
 %adb% reboot
 
 cls
-echo Waiting For Return To Home Screen....
+echo Waiting For Home Screen To Finish Loading....
 echo.
 echo.
 echo.
@@ -990,7 +990,7 @@ echo.
 
 pause
 
-%sleep% 5
+::%sleep% 2
 
 ::%keyBack%
 %sleep% 2
@@ -1026,12 +1026,18 @@ cls
 echo Launching FireStopper....
 echo.
 echo.
+echo *** BE SURE TO ALLOW ALL PERMISSIONS ***
+echo.
+echo.
 %shell% am start -a de.belu.firestopper/.gui.MainActivity -n de.belu.firestopper/.gui.MainActivity
 
 goto menu
 
 
 :unrootKing
+
+set teamViewerSuRequest=0
+set removeTeamViewer=0
 
 cls
 echo Preparing Files....
@@ -1046,7 +1052,16 @@ echo.
 
 %sleep% 3
 
+:retryTV
+
+if %removeTeamViewer%==1 %uninstall% com.teamviewer.quicksupport.market
+if %removeTeamViewer%==1 %sleep% 3
+if %removeTeamViewer%==1 %install% "%~dp0apps\web\teamviewer.apk"
+if %removeTeamViewer%==1 taskkill /f /im teamviewer.exe
+set removeTeamViewer=0
+
 %shell% am start -a android.intent.action.MAIN -n com.teamviewer.quicksupport.market/com.teamviewer.quicksupport.ui.QSActivity
+
 
 :: Launch Teamviewer
 cls
@@ -1054,14 +1069,29 @@ echo Teamviewer on PC and FireStick should be open!
 echo.
 echo.
 echo.
-echo *** BE SURE TO ALLOW ALL PERMISSIONS ***
+echo *** YOU MUST ACT FAST TO ALLOW SU PERMISSIONS ***
+echo.
+echo *** YOU WILL NEED TO PRESS RIGHT AND ENTER TO ALLOW PERMISSIONS ***
 echo.
 echo.
-echo Login to FireStick from PC and press ENTER when finished....
+echo *** IF TEAMVIEWER GETS DENIED SU PERMISSIONS, PRESS R TO RETRY ***
+echo.
+echo.
+echo.
+echo Login to FireStick from PC, press Allow for Client and then SU Request
+echo.
+echo Once you have remote control access, press ENTER to continue....
 echo.
 echo.
 
-pause
+set /p teamViewerSuRequest=
+
+if %teamViewerSuRequest%==R set removeTeamViewer=1
+if %teamViewerSuRequest%==r set removeTeamViewer=1
+
+if %teamViewerSuRequest%==R goto retryTV
+if %teamViewerSuRequest%==r goto retryTV
+
 
 
 cls
@@ -1090,9 +1120,14 @@ echo.
 echo From there, proceeed to uninstall/unroot option
 echo.
 echo.
+echo When unrooting is finished, press ENTER....
+echo.
+echo.
 
 
 pause
+
+taskkill /f /im teamviewer.exe
 
 goto menu
 
