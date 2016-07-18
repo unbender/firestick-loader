@@ -106,10 +106,36 @@ md "%temp%\firestick-loader\apps\media\kodi"
 %sleep% 3
 %install% "%temp%\firestick-loader\apps\media\kodi.apk"
 
+
 %extractRAR% "%~dp0apps\media\kodi\kodi-data.split" "%temp%\firestick-loader\apps\media\kodi"
 %push% "%temp%\firestick-loader\apps\media\kodi\addons" "/%sdcard%/%pathAndroid%/addons"
 %push% "%temp%\firestick-loader\apps\media\kodi\userdata" "/%sdcard%/%pathAndroid%/userdata"
 %rm% "%temp%\firestick-loader\apps\media\kodi"
+)
+
+
+cls
+%_color% 0e
+set appName=XBMC Launcher
+set apk=
+echo Install %appName%?
+echo.
+echo 1) Yes   2) No
+echo.
+echo.
+%_color% 0b
+echo Requirements: Kodi (XBMC)
+echo.
+echo Info: Use Kodi as a HOME Replacement
+echo.
+set /p choice=
+if %choice%==1 (
+echo.
+echo.
+echo Installing %appName%...
+echo.
+
+%install% "apps\system\xbmclauncher.apk"
 )
 
 
