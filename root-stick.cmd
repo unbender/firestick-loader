@@ -1026,9 +1026,7 @@ cls
 echo Launching FireStopper....
 echo.
 echo.
-echo *** BE SURE TO ALLOW ALL PERMISSIONS ***
-echo.
-echo.
+
 %shell% am start -a de.belu.firestopper/.gui.MainActivity -n de.belu.firestopper/.gui.MainActivity
 
 goto menu
