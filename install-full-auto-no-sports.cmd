@@ -57,7 +57,7 @@ echo Installing %appName%...
 echo.
 %install% "apps\system\firestopper.apk"
 ::%install% "apps\system\firestarter.apk"
-%push% "apps\system\FireStarterBackup.zip" /sdcard/
+%push% "apps\system\sdcard\FireStarterBackup.zip" /sdcard/
 
 
 cls

@@ -77,7 +77,7 @@ if %choice%==1 (
 		echo.
 
 		%install% "apps\system\firestopper.apk"
-		%push% "apps\system\FireStarterBackup.zip" /sdcard/
+		%push% "apps\system\sdcard\FireStarterBackup.zip" /sdcard/
 )
 
 
@@ -352,54 +352,6 @@ echo.
 
 cls
 %_color% 0e
-set appName=Youtube
-set apk=
-echo Install %appName%?
-echo.
-echo 1) Yes   2) No
-echo.
-echo.
-%_color% 0b
-echo Requirements: GOOGLE SERVICES?
-echo.
-echo Info: NONE
-echo.
-set /p choice=
-if %choice%==1 (
-echo.
-echo.
-echo Installing %appName%...
-echo.
-%install% "gapps\YouTube6.0.13.apk"
-)
-
-
-cls
-%_color% 0e
-set appName=Showbox
-set apk=
-echo Install %appName%?
-echo.
-echo 1) Yes   2) No
-echo.
-echo.
-%_color% 0b
-echo Requirements: MOUSE/KEYBOARD
-echo.
-echo Info: NONE
-echo.
-set /p choice=
-if %choice%==1 (
-echo.
-echo.
-echo Installing %appName%...
-echo.
-%install% "apps\media\showbox.apk"
-)
-
-
-cls
-%_color% 0e
 set appName=Popcorn Time
 set apk=
 echo Install %appName%?
@@ -426,78 +378,6 @@ echo.
 
 cls
 %_color% 0e
-set appName=Viewster
-set apk=
-echo Install %appName%?
-echo.
-echo 1) Yes   2) No
-echo.
-echo.
-%_color% 0b
-echo Requirements: MOUSE/KEYBOARD
-echo.
-echo Info: NONE
-echo.
-set /p choice=
-if %choice%==1 (
-echo.
-echo.
-echo Installing %appName%...
-echo.
-%install% "apps\media\viewster.apk"
-)
-
-
-cls
-%_color% 0e
-set appName=VH1
-set apk=
-echo Install %appName%?
-echo.
-echo 1) Yes   2) No
-echo.
-echo.
-%_color% 0b
-echo Requirements: MOUSE/KEYBOARD
-echo.
-echo Info: NONE
-echo.
-set /p choice=
-if %choice%==1 (
-echo.
-echo.
-echo Installing %appName%...
-echo.
-%install% "apps\media\vh1.apk"
-)
-
-
-cls
-%_color% 0e
-set appName=MTV
-set apk=
-echo Install %appName%?
-echo.
-echo 1) Yes   2) No
-echo.
-echo.
-%_color% 0b
-echo Requirements: MOUSE/KEYBOARD
-echo.
-echo Info: NONE
-echo.
-set /p choice=
-if %choice%==1 (
-echo.
-echo.
-echo Installing %appName%...
-echo.
-%install% "apps\media\mtv.apk"
-)
-
-
-cls
-%_color% 0e
 set appName=VLC TV
 set apk=
 echo Install %appName%?
@@ -517,30 +397,6 @@ echo.
 echo Installing %appName%...
 echo.
 %install% "apps\media\vlc-tv-arm.apk"
-)
-
-
-cls
-%_color% 0e
-set appName=Firefox
-set apk=
-echo Install %appName%?
-echo.
-echo 1) Yes   2) No
-echo.
-echo.
-%_color% 0b
-echo Requirements: NONE
-echo.
-echo Info: Open Source Web Browser
-echo.
-set /p choice=
-if %choice%==1 (
-echo.
-echo.
-echo Installing %appName%...
-echo.
-%install% "apps\web\firefox.apk"
 )
 
 
@@ -662,33 +518,6 @@ echo Installing %appName%...
 echo.
 %install% "apps\web\teamviewer.apk"
 )
-
-
-:instAPK
-cls
-%_color% 0e
-set appName=Android Settings App
-set apk=
-echo Install %appName%?
-echo.
-echo 1) Yes   2) No
-echo.
-echo.
-%_color% 0b
-echo Requirements: NONE
-echo.
-echo Info: Android Settings for Bluetooth 3rd Party and more
-echo.
-set /p choice=
-if %choice%==1 (
-echo.
-echo.
-echo Installing %appName%...
-echo.
-%install% "apps\system\settings-4.0.4.apk"
-)
-
-goto instWP
 
 
 :instWP
