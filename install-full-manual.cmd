@@ -26,6 +26,8 @@ set pathWindows=%AppData%\Kodi
 
 set apk=
 
+set kodiBuild=default
+
 set sdcard=sdcard
 ::set sdcard=external_sd
 ::set sdcard=extSdCard
@@ -96,21 +98,81 @@ echo Info: XBMC: XBOX Media Center
 echo.
 set /p choice=
 if %choice%==1 (
+	echo.
+	echo.
+	echo Installing %appName%...
+	echo.
+
+	md "%temp%\firestick-loader\apps\media\kodi"
+
+	%extractRAR% "%~dp0apps\media\kodi.apk.split" "%temp%\firestick-loader\apps\media"
+	%sleep% 3
+	%install% "%temp%\firestick-loader\apps\media\kodi.apk"
+
+	%rm% "%temp%\firestick-loader\apps\media\kodi"
+)
+
+
+cls
+set kodiBuildSelect=2
+%_color% 0e
+set appName=Kodi Data
+set apk=
+echo Select Type of Kodi Data To Transfer and Press ENTER (Default 2):
+echo.
+echo 1) None   2) Default   3) No Sports
 echo.
 echo.
-echo Installing %appName%...
+%_color% 0b
+echo Requirements: Kodi
 echo.
+echo Info: Kodi Addon and User Data
+echo.
+set /p kodiBuildSelect=
 
-md "%temp%\firestick-loader\apps\media\kodi"
-%extractRAR% "%~dp0apps\media\kodi.apk.split" "%temp%\firestick-loader\apps\media"
-%sleep% 3
-%install% "%temp%\firestick-loader\apps\media\kodi.apk"
+if %kodiBuildSelect%==1 (
+
+	cls
+	echo.
+
+)
+
+if %kodiBuildSelect%==2 (
+
+	set kodiBuild=default
+
+	echo.
+	echo.
+	echo Installing %appName% / %kodiBuild%...
+	echo.
 
 
-%extractRAR% "%~dp0apps\media\kodi\kodi-data.split" "%temp%\firestick-loader\apps\media\kodi"
-%push% "%temp%\firestick-loader\apps\media\kodi\addons" "/%sdcard%/%pathAndroid%/addons"
-%push% "%temp%\firestick-loader\apps\media\kodi\userdata" "/%sdcard%/%pathAndroid%/userdata"
-%rm% "%temp%\firestick-loader\apps\media\kodi"
+	md "%temp%\firestick-loader\apps\media\kodi\data\%kodiBuild%"
+
+	%extractRAR% "%~dp0apps\media\kodi\data\%kodiBuild%\kodi-data.split" "%temp%\firestick-loader\apps\media\kodi\data\%kodiBuild%"
+	%push% "%temp%\firestick-loader\apps\media\kodi\data\%kodiBuild%\addons" "/%sdcard%/%pathAndroid%/addons"
+	%push% "%temp%\firestick-loader\apps\media\kodi\data\%kodiBuild%\userdata" "/%sdcard%/%pathAndroid%/userdata"
+
+	%rm% "%temp%\firestick-loader\apps\media\kodi"
+)
+
+if %kodiBuildSelect%==3 (
+
+	set kodiBuild=no-sports
+
+	echo.
+	echo.
+	echo Installing %appName% / %kodiBuild%...
+	echo.
+
+
+	md "%temp%\firestick-loader\apps\media\kodi\data\%kodiBuild%"
+
+	%extractRAR% "%~dp0apps\media\kodi\data\%kodiBuild%\kodi-data.split" "%temp%\firestick-loader\apps\media\kodi\data\%kodiBuild%"
+	%push% "%temp%\firestick-loader\apps\media\kodi\data\%kodiBuild%\addons" "/%sdcard%/%pathAndroid%/addons"
+	%push% "%temp%\firestick-loader\apps\media\kodi\data\%kodiBuild%\userdata" "/%sdcard%/%pathAndroid%/userdata"
+
+	%rm% "%temp%\firestick-loader\apps\media\kodi"
 )
 
 

@@ -68,14 +68,18 @@ echo.
 echo.
 echo Installing %appName%...
 echo.
-md "%temp%\firestick-loader\apps\media\kodi"
+
+set kodiBuild=default
+
+md "%temp%\firestick-loader\apps\media\kodi\data\%kodiBuild%"
 %extractRAR% "%~dp0apps\media\kodi.apk.split" "%temp%\firestick-loader\apps\media"
 %sleep% 3
 %install% "%temp%\firestick-loader\apps\media\kodi.apk"
 
-%extractZIP% "%temp%\firestick-loader\apps\media\kodi\org.xbmc.kodi.zip" -d "%temp%\firestick-loader\apps\media\kodi"
-%push% "%temp%\firestick-loader\apps\media\kodi\addons" "/%sdcard%/%pathAndroid%/addons"
-%push% "%temp%\firestick-loader\apps\media\kodi\userdata" "/%sdcard%/%pathAndroid%/userdata"
+%extractRAR% "%~dp0apps\media\kodi\data\%kodiBuild%\kodi-data.split" "%temp%\firestick-loader\apps\media\kodi\data\%kodiBuild%"
+%push% "%temp%\firestick-loader\apps\media\kodi\data\%kodiBuild%\addons" "/%sdcard%/%pathAndroid%/addons"
+%push% "%temp%\firestick-loader\apps\media\kodi\data\%kodiBuild%\userdata" "/%sdcard%/%pathAndroid%/userdata"
+
 %rm% "%temp%\firestick-loader\apps\media\kodi"
 
 
