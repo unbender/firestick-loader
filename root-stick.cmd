@@ -1060,6 +1060,7 @@ set removeTeamViewer=0
 
 %shell% am start -a android.intent.action.MAIN -n com.teamviewer.quicksupport.market/com.teamviewer.quicksupport.ui.QSActivity
 
+%teamviewer%
 
 :: Launch Teamviewer
 cls
