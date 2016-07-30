@@ -1252,6 +1252,10 @@ echo Making sure FireStarter is installed as a HOME Menu....
 echo.
 echo.
 echo.
+echo.
+echo *** BE SURE TO ALLOW SU PERMISSIONS IF REQUESTED ***
+echo.
+echo.
 
 %install% "%~dp0apps\system\firestopper.apk"
 
@@ -1269,6 +1273,10 @@ goto menu
 cls
 echo Making sure FireStarter is installed as a HOME Menu....
 echo.
+echo.
+echo.
+echo.
+echo *** BE SURE TO ALLOW SU PERMISSIONS IF REQUESTED ***
 echo.
 echo.
 
