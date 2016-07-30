@@ -1107,14 +1107,14 @@ echo.
 
 %shell% am start -a android.intent.action.MAIN -n com.kingroot.kinguser/.activitys.SliderMainActivity
 
-%sleep% 3
-%swipeUp%
+::%sleep% 3
+::%swipeUp%
+::%sleep% 2
+::%swipeUp%
+::%sleep% 2
+::%keyTab%
 %sleep% 2
-%swipeUp%
-%sleep% 2
-%keyTab%
-%sleep% 2
-%keyEnter%
+::%keyEnter%
 
 cls
 echo KingRoot should be open!
