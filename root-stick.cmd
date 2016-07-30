@@ -1447,7 +1447,9 @@ echo Clearing Device Caches....
 echo.
 echo.
 echo.
+%_color% 0c
 echo *** THE DEVICE WILL REBOOT WHEN FINISHED TO REBUILD DALVIK CACHES ***
+%_color% 0e
 echo.
 echo.
 
