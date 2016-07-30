@@ -1230,12 +1230,14 @@ echo.
 echo *** TRY DIRECTLY CLICKING THE REMOTE VIEWER WINDOW ON FIRESTICK SCREEN ***
 echo.
 echo.
+echo.
+echo.
 %_color% 0e
 echo Use TeamViewer to select the top-right menu and click "General Settings"
 echo.
 echo.
 echo.
-echo From there, proceeed to uninstall/unroot option
+echo From there, proceeed to "Uninstall KingRoot" option, then press CONTINUE then OK on dialogs
 echo.
 echo.
 echo When unrooting is finished, press ENTER....
