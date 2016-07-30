@@ -552,6 +552,8 @@ set /p check=
 
 %keyHome%
 
+%adbKill%
+
 goto menu
 
 
