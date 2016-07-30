@@ -411,6 +411,7 @@ goto menu
 
 :installRoot
 cls
+%_color% 0c
 echo DO NOT TOUCH ANY KEYS ON THE FIRESTICK REMOTE UNTIL FINISHED!!!
 echo.
 echo.
@@ -433,6 +434,7 @@ goto menu
 :root
 
 cls
+%_color% 0c
 echo DO NOT TOUCH ANY KEYS ON THE FIRESTICK REMOTE UNTIL FINISHED!!!
 echo.
 echo.
@@ -451,6 +453,7 @@ if %firstTimeRootAttempt%==0 (
 
 
 cls
+%_color% 0c
 echo DO NOT TOUCH ANY KEYS ON THE FIRESTICK REMOTE UNTIL FINISHED!!!
 echo.
 echo.
@@ -507,6 +510,7 @@ set firstTimeRootAttempt=0
 
 set check=0
 cls
+%_color% 0e
 echo KingRoot should be rooting device!
 echo.
 echo.
@@ -516,6 +520,7 @@ echo.
 echo If this is not the case, close script and any active apps, then re-run script!
 echo.
 echo.
+%_color% 0c
 echo *** IF IT REBOOTS, DO NOT CONTINUE UNTIL A PASS/FAIL MESSAGE IS SEEN!! ***
 echo.
 echo.
@@ -527,6 +532,7 @@ echo *** YOU MAY SPAWN A NEW CMD WINDOW AND ISSUE AN
 echo "ADB SHELL" and "SU" COMMAND AROUND 27%% TO SPEED THINGS UP***
 echo.
 echo.
+%_color% 0e
 
 set /p check=
 
@@ -819,11 +825,13 @@ echo --update_package=/cache/update.bin>"%temp%\tmpShit.txt"
 %sleep% 5
 
 cls
+%_color% 0e
 echo The Downgrade Process Should Be Happening!
 echo.
 echo The TV screen should be on the Amazon Install screen.
 echo.
 echo.
+%_color% 0c
 echo *** If this is not the case, try restarting the device and script. ***
 echo.
 echo *** If you are at the Android Recovery Screen, unplug and re-plug device ***
@@ -833,6 +841,7 @@ echo *** DO NOT PRESS ANY KEYS ON THE REMOTE OR UNPLUG THE DEVICE ***
 echo.
 echo.
 echo.
+%_color% 0e
 echo Script will continue when device is at the Optimizing System Storage screen....
 echo.
 echo.
@@ -846,11 +855,15 @@ echo.
 ::%adbWait%
 
 cls
+%_color% 0a
 echo The Downgrade Process Should Have Been Successful!
 echo.
+echo.
+%_color% 0e
 echo The TV screen should be on the Optimizing System Storage screen.
 echo.
 echo.
+%_color% 0c
 echo *** If this is not the case, try restarting the device and script. ***
 echo.
 echo.
@@ -860,6 +873,7 @@ echo *** DO NOT PRESS ANY KEYS ON THE REMOTE OR UNPLUG THE DEVICE ***
 echo.
 echo.
 echo.
+%_color% 0e
 echo When device is back at HOME screen, press ENTER....
 echo.
 echo.
@@ -886,6 +900,13 @@ echo.
 %adb% reboot
 
 cls
+echo Rebooting....
+echo.
+echo.
+
+%sleep% 10
+
+cls
 echo Waiting For Home Screen To Finish Loading....
 echo.
 echo.
@@ -897,7 +918,7 @@ echo.
 
 %adbWait%
 
-%sleep% 60
+%sleep% 40
 
 cls
 echo The device should now be at the HOME screen!
@@ -972,13 +993,16 @@ echo.
 %shell% am start -a android.intent.action.MAIN -n stericson.busybox/.Activity.MainActivity
 
 cls
+%_color% 0e
 echo The Busybox installer should be open!
 echo.
 echo.
+%_color% 0c
 echo *** BE SURE TO ALLOW SU PERMISSIONS UPON LAUNCH ***
 echo.
 echo.
 echo.
+%_color% 0e
 echo Once BusyBox is open, click BACK on the remote!
 echo.
 echo.
@@ -1072,10 +1096,12 @@ set removeTeamViewer=0
 
 :: Launch Teamviewer
 cls
+%_color% 0e
 echo Teamviewer on PC and FireStick should be open!
 echo.
 echo.
 echo.
+%_color% 0c
 echo *** YOU MUST ACT FAST TO ALLOW SU PERMISSIONS ***
 echo.
 echo *** YOU WILL NEED TO PRESS RIGHT AND ENTER TO ALLOW PERMISSIONS ***
@@ -1085,6 +1111,7 @@ echo *** IF TEAMVIEWER GETS DENIED SU PERMISSIONS, PRESS R TO RETRY ***
 echo.
 echo.
 echo.
+%_color% 0e
 echo Login to FireStick from PC, press Allow for Client and then SU Request
 echo.
 echo Once you have remote control access, press ENTER to continue....
@@ -1117,6 +1144,12 @@ echo.
 ::%keyEnter%
 
 cls
+%_color% 0c
+echo *** IF THE PC TEAMVIEWER REMOTE SCREEN GOES BLANK, TRY RECONNECTING ***
+echo.
+echo.
+echo.
+%_color% 0e
 echo KingRoot should be open!
 echo.
 echo.
