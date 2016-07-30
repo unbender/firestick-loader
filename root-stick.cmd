@@ -1102,7 +1102,7 @@ cls
 %_color% 0e
 echo Teamviewer on PC and FireStick should be open!
 echo.
-echo IF YOU RECIEVE A "Some Files Could Not Be Created" ERROR, SIMPLY CLICK OK!
+echo IF YOU GET A "Some Files Could Not Be Created" ERROR, CLICK OK AND CLOSE!
 echo.
 echo.
 echo.
