@@ -415,6 +415,7 @@ cls
 echo DO NOT TOUCH ANY KEYS ON THE FIRESTICK REMOTE UNTIL FINISHED!!!
 echo.
 echo.
+%_color% 0e
 
 :: Install KingoRoot
 set apk="rooting\kingroot.apk"
@@ -438,6 +439,7 @@ cls
 echo DO NOT TOUCH ANY KEYS ON THE FIRESTICK REMOTE UNTIL FINISHED!!!
 echo.
 echo.
+%_color% 0e
 
 %shell% am start -a android.intent.action.MAIN -n com.kingroot.kinguser/.activitys.SliderMainActivity
 
@@ -457,6 +459,7 @@ cls
 echo DO NOT TOUCH ANY KEYS ON THE FIRESTICK REMOTE UNTIL FINISHED!!!
 echo.
 echo.
+%_color% 0e
 
 :: Swipe 1st Page Up
 if %firstTimeRootAttempt%==1 (
@@ -488,13 +491,13 @@ if %firstTimeRootAttempt%==1 (
 :: Wait for app to load
 if %firstTimeRootAttempt%==1 (
 
-	%sleep% 45
+	%sleep% 35
 )
 
 :: Wait for app to load
 if %firstTimeRootAttempt%==0 (
 
-	%sleep% 25
+	%sleep% 15
 )
 
 :: Tab over to button
