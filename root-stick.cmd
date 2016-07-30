@@ -164,7 +164,7 @@ echo.
 echo Press B to install busybox
 echo.
 echo Press A to disable Amazon Bloatware
-echo Press E to remove Amazon Bloatware
+::echo Press E to remove Amazon Bloatware
 echo.
 echo Press C to clear caches on device
 echo.
