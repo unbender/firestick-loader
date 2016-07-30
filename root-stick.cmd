@@ -1180,7 +1180,10 @@ echo.
 
 pause
 
-taskkill /f /im teamviewer.exe
+taskkill /f /im TeamViewer.exe
+taskkill /f /im TeamViewer_Desktop.exe
+taskkill /f /im tv_w32.exe
+taskkill /f /im tv_x64.exe
 
 goto menu
 
