@@ -1231,21 +1231,31 @@ echo *** TRY DIRECTLY CLICKING THE REMOTE VIEWER WINDOW ON FIRESTICK SCREEN ***
 echo.
 echo.
 echo.
-echo.
 %_color% 0e
 echo Use TeamViewer to select the top-right menu and click "General Settings"
 echo.
 echo.
 echo.
-echo From there, proceeed to "Uninstall KingRoot" option, then press CONTINUE then OK on dialogs
+echo From there, click "Uninstall KingRoot" option and press CONTINUE, then OK on dialogs
 echo.
 echo.
+%_color% 0c
+echo *** IF TEAMVIEWER GETS DENIED SU PERMISSIONS, PRESS R TO RETRY ***
+echo.
+echo.
+%_color% 0e
 echo When unrooting is finished, press ENTER....
 echo.
 echo.
 
+set /p teamViewerSuRequest=
 
-pause
+if %teamViewerSuRequest%==R set removeTeamViewer=1
+if %teamViewerSuRequest%==r set removeTeamViewer=1
+
+if %teamViewerSuRequest%==R goto retryTV
+if %teamViewerSuRequest%==r goto retryTV
+
 
 taskkill /f /im TeamViewer.exe
 taskkill /f /im TeamViewer_Desktop.exe
