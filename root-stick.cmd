@@ -1077,6 +1077,11 @@ echo.
 
 %sleep% 1
 
+taskkill /f /im TeamViewer.exe
+taskkill /f /im TeamViewer_Desktop.exe
+taskkill /f /im tv_w32.exe
+taskkill /f /im tv_x64.exe
+
 %teamviewer%
 
 %sleep% 3
@@ -1091,6 +1096,7 @@ if %removeTeamViewer%==1 taskkill /f /im TeamViewer_Desktop.exe
 if %removeTeamViewer%==1 taskkill /f /im tv_w32.exe
 if %removeTeamViewer%==1 taskkill /f /im tv_x64.exe
 set removeTeamViewer=0
+set teamViewerSuRequest=0
 
 %shell% am start -a android.intent.action.MAIN -n com.teamviewer.quicksupport.market/com.teamviewer.quicksupport.ui.QSActivity
 
