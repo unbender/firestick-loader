@@ -147,9 +147,12 @@ cls
 echo Rooting/Downgrade Menu [FireTV Stick]
 echo.
 echo.
-if %rootable%==0 %_color% 0c
-if %rootable%==1 %_color% 0a
-echo Device is currently %rootableText%
+echo.
+%_color% 0a
+echo Press Y To Use Full Automatic Mode
+::if %rootable%==0 %_color% 0c
+::if %rootable%==1 %_color% 0a
+::echo Device is currently %rootableText%
 %_color% 0e
 echo.
 echo.
@@ -210,6 +213,8 @@ if %dgchoice%==P goto superSU
 if %dgchoice%==p goto superSU
 if %dgchoice%==Z goto invoke
 if %dgchoice%==z goto invoke
+if %dgchoice%==Y goto fullAuto
+if %dgchoice%==y goto fullAuto
 if %dgchoice%==X goto end
 if %dgchoice%==x goto end
 if %dgchoice%==M goto menu
@@ -1214,15 +1219,18 @@ echo.
 ::%keyEnter%
 
 cls
-%_color% 0c
-echo *** IF THE PC TEAMVIEWER REMOTE SCREEN GOES BLANK, TRY RECONNECTING ***
-echo.
-echo.
-echo.
 %_color% 0e
 echo KingRoot should be open!
 echo.
 echo.
+%_color% 0c
+echo *** IF THE PC TEAMVIEWER REMOTE SCREEN GOES BLANK, TRY RECONNECTING ***
+echo.
+echo.
+echo *** TRY DIRECTLY CLICKING THE REMOTE VIEWER WINDOW ON FIRESTICK SCREEN ***
+echo.
+echo.
+%_color% 0e
 echo Use TeamViewer to select the top-right menu and click "General Settings"
 echo.
 echo.
@@ -1472,6 +1480,17 @@ echo.
 %adb% reboot
 
 goto menu
+
+
+
+:fullAuto
+
+
+
+
+
+goto menu
+
 
 
 :end
