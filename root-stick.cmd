@@ -1236,7 +1236,7 @@ echo Use TeamViewer to select the top-right menu and click "General Settings"
 echo.
 echo.
 echo.
-echo From there, click "Uninstall KingRoot" option and press CONTINUE, then OK on dialogs
+echo Then click "Uninstall KingRoot" option and press CONTINUE, then OK on dialogs
 echo.
 echo.
 %_color% 0c
