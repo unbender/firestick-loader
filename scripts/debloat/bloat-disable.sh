@@ -1,6 +1,6 @@
 #!/system/bin/sh
 
-clear
+#clear
 echo "Disabling Amazon Bloat...."
 echo ""
 echo ""
