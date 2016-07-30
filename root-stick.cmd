@@ -734,6 +734,12 @@ cls
 echo Preparing Downgrade Files....
 echo.
 echo.
+%_color% 0c
+echo *** BE SURE TO ALLOW SU PERMISSIONS WHEN REQUESTED FOR ADB ***
+echo.
+echo.
+echo.
+%_color% 0e
 
 %sleep% 2
 
@@ -748,6 +754,12 @@ cls
 echo Pushing Downgrade files to device....
 echo.
 echo.
+%_color% 0c
+echo *** BE SURE TO ALLOW SU PERMISSIONS WHEN REQUESTED FOR ADB ***
+echo.
+echo.
+echo.
+%_color% 0e
 
 %push% "%temp%\firestick-loader\downgrade\stick\update-kindle-montoya-54.5.3.7_user_537174420.bin" /%sdcard%/update.bin
 
@@ -762,6 +774,13 @@ cls
 echo Cleaning current local cache....
 echo.
 echo.
+%_color% 0c
+echo *** BE SURE TO ALLOW SU PERMISSIONS WHEN REQUESTED FOR ADB ***
+echo.
+echo.
+echo.
+%_color% 0e
+
 %shell% "su -c rm -f /cache/*.bin"
 %shell% "su -c rm -f /cache/*.zip"
 %shell% "su -c rm -f /cache/recovery/command"
@@ -797,6 +816,13 @@ cls
 echo Moving update.bin into local cache....
 echo.
 echo.
+%_color% 0c
+echo *** BE SURE TO ALLOW SU PERMISSIONS WHEN REQUESTED FOR ADB ***
+echo.
+echo.
+echo.
+%_color% 0e
+
 %shell% "su -c mv /%sdcard%/update.bin /cache/"
 
 ::pause
@@ -805,6 +831,13 @@ cls
 echo Creating update file to trigger during recovery....
 echo.
 echo.
+%_color% 0c
+echo *** BE SURE TO ALLOW SU PERMISSIONS WHEN REQUESTED FOR ADB ***
+echo.
+echo.
+echo.
+%_color% 0e
+
 ::%shell% "su -c echo --update_package=/cache/update.bin > /cache/recovery/command"
 
 echo --update_package=/cache/update.bin>"%temp%\tmpShit.txt"
@@ -827,7 +860,14 @@ echo --update_package=/cache/update.bin>"%temp%\tmpShit.txt"
 
 %shell% reboot recovery
 
+
+cls
+echo Rebooting....
+echo.
+echo.
+
 %sleep% 5
+
 
 cls
 %_color% 0e
