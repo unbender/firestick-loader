@@ -951,6 +951,15 @@ echo.
 
 %sleep% 10
 
+%adbWait%
+
+cls
+echo Waiting For Boot Animation....
+echo.
+echo.
+
+%sleep% 15
+
 cls
 echo Waiting For Home Screen To Finish Loading....
 echo.
@@ -961,9 +970,7 @@ echo If the Home Screen is ready now, please wait a few moments!
 echo.
 echo.
 
-%adbWait%
-
-%sleep% 40
+%sleep% 20
 
 cls
 echo The device should now be at the HOME screen!
@@ -1030,6 +1037,16 @@ cls
 echo Installing %app%....
 echo.
 echo.
+echo.
+%_color% 0c
+echo *** IF DEVICE REBOOTS, CLOSE SCRIPT AND RUN AGAIN ***
+echo.
+echo.
+echo.
+echo *** BE SURE TO ALLOW SU PERMISSIONS UPON LAUNCH ***
+echo.
+echo.
+%_color% 0e
 
 %install% %apk%
 
