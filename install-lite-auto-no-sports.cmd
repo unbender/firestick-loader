@@ -151,6 +151,28 @@ echo.
 
 cls
 %_color% 0e
+set appName=Amazon Underground
+set apk=
+echo.
+echo.
+echo Installing %appName%...
+echo.
+%install% "apps\media\amazon-underground.apk"
+
+
+cls
+%_color% 0e
+set appName=Amazon Video
+set apk=
+echo.
+echo.
+echo Installing %appName%...
+echo.
+%install% "apps\media\amazon-video.apk"
+
+
+cls
+%_color% 0e
 set appName=Movian
 set apk=
 echo.
