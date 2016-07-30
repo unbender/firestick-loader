@@ -524,7 +524,7 @@ echo PRESS ENTER TO RETURN TO MENU AND TRY AGAIN ***
 echo.
 echo.
 echo *** YOU MAY SPAWN A NEW CMD WINDOW AND ISSUE AN 
-echo "ADB SHELL" and "SU" COMMAND AROUND 27%% ***
+echo "ADB SHELL" and "SU" COMMAND AROUND 27%% TO SPEED THINGS UP***
 echo.
 echo.
 
@@ -1042,9 +1042,11 @@ echo Preparing Files....
 echo.
 echo.
 
+%uninstall% com.teamviewer.quicksupport.market
+%sleep% 1
 %install% "%~dp0apps\web\teamviewer.apk"
 
-::%sleep% 5
+%sleep% 1
 
 %teamviewer%
 
@@ -1055,10 +1057,16 @@ echo.
 if %removeTeamViewer%==1 %uninstall% com.teamviewer.quicksupport.market
 if %removeTeamViewer%==1 %sleep% 3
 if %removeTeamViewer%==1 %install% "%~dp0apps\web\teamviewer.apk"
-if %removeTeamViewer%==1 taskkill /f /im teamviewer.exe
+if %removeTeamViewer%==1 taskkill /f /im TeamViewer.exe
+if %removeTeamViewer%==1 taskkill /f /im TeamViewer_Desktop.exe
+if %removeTeamViewer%==1 taskkill /f /im tv_w32.exe
+if %removeTeamViewer%==1 taskkill /f /im tv_x64.exe
 set removeTeamViewer=0
 
 %shell% am start -a android.intent.action.MAIN -n com.teamviewer.quicksupport.market/com.teamviewer.quicksupport.ui.QSActivity
+
+%sleep% 3
+
 
 %teamviewer%
 
