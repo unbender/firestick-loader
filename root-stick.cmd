@@ -1273,7 +1273,9 @@ echo.
 echo.
 echo.
 echo.
+%_color% 0c
 echo *** BE SURE TO ALLOW SU PERMISSIONS IF REQUESTED ***
+%_color% 0e
 echo.
 echo.
 
@@ -1296,7 +1298,9 @@ echo.
 echo.
 echo.
 echo.
+%_color% 0c
 echo *** BE SURE TO ALLOW SU PERMISSIONS IF REQUESTED ***
+%_color% 0e
 echo.
 echo.
 
@@ -1489,7 +1493,7 @@ echo.
 
 %sleep% 5
 
-%adb% reboot
+::%adb% reboot
 
 goto menu
 
