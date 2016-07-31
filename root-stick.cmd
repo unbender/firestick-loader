@@ -1493,7 +1493,7 @@ echo.
 
 %sleep% 5
 
-::%adb% reboot
+%adb% reboot
 
 goto menu
 
