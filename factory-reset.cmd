@@ -63,7 +63,7 @@ echo.
 
 pause
 
-goto new
+::goto new
 
 
 %shell% am start -a android.intent.action.MAIN -n com.amazon.tv.settings/.tv.FactoryResetActivity
@@ -75,6 +75,8 @@ goto new
 %sleep% 1
 
 %keyEnter%
+
+goto end
 
 
 
