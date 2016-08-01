@@ -583,9 +583,12 @@ echo.
 %push% "%~dp0rooting\king2su\superuser.apk" /data/local/tmp/
 
 
+%shell% "su -c rm /data/local/tmp/king2su.sh"
 %push% "%~dp0rooting\king2su\king2su.sh" /data/local/tmp/
 %shell% "su -c chmod 755 /data/local/tmp/king2su.sh"
 %shell% "su -c sh /data/local/tmp/king2su.sh"
+
+pause
 
 %sleep% 3
 
