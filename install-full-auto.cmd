@@ -218,13 +218,13 @@ echo.
 
 cls
 %_color% 0e
-set appName=UC Browser Mini
+set appName=Opera Mini
 set apk=
 echo.
 echo.
 echo Installing %appName%...
 echo.
-%install% "apps\web\ucmini.apk"
+%install% "apps\web\opera.apk"
 
 
 cls
