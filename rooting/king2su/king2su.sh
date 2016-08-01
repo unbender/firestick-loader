@@ -117,6 +117,7 @@ rm -r /data/data-lib/king
 rm -r /sdcard/Kingroot
 rm /sdcard/kr-stock-conf >/dev/null 2>&1
 
+mount -o rw,remount /system
 pm uninstall com.kingroot.kinguser
 
 sleep 1
@@ -140,6 +141,6 @@ echo ""
 echo "Press ENTER when finished...."
 echo ""
 echo ""
-read
+#read
 
 exit

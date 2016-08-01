@@ -11,7 +11,6 @@
 
 
 mount -o rw,remount /system
-
 am kill com.kingroot.RushRoot
 pm uninstall com.kingroot.RushRoot
 am kill com.kingroot.kinguser
@@ -20,11 +19,13 @@ pm uninstall com.kingroot.kinguser
 rm /system/app/Kinguser.apk >/dev/null
 rm -r /system/app/Kinguser >/dev/null
 
+mount -o rw,remount /system
 am kill com.kingroot.master
 pm uninstall com.kingroot.master >/dev/null
 
 cat /data/local/tmp/busybox > /system/bin/busybox
 
+mount -o rw,remount /system
 chown 0.1000 /system/bin/busybox
 chmod 0755 /system/bin/busybox
 
@@ -55,6 +56,7 @@ rm /system/xbin/pidof >/dev/null 2>&1
 
 daemonsu -d
 
+mount -o rw,remount /system
 rm -r /data/app/com.kingroot.RushRoot-1 >/dev/null 2>&1
 rm -r /data/data/com.kingroot.RushRoot
 rm -r /data/data-lib/com.kingroot.RushRoot
@@ -65,6 +67,7 @@ rm -r /data/app/com.kingroot.master-1 >/dev/null 2>&1
 rm -r /data/data/com.kingroot.master
 rm -r /data/data-lib/king >/dev/null 2>&1
 
+mount -o rw,remount /system
 busybox chattr -ia /system/bin/.usr/.ku
 rm /system/bin/.usr/.ku
 busybox chattr -ia /system/bin/rt.sh
@@ -85,6 +88,7 @@ rm /system/bin/install-recovery.sh-ku.bak
 # pm uninstall eu.chainfire.supersu >/dev/null  2>&1
 # pm install /data/local/tmp/superuser.apk
 
+mount -o rw,remount /system
 busybox chattr -ia /system/usr/iku/isu
 rm -r /system/usr/iku
 rm -r /dev/reportroot
