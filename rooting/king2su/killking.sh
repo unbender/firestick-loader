@@ -97,6 +97,8 @@ rm -r /data/data-lib/king
 rm -r /sdcard/Kingroot
 rm /sdcard/kr-stock-conf >/dev/null 2>&1
 
+pm uninstall com.kingroot.kinguser
+
 # am start -a android.intent.action.MAIN -n eu.chainfire.supersu/.MainActivity >/dev/null
 
 sleep 2
@@ -111,4 +113,6 @@ echo ""
 echo "Press ENTER when finished...."
 echo ""
 echo ""
-read pause
+read
+
+exit

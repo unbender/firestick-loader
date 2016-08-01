@@ -141,3 +141,5 @@ echo "Press ENTER when finished...."
 echo ""
 echo ""
 read
+
+exit
