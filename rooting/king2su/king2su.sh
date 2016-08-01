@@ -117,6 +117,8 @@ rm -r /data/data-lib/king
 rm -r /sdcard/Kingroot
 rm /sdcard/kr-stock-conf >/dev/null 2>&1
 
+pm uninstall com.kingroot.kinguser
+
 sleep 1
 
 am start -a android.intent.action.MAIN -n eu.chainfire.supersu/.MainActivity >/dev/null
@@ -126,11 +128,16 @@ sleep 2
 echo ""
 echo ""
 echo ""
-echo "Done! Check For Errors!"
+echo "Done!"
 echo ""
+echo ""
+echo "*** CLICK NO THANKS AND THEN CONTINUE ON SUPERSU WINDOW ***"
+echo ""
+echo ""
+echo "*** IF SU BINARY UPDATE IS SUCCESSFUL, CLICK OK"
 echo ""
 echo ""
 echo "Press ENTER when finished...."
 echo ""
 echo ""
-read -p pause
+read
