@@ -784,8 +784,6 @@ echo.
 
 %rm% "%temp%\firestick-loader\downgrade\stick"
 
-
-
 :: Clear cache
 cls
 echo Cleaning current local cache....
@@ -1295,6 +1293,7 @@ echo.
 
 
 cls
+%shell% "su -c rm /data/local/tmp/bloat-disable.sh"
 %push% "%~dp0scripts\debloat\bloat-disable.sh" /data/local/tmp/
 %shell% "su -c chmod 755 /data/local/tmp/bloat-disable.sh"
 %shell% "su -c sh /data/local/tmp/bloat-disable.sh"
@@ -1320,6 +1319,7 @@ echo.
 
 
 cls
+%shell% "su -c rm /data/local/tmp/full-debloat.sh"
 %push% "%~dp0scripts\debloat\full-debloat.sh" /data/local/tmp/
 %shell% "su -c chmod 755 /data/local/tmp/full-debloat.sh"
 %shell% "su -c sh /data/local/tmp/full-debloat.sh"
