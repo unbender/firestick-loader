@@ -572,23 +572,24 @@ goto menu
 :: Install SuperSuMe
 set apk="rooting\king2su\Superuser.apk"
 set app=SuperSu
+
 cls
 echo Installing %app%....
 echo.
 echo.
 
-%install% %apk%
+%push% "%~dp0rooting\king2su\busybox" /data/local/tmp/
+%push% "%~dp0rooting\king2su\su" /data/local/tmp/
+%push% "%~dp0rooting\king2su\superuser.apk" /data/local/tmp/
 
-cls
-echo Launching %app%....
-echo.
-echo.
 
-%sleep% 5
+%push% "%~dp0rooting\king2su\king2su.sh" /data/local/tmp/
+%shell% "su -c chmod 755 /data/local/tmp/king2su.sh"
+%shell% "su -c sh /data/local/tmp/king2su.sh"
 
 ::%shell% am start -a android.intent.action.MAIN -n darkslide.com.supersumepro/.MainActivity
 
-%shell% am start -a android.intent.action.MAIN -n eu.chainfire.supersu/eu.chainfire.supersu.MainActivity
+::%shell% am start -a android.intent.action.MAIN -n eu.chainfire.supersu/eu.chainfire.supersu.MainActivity
 
 ::%sleep% 10
 

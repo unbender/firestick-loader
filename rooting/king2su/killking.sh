@@ -23,7 +23,7 @@ rm -r /system/app/Kinguser >/dev/null
 am kill com.kingroot.master
 pm uninstall com.kingroot.master >/dev/null
 
-cat sdcard/mrw/busybox > /system/bin/busybox
+cat /data/local/tmp/busybox > /system/bin/busybox
 
 chown 0.1000 /system/bin/busybox
 chmod 0755 /system/bin/busybox
@@ -39,19 +39,19 @@ rm /system/xbin/supolicy
 busybox chattr -ia /system/xbin/pidof >/dev/null 2>&1
 rm /system/xbin/pidof >/dev/null 2>&1
 
-cat /data/local/tmp/su > /system/xbin/su
-cat /data/local/tmp/su > /system/xbin/daemonsu
-cat /data/local/tmp/su > /system/xbin/sugote
-cat /system/bin/sh > /system/xbin/sugote-mksh
+# cat /data/local/tmp/su > /system/xbin/su
+# cat /data/local/tmp/su > /system/xbin/daemonsu
+# cat /data/local/tmp/su > /system/xbin/sugote
+# cat /system/bin/sh > /system/xbin/sugote-mksh
 
-chown 0.0 /system/xbin/su
-chmod 6755 /system/xbin/su
-chown 0.0 /system/xbin/sugote
-chmod 0755 /system/xbin/sugote
-chown 0.0 /system/xbin/sugote-mksh
-chmod 0755 /system/xbin/sugote-mksh
-chown 0.0 /system/xbin/daemonsu
-chmod 0755 /system/xbin/daemonsu
+# chown 0.0 /system/xbin/su
+# chmod 6755 /system/xbin/su
+# chown 0.0 /system/xbin/sugote
+# chmod 0755 /system/xbin/sugote
+# chown 0.0 /system/xbin/sugote-mksh
+# chmod 0755 /system/xbin/sugote-mksh
+# chown 0.0 /system/xbin/daemonsu
+# chmod 0755 /system/xbin/daemonsu
 
 daemonsu -d
 
@@ -82,8 +82,8 @@ rm /system/bin/install-recovery.sh
 busybox chattr -ia /system/bin/install-recovery.sh-ku.bak
 rm /system/bin/install-recovery.sh-ku.bak
 
-pm uninstall eu.chainfire.supersu >/dev/null  2>&1
-pm install /data/local/tmp/superuser.apk
+# pm uninstall eu.chainfire.supersu >/dev/null  2>&1
+# pm install /data/local/tmp/superuser.apk
 
 busybox chattr -ia /system/usr/iku/isu
 rm -r /system/usr/iku
@@ -97,7 +97,7 @@ rm -r /data/data-lib/king
 rm -r /sdcard/Kingroot
 rm /sdcard/kr-stock-conf >/dev/null 2>&1
 
-am start -a android.intent.action.MAIN -n eu.chainfire.supersu/.MainActivity >/dev/null
+# am start -a android.intent.action.MAIN -n eu.chainfire.supersu/.MainActivity >/dev/null
 
 sleep 2
 
