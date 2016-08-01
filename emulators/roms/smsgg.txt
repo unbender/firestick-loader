@@ -1,9 +1,0 @@
-PLACE A ZIP FILE CALLED "smsgg.zip" INTO THIS FOLDER
-
-DO NOT INCLUDE A PATH
-
-EXAMPLE GOOD: GameName.gg
-EXAMPLE GOOD: GameName.sms
-
-EXAMPLE BAD: /genesis/GameName.gg
-EXAMPLE BAD: /genesis/GameName.sms
