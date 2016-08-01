@@ -25,9 +25,13 @@ cp /data/data/com.amazon.tv.settings/shared_prefs/com.amazon.tv.settings_prefere
 #</map>
 
 # Removing /data/
+rm -rf /data/app/
 rm -rf /data/data/
 
 # Rebuilding empty /data/
+mkdir /data/app/
+mkdir /data/app/mcRegistry
+mkdir /data/app/mcRegistry/TbStorage
 mkdir /data/data/
 
 # Restoring ADB Settings
