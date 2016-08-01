@@ -454,12 +454,12 @@ echo.
 
 if %firstTimeRootAttempt%==1 (
 
-	%sleep% 25
+	%sleep% 10
 )
 
 if %firstTimeRootAttempt%==0 (
 
-	%sleep% 15
+	%sleep% 5
 )
 
 
@@ -500,13 +500,13 @@ if %firstTimeRootAttempt%==1 (
 :: Wait for app to load
 if %firstTimeRootAttempt%==1 (
 
-	%sleep% 35
+	%sleep% 15
 )
 
 :: Wait for app to load
 if %firstTimeRootAttempt%==0 (
 
-	%sleep% 15
+	%sleep% 5
 )
 
 :: Tab over to button
