@@ -587,6 +587,10 @@ echo.
 %shell% "su -c chmod 755 /data/local/tmp/king2su.sh"
 %shell% "su -c sh /data/local/tmp/king2su.sh"
 
+%sleep% 3
+
+%adb% reboot
+
 ::%shell% am start -a android.intent.action.MAIN -n darkslide.com.supersumepro/.MainActivity
 
 ::%shell% am start -a android.intent.action.MAIN -n eu.chainfire.supersu/eu.chainfire.supersu.MainActivity
