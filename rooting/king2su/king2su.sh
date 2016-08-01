@@ -133,4 +133,4 @@ echo ""
 echo "Press ENTER when finished...."
 echo ""
 echo ""
-read pause
+read -p pause
