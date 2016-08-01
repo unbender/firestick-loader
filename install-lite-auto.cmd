@@ -217,15 +217,26 @@ echo.
 ::%install% "apps\web\firefox.apk"
 
 
-::cls
-::%_color% 0e
-::set appName=Opera Mini
-::set apk=
-::echo.
-::echo.
-::echo Installing %appName%...
-::echo.
-::%install% "apps\web\opera.apk"
+cls
+%_color% 0e
+set appName=YouTube -No Play Services-
+set apk=
+echo.
+echo.
+echo Installing %appName%...
+echo.
+%install% "apps\web\youtube.apk"
+
+
+cls
+%_color% 0e
+set appName=Opera Mini
+set apk=
+echo.
+echo.
+echo Installing %appName%...
+echo.
+%install% "apps\web\opera.apk"
 
 
 ::cls
