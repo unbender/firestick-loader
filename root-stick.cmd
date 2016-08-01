@@ -123,7 +123,11 @@ set showSettingsMyAccount=%shell% am start -a android.intent.action.MAIN -n com.
 :: Misc Invokes
 set showDeviceNotifications=%shell% am start -a android.intent.action.MAIN -n com.amazon.bueller.notification/com.amazon.bueller.notification.BuellerDeviceService
 
-set cwmSU=%shell% am start -a android.intent.action.MAIN -n com.koushikdutta.superuser/.MainActivity
+
+:: Launch Different Apps
+set launchSuperSU=%shell% am start -a android.intent.action.MAIN -n com.koushikdutta.superuser/.MainActivity
+set launchAceStream=%shell% am start -a android.intent.action.MAIN -n org.acestream cmp=org.acestream/.player.gui.MainActivity
+set launchSopCast=%shell% am start -a android.intent.action.MAIN -n org.acestream cmp=org.acestream/.player.gui.MainActivity
 
 
 set cleanPackages=%shell% "su -c dumpsys package"

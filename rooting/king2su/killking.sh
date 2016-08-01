@@ -12,90 +12,92 @@
 
 mount -o rw,remount /system
 
-chattr -ia /system/bin/.usr/.ku
-rm -rf /system/bin/.usr/.ku
-chattr -ia /system/bin/rt.sh
-rm -rf /system/bin/rt.sh
-#chattr -ia /system/bin/su
-#rm -rf /system/bin/su
-chattr -ia /system/bin/ddexe-ku.bak
-rm -rf /system/bin/ddexe-ku.bak
-chattr -ia /system/bin/ddexe
-rm -rf /system/bin/ddexe
-chattr -ia /system/bin/ddexe_real
-rm -rf /system/bin/ddexe_real
-chattr -ia /system/bin/install-recovery.sh
-rm -rf /system/bin/install-recovery.sh
-
-mv /system/bin/install-recovery.sh-ku.bak /system/bin/install-recovery.sh
-
-mv /system/bin/install-recovery.sh-ku.bak /system/etc/install-recovery.sh
-
-chmod 0755 /system/bin/install-recovery.sh
-chmod 0755 /system/etc/install-recovery.sh
-
-chattr -ia /system/bin/install-recovery.sh-ku.bak
-rm -rf /system/bin/install-recovery.sh-ku.bak
-
-chattr -ia /system/usr/iku/isu
-rm -rf -rf /system/usr/iku
-rm -rf -rf /dev/reportroot
-
-rm -rf -rf /system/app/Kinguser
-rm -rf -rf /data/data-lib/king
-rm -rf -rf /sdcard/Kingroot
-rm -rf /sdcard/kr-stock-conf
-
-
-rm -rf -rf /data/app/com.kingroot.RushRoot-1
-rm -rf -rf /data/data/com.kingroot.RushRoot
-rm -rf -rf /data/data-lib/com.kingroot.RushRoot
-rm -rf -rf /data/app/com.kingroot.kinguser-1
-rm -rf -rf /data/data/com.kingroot.kinguser
-rm -rf -rf /data/data-lib/com.kingroot.kinguser
-rm -rf -rf /data/app/com.kingroot.master-1
-rm -rf -rf /data/data/com.kingroot.master
-rm -rf -rf /data/data-lib/king
-
-
-
-echo ""
-echo ""
-echo ""
-echo "*** Try Uninstalling KingRoot APK Manually Now! ***"
-echo ""
-echo ""
-echo ""
-echo "Press ENTER when finished...."
-echo ""
-echo ""
-read pause
-
-
-chattr -ia /system/xbin/ku.sud
-rm -rf /system/xbin/ku.sud
-chattr -ia /system/xbin/kugote
-rm -rf /system/xbin/kugote
-chattr -ia /system/xbin/supolicy
-rm -rf /system/xbin/supolicy
-chattr -ia /system/xbin/pidof
-rm -rf /system/xbin/pidof
-chattr -ia /system/xbin/su
-rm -rf /system/xbin/su
-
-
 am kill com.kingroot.RushRoot
 pm uninstall com.kingroot.RushRoot
-read pause
 am kill com.kingroot.kinguser
 pm uninstall com.kingroot.kinguser
 
-rm -rf /system/app/Kinguser.apk
-rm -rf -rf /system/app/Kinguser
+rm /system/app/Kinguser.apk >/dev/null
+rm -r /system/app/Kinguser >/dev/null
 
 am kill com.kingroot.master
-pm uninstall com.kingroot.master
+pm uninstall com.kingroot.master >/dev/null
 
+cat sdcard/mrw/busybox > /system/bin/busybox
+
+chown 0.1000 /system/bin/busybox
+chmod 0755 /system/bin/busybox
+
+busybox chattr -ia /system/xbin/ku.sud
+rm /system/xbin/ku.sud
+busybox chattr -ia /system/xbin/kugote >/dev/null 2>&1
+rm /system/xbin/kugote >/dev/null 2>&1
+busybox chattr -ia /system/xbin/su
+rm /system/xbin/su
+busybox chattr -ia /system/xbin/supolicy
+rm /system/xbin/supolicy
+busybox chattr -ia /system/xbin/pidof >/dev/null 2>&1
+rm /system/xbin/pidof >/dev/null 2>&1
+
+cat /data/local/tmp/su > /system/xbin/su
+cat /data/local/tmp/su > /system/xbin/daemonsu
+cat /data/local/tmp/su > /system/xbin/sugote
+cat /system/bin/sh > /system/xbin/sugote-mksh
+
+chown 0.0 /system/xbin/su
+chmod 6755 /system/xbin/su
+chown 0.0 /system/xbin/sugote
+chmod 0755 /system/xbin/sugote
+chown 0.0 /system/xbin/sugote-mksh
+chmod 0755 /system/xbin/sugote-mksh
+chown 0.0 /system/xbin/daemonsu
+chmod 0755 /system/xbin/daemonsu
+
+daemonsu -d
+
+rm -r /data/app/com.kingroot.RushRoot-1 >/dev/null 2>&1
+rm -r /data/data/com.kingroot.RushRoot
+rm -r /data/data-lib/com.kingroot.RushRoot
+rm -r /data/app/com.kingroot.kinguser-1 >/dev/null 2>&1
+rm -r /data/data/com.kingroot.kinguser
+rm -r /data/data-lib/com.kingroot.kinguser
+rm -r /data/app/com.kingroot.master-1 >/dev/null 2>&1
+rm -r /data/data/com.kingroot.master
+rm -r /data/data-lib/king >/dev/null 2>&1
+
+busybox chattr -ia /system/bin/.usr/.ku
+rm /system/bin/.usr/.ku
+busybox chattr -ia /system/bin/rt.sh
+rm /system/bin/rt.sh
+busybox chattr -ia /system/bin/su
+rm /system/bin/su
+busybox chattr -ia /system/bin/ddexe-ku.bak >/dev/null 2>&1
+rm /system/bin/ddexe-ku.bak >/dev/null 2>&1
+busybox chattr -ia /system/bin/ddexe
+rm /system/bin/ddexe
+busybox chattr -ia /system/bin/ddexe_real >/dev/null 2>&1
+rm /system/bin/ddexe_real >/dev/null 2>&1
+busybox chattr -ia /system/bin/install-recovery.sh
+rm /system/bin/install-recovery.sh
+busybox chattr -ia /system/bin/install-recovery.sh-ku.bak
+rm /system/bin/install-recovery.sh-ku.bak
+
+pm uninstall eu.chainfire.supersu >/dev/null  2>&1
+pm install /data/local/tmp/superuser.apk
+
+busybox chattr -ia /system/usr/iku/isu
+rm -r /system/usr/iku
+rm -r /dev/reportroot
+busybox chattr -ia /system/etc/install-recovery.sh
+rm /system/etc/install-recovery.sh
+busybox chattr -ia /system/etc/install_recovery.sh
+rm -r /system/app/Kinguser
+rm -r /data/data-lib/king
+
+rm -r /sdcard/Kingroot
+rm /sdcard/kr-stock-conf >/dev/null 2>&1
+
+am start -a android.intent.action.MAIN -n eu.chainfire.supersu/.MainActivity >/dev/null
 
 sleep 2
 
