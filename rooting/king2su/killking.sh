@@ -33,8 +33,8 @@ busybox chattr -ia /system/xbin/ku.sud
 rm /system/xbin/ku.sud
 busybox chattr -ia /system/xbin/kugote >/dev/null 2>&1
 rm /system/xbin/kugote >/dev/null 2>&1
-busybox chattr -ia /system/xbin/su
-rm /system/xbin/su
+#busybox chattr -ia /system/xbin/su
+#rm /system/xbin/su
 busybox chattr -ia /system/xbin/supolicy
 rm /system/xbin/supolicy
 busybox chattr -ia /system/xbin/pidof >/dev/null 2>&1
@@ -54,7 +54,11 @@ rm /system/xbin/pidof >/dev/null 2>&1
 # chown 0.0 /system/xbin/daemonsu
 # chmod 0755 /system/xbin/daemonsu
 
-daemonsu -d
+# daemonsu -d
+
+# mount -o rw,remount /system
+# busybox chattr -ia /system/xbin/daemonsu
+# rm -r /system/xbin/daemonsu
 
 mount -o rw,remount /system
 rm -r /data/app/com.kingroot.RushRoot-1 >/dev/null 2>&1
@@ -98,10 +102,13 @@ busybox chattr -ia /system/etc/install_recovery.sh
 rm -r /system/app/Kinguser
 rm -r /data/data-lib/king
 
-rm -r /sdcard/Kingroot
+
+#rm -r /sdcard/Kingroot
 rm /sdcard/kr-stock-conf >/dev/null 2>&1
 
 pm uninstall com.kingroot.kinguser
+
+pm uninstall com.kingstudio.purify
 
 # am start -a android.intent.action.MAIN -n eu.chainfire.supersu/.MainActivity >/dev/null
 
