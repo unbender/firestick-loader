@@ -129,6 +129,8 @@ set launchSuperSU=%shell% am start -a android.intent.action.MAIN -n com.koushikd
 set launchAceStream=%shell% am start -a android.intent.action.MAIN -n org.acestream cmp=org.acestream/.player.gui.MainActivity
 set launchSopCast=%shell% am start -a android.intent.action.MAIN -n org.acestream cmp=org.acestream/.player.gui.MainActivity
 
+set suRequest=%shell% am start -a android.intent.action.MAIN -n com.android.internal.os.RuntimeInit uid 0
+
 
 set cleanPackages=%shell% "su -c dumpsys package"
 
@@ -571,7 +573,7 @@ goto menu
 
 :: Install SuperSuMe
 set apk="rooting\king2su\Superuser.apk"
-set app=SuperSu
+set app=SuperSU
 
 cls
 echo Installing %app%....
@@ -587,6 +589,8 @@ echo.
 %push% "%~dp0rooting\king2su\king2su.sh" /data/local/tmp/
 %shell% "su -c chmod 755 /data/local/tmp/king2su.sh"
 %shell% "su -c sh /data/local/tmp/king2su.sh"
+
+
 
 pause
 
@@ -607,6 +611,18 @@ pause
 ::%keyEnter%
 
 goto menu
+
+
+
+:killTheKing
+
+%shell% "su -c rm /data/local/tmp/killking.sh"
+%push% "%~dp0rooting\king2su\killking.sh" /data/local/tmp/
+%shell% "su -c chmod 755 /data/local/tmp/killking.sh"
+%shell% "su -c sh /data/local/tmp/killking.sh"
+
+goto %returnTo%
+
 
 
 :OLDsuperSU
@@ -1292,8 +1308,9 @@ echo.
 %install% "%~dp0apps\system\firestopper.apk"
 
 
-cls
 %shell% "su -c rm /data/local/tmp/bloat-disable.sh"
+
+cls
 %push% "%~dp0scripts\debloat\bloat-disable.sh" /data/local/tmp/
 %shell% "su -c chmod 755 /data/local/tmp/bloat-disable.sh"
 %shell% "su -c sh /data/local/tmp/bloat-disable.sh"
@@ -1318,8 +1335,9 @@ echo.
 %install% "%~dp0apps\system\firestopper.apk"
 
 
-cls
 %shell% "su -c rm /data/local/tmp/full-debloat.sh"
+
+cls
 %push% "%~dp0scripts\debloat\full-debloat.sh" /data/local/tmp/
 %shell% "su -c chmod 755 /data/local/tmp/full-debloat.sh"
 %shell% "su -c sh /data/local/tmp/full-debloat.sh"
