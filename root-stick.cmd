@@ -147,7 +147,7 @@ set returnTo=menu
 
 set dgchoice=m
 
-if %firstCheck%==0 goto checkCanRoot
+::if %firstCheck%==0 goto checkCanRoot
 
 cls
 echo Rooting/Downgrade Menu [FireTV Stick]
