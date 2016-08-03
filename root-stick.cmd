@@ -182,7 +182,7 @@ echo.
 echo Press P to replace kingroot with SuperSU
 echo.
 ::echo Press F to launch firestopper
-echo Press F to run fixes and tweaks
+echo Press F to run fixes, tweaks, and misc
 echo.
 echo Press Z to directly invoke Amazon Settings menu items
 echo.
@@ -378,7 +378,7 @@ goto advInvoke
 set fchoice=y
 
 cls
-echo Fixes and Tweaks Menu [FireTV Stick]
+echo Fixes, Tweaks, and Misc Menu [FireTV Stick]
 echo.
 echo.
 echo.
