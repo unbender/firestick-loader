@@ -1070,15 +1070,16 @@ echo.
 
 %sleep% 3
 
-%shell% "su -c mount -o remount,rw /system"
+::%shell% "su -c mount -o remount,rw /system"
 
 %push% "%~dp0rooting\king2su\busybox" /data/local/tmp/
-%shell% "su -c chmod 755 /data/local/tmp/busybox"
-%shell% "su -c /data/local/tmp/busybox --install -s /system/xbin"
+%push% "%~dp0scripts\install-busybox.sh" /data/local/tmp/
+%shell% "su -c chmod 755 /data/local/tmp/install-busybox.sh"
+%shell% "su -c sh /data/local/tmp/install-busybox.sh"
 
 ::%shell% "su -c mount -o remount,ro /system"
 
-%sleep% 3
+%sleep% 5
 
 goto menu
 
