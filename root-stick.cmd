@@ -1609,7 +1609,7 @@ cls
 %shell% "su -c sh /data/local/tmp/clear-all-caches.sh"
 
 %sleep% 5
-pause
+::pause
 %adb% reboot
 
 goto menu
