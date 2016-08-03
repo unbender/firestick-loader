@@ -1114,7 +1114,7 @@ goto menu
 
 
 
-:busybox
+:brokenbusybox
 
 set app=Busybox
 
@@ -1140,7 +1140,7 @@ goto menu
 
 
 
-:oldbusybox
+:busybox
 :: Install Busybox
 set apk="rooting\busybox.apk"
 set app=Busybox
