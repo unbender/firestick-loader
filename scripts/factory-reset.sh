@@ -42,8 +42,12 @@ mkdir /data/data/com.amazon.tv.settings/shared_prefs
 cp /sdcard/com.amazon.tv.settings_preferences.xml /data/data/com.amazon.tv.settings/shared_prefs/com.amazon.tv.settings_preferences.xml
 
 # Clearing Dalvik Cache
-rm -rf /data/dalvik-cache
-rm -rf /cache/dalvik-cache
+#rm -rf /data/dalvik-cache
+#rm -rf /cache/dalvik-cache
+
+# Clearing Cache
+rm -rf /cache/
+mkdir /cache/
 
 
 
