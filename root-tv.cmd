@@ -123,7 +123,13 @@ set showSettingsMyAccount=%shell% am start -a android.intent.action.MAIN -n com.
 :: Misc Invokes
 set showDeviceNotifications=%shell% am start -a android.intent.action.MAIN -n com.amazon.bueller.notification/com.amazon.bueller.notification.BuellerDeviceService
 
-set cwmSU=%shell% am start -a android.intent.action.MAIN -n com.koushikdutta.superuser/.MainActivity
+
+:: Launch Different Apps
+set launchSuperSU=%shell% am start -a android.intent.action.MAIN -n com.koushikdutta.superuser/.MainActivity
+set launchAceStream=%shell% am start -a android.intent.action.MAIN -n org.acestream cmp=org.acestream/.player.gui.MainActivity
+set launchSopCast=%shell% am start -a android.intent.action.MAIN -n org.acestream cmp=org.acestream/.player.gui.MainActivity
+
+set suRequest=%shell% am start -a android.intent.action.MAIN -n com.android.internal.os.RuntimeInit uid 0
 
 
 set cleanPackages=%shell% "su -c dumpsys package"
@@ -147,9 +153,12 @@ cls
 echo Rooting/Downgrade Menu [FireTV Stick]
 echo.
 echo.
-if %rootable%==0 %_color% 0c
-if %rootable%==1 %_color% 0a
-echo Device is currently %rootableText%
+echo.
+%_color% 0a
+echo Press Y To Use Full Automatic Mode
+::if %rootable%==0 %_color% 0c
+::if %rootable%==1 %_color% 0a
+::echo Device is currently %rootableText%
 %_color% 0e
 echo.
 echo.
@@ -159,12 +168,12 @@ echo Press R to root
 echo.
 echo Press S to issue an "su" request to the device
 echo.
-echo Press D to downgrade
+echo Press D to downgrade to stock 5.0.5
 echo.
 echo Press B to install busybox
 echo.
 echo Press A to disable Amazon Bloatware
-echo Press E to remove Amazon Bloatware
+::echo Press E to remove Amazon Bloatware
 echo.
 echo Press C to clear caches on device
 echo.
@@ -210,6 +219,8 @@ if %dgchoice%==P goto superSU
 if %dgchoice%==p goto superSU
 if %dgchoice%==Z goto invoke
 if %dgchoice%==z goto invoke
+if %dgchoice%==Y goto fullAuto
+if %dgchoice%==y goto fullAuto
 if %dgchoice%==X goto end
 if %dgchoice%==x goto end
 if %dgchoice%==M goto menu
@@ -411,9 +422,11 @@ goto menu
 
 :installRoot
 cls
+%_color% 0c
 echo DO NOT TOUCH ANY KEYS ON THE FIRESTICK REMOTE UNTIL FINISHED!!!
 echo.
 echo.
+%_color% 0e
 
 :: Install KingoRoot
 set apk="rooting\kingroot.apk"
@@ -433,27 +446,31 @@ goto menu
 :root
 
 cls
+%_color% 0c
 echo DO NOT TOUCH ANY KEYS ON THE FIRESTICK REMOTE UNTIL FINISHED!!!
 echo.
 echo.
+%_color% 0e
 
 %shell% am start -a android.intent.action.MAIN -n com.kingroot.kinguser/.activitys.SliderMainActivity
 
 if %firstTimeRootAttempt%==1 (
 
-	%sleep% 25
+	%sleep% 10
 )
 
 if %firstTimeRootAttempt%==0 (
 
-	%sleep% 15
+	%sleep% 5
 )
 
 
 cls
+%_color% 0c
 echo DO NOT TOUCH ANY KEYS ON THE FIRESTICK REMOTE UNTIL FINISHED!!!
 echo.
 echo.
+%_color% 0e
 
 :: Swipe 1st Page Up
 if %firstTimeRootAttempt%==1 (
@@ -485,13 +502,13 @@ if %firstTimeRootAttempt%==1 (
 :: Wait for app to load
 if %firstTimeRootAttempt%==1 (
 
-	%sleep% 45
+	%sleep% 15
 )
 
 :: Wait for app to load
 if %firstTimeRootAttempt%==0 (
 
-	%sleep% 25
+	%sleep% 5
 )
 
 :: Tab over to button
@@ -507,6 +524,7 @@ set firstTimeRootAttempt=0
 
 set check=0
 cls
+%_color% 0e
 echo KingRoot should be rooting device!
 echo.
 echo.
@@ -516,6 +534,7 @@ echo.
 echo If this is not the case, close script and any active apps, then re-run script!
 echo.
 echo.
+%_color% 0c
 echo *** IF IT REBOOTS, DO NOT CONTINUE UNTIL A PASS/FAIL MESSAGE IS SEEN!! ***
 echo.
 echo.
@@ -524,9 +543,10 @@ echo PRESS ENTER TO RETURN TO MENU AND TRY AGAIN ***
 echo.
 echo.
 echo *** YOU MAY SPAWN A NEW CMD WINDOW AND ISSUE AN 
-echo "ADB SHELL" and "SU" COMMAND AROUND 27%% ***
+echo "ADB SHELL" and "SU" COMMAND AROUND 27%% TO SPEED THINGS UP***
 echo.
 echo.
+%_color% 0e
 
 set /p check=
 
@@ -543,6 +563,8 @@ set /p check=
 
 %keyHome%
 
+%adbKill%
+
 goto menu
 
 
@@ -551,24 +573,32 @@ goto menu
 
 :: Install SuperSuMe
 set apk="rooting\king2su\Superuser.apk"
-set app=SuperSu
+set app=SuperSU
+
 cls
 echo Installing %app%....
 echo.
 echo.
 
-%install% %apk%
+%push% "%~dp0rooting\king2su\busybox" /data/local/tmp/
+%push% "%~dp0rooting\king2su\su" /data/local/tmp/
+%push% "%~dp0rooting\king2su\superuser.apk" /data/local/tmp/
 
-cls
-echo Launching %app%....
-echo.
-echo.
 
-%sleep% 5
+%shell% "su -c rm /data/local/tmp/king2su.sh"
+%push% "%~dp0rooting\king2su\king2su.sh" /data/local/tmp/
+%shell% "su -c chmod 755 /data/local/tmp/king2su.sh"
+%shell% "su -c sh /data/local/tmp/king2su.sh"
+
+pause
+
+%sleep% 3
+
+%adb% reboot
 
 ::%shell% am start -a android.intent.action.MAIN -n darkslide.com.supersumepro/.MainActivity
 
-%shell% am start -a android.intent.action.MAIN -n eu.chainfire.supersu/eu.chainfire.supersu.MainActivity
+::%shell% am start -a android.intent.action.MAIN -n eu.chainfire.supersu/eu.chainfire.supersu.MainActivity
 
 ::%sleep% 10
 
@@ -579,6 +609,18 @@ echo.
 ::%keyEnter%
 
 goto menu
+
+
+
+:killTheKing
+
+%shell% "su -c rm /data/local/tmp/killking.sh"
+%push% "%~dp0rooting\king2su\killking.sh" /data/local/tmp/
+%shell% "su -c chmod 755 /data/local/tmp/killking.sh"
+%shell% "su -c sh /data/local/tmp/killking.sh"
+
+goto %returnTo%
+
 
 
 :OLDsuperSU
@@ -723,6 +765,12 @@ cls
 echo Preparing Downgrade Files....
 echo.
 echo.
+%_color% 0c
+echo *** BE SURE TO ALLOW SU PERMISSIONS WHEN REQUESTED FOR ADB ***
+echo.
+echo.
+echo.
+%_color% 0e
 
 %sleep% 2
 
@@ -737,6 +785,12 @@ cls
 echo Pushing Downgrade files to device....
 echo.
 echo.
+%_color% 0c
+echo *** BE SURE TO ALLOW SU PERMISSIONS WHEN REQUESTED FOR ADB ***
+echo.
+echo.
+echo.
+%_color% 0e
 
 %push% "%temp%\firestick-loader\downgrade\stick\update-kindle-montoya-54.5.3.7_user_537174420.bin" /%sdcard%/update.bin
 
@@ -744,13 +798,18 @@ echo.
 
 %rm% "%temp%\firestick-loader\downgrade\stick"
 
-
-
 :: Clear cache
 cls
 echo Cleaning current local cache....
 echo.
 echo.
+%_color% 0c
+echo *** BE SURE TO ALLOW SU PERMISSIONS WHEN REQUESTED FOR ADB ***
+echo.
+echo.
+echo.
+%_color% 0e
+
 %shell% "su -c rm -f /cache/*.bin"
 %shell% "su -c rm -f /cache/*.zip"
 %shell% "su -c rm -f /cache/recovery/command"
@@ -786,6 +845,13 @@ cls
 echo Moving update.bin into local cache....
 echo.
 echo.
+%_color% 0c
+echo *** BE SURE TO ALLOW SU PERMISSIONS WHEN REQUESTED FOR ADB ***
+echo.
+echo.
+echo.
+%_color% 0e
+
 %shell% "su -c mv /%sdcard%/update.bin /cache/"
 
 ::pause
@@ -794,6 +860,13 @@ cls
 echo Creating update file to trigger during recovery....
 echo.
 echo.
+%_color% 0c
+echo *** BE SURE TO ALLOW SU PERMISSIONS WHEN REQUESTED FOR ADB ***
+echo.
+echo.
+echo.
+%_color% 0e
+
 ::%shell% "su -c echo --update_package=/cache/update.bin > /cache/recovery/command"
 
 echo --update_package=/cache/update.bin>"%temp%\tmpShit.txt"
@@ -816,14 +889,23 @@ echo --update_package=/cache/update.bin>"%temp%\tmpShit.txt"
 
 %shell% reboot recovery
 
-%sleep% 5
 
 cls
+echo Rebooting....
+echo.
+echo.
+
+%sleep% 5
+
+
+cls
+%_color% 0e
 echo The Downgrade Process Should Be Happening!
 echo.
 echo The TV screen should be on the Amazon Install screen.
 echo.
 echo.
+%_color% 0c
 echo *** If this is not the case, try restarting the device and script. ***
 echo.
 echo *** If you are at the Android Recovery Screen, unplug and re-plug device ***
@@ -833,6 +915,7 @@ echo *** DO NOT PRESS ANY KEYS ON THE REMOTE OR UNPLUG THE DEVICE ***
 echo.
 echo.
 echo.
+%_color% 0e
 echo Script will continue when device is at the Optimizing System Storage screen....
 echo.
 echo.
@@ -846,11 +929,15 @@ echo.
 ::%adbWait%
 
 cls
+%_color% 0a
 echo The Downgrade Process Should Have Been Successful!
 echo.
+echo.
+%_color% 0e
 echo The TV screen should be on the Optimizing System Storage screen.
 echo.
 echo.
+%_color% 0c
 echo *** If this is not the case, try restarting the device and script. ***
 echo.
 echo.
@@ -860,6 +947,7 @@ echo *** DO NOT PRESS ANY KEYS ON THE REMOTE OR UNPLUG THE DEVICE ***
 echo.
 echo.
 echo.
+%_color% 0e
 echo When device is back at HOME screen, press ENTER....
 echo.
 echo.
@@ -886,6 +974,22 @@ echo.
 %adb% reboot
 
 cls
+echo Rebooting....
+echo.
+echo.
+
+%sleep% 10
+
+%adbWait%
+
+cls
+echo Waiting For Boot Animation....
+echo.
+echo.
+
+%sleep% 15
+
+cls
 echo Waiting For Home Screen To Finish Loading....
 echo.
 echo.
@@ -895,9 +999,7 @@ echo If the Home Screen is ready now, please wait a few moments!
 echo.
 echo.
 
-%adbWait%
-
-%sleep% 60
+%sleep% 20
 
 cls
 echo The device should now be at the HOME screen!
@@ -956,7 +1058,34 @@ echo.
 goto menu
 
 
+
 :busybox
+
+set app=Busybox
+
+cls
+echo Installing %app%....
+echo.
+echo.
+
+%sleep% 3
+
+::%shell% "su -c mount -o remount,rw /system"
+
+%push% "%~dp0rooting\king2su\busybox" /data/local/tmp/
+%push% "%~dp0scripts\install-busybox.sh" /data/local/tmp/
+%shell% "su -c chmod 755 /data/local/tmp/install-busybox.sh"
+%shell% "su -c sh /data/local/tmp/install-busybox.sh"
+
+::%shell% "su -c mount -o remount,ro /system"
+
+%sleep% 5
+
+goto menu
+
+
+
+:oldbusybox
 :: Install Busybox
 set apk="rooting\busybox.apk"
 set app=Busybox
@@ -964,6 +1093,16 @@ cls
 echo Installing %app%....
 echo.
 echo.
+echo.
+%_color% 0c
+echo *** IF DEVICE REBOOTS, CLOSE SCRIPT AND RUN AGAIN ***
+echo.
+echo.
+echo.
+echo *** BE SURE TO ALLOW SU PERMISSIONS UPON LAUNCH ***
+echo.
+echo.
+%_color% 0e
 
 %install% %apk%
 
@@ -972,13 +1111,16 @@ echo.
 %shell% am start -a android.intent.action.MAIN -n stericson.busybox/.Activity.MainActivity
 
 cls
+%_color% 0e
 echo The Busybox installer should be open!
 echo.
 echo.
+%_color% 0c
 echo *** BE SURE TO ALLOW SU PERMISSIONS UPON LAUNCH ***
 echo.
 echo.
 echo.
+%_color% 0e
 echo Once BusyBox is open, click BACK on the remote!
 echo.
 echo.
@@ -1026,9 +1168,7 @@ cls
 echo Launching FireStopper....
 echo.
 echo.
-echo *** BE SURE TO ALLOW ALL PERMISSIONS ***
-echo.
-echo.
+
 %shell% am start -a de.belu.firestopper/.gui.MainActivity -n de.belu.firestopper/.gui.MainActivity
 
 goto menu
@@ -1044,9 +1184,16 @@ echo Preparing Files....
 echo.
 echo.
 
+%uninstall% com.teamviewer.quicksupport.market
+%sleep% 1
 %install% "%~dp0apps\web\teamviewer.apk"
 
-::%sleep% 5
+%sleep% 1
+
+taskkill /f /im TeamViewer.exe
+taskkill /f /im TeamViewer_Desktop.exe
+taskkill /f /im tv_w32.exe
+taskkill /f /im tv_x64.exe
 
 %teamviewer%
 
@@ -1057,18 +1204,30 @@ echo.
 if %removeTeamViewer%==1 %uninstall% com.teamviewer.quicksupport.market
 if %removeTeamViewer%==1 %sleep% 3
 if %removeTeamViewer%==1 %install% "%~dp0apps\web\teamviewer.apk"
-if %removeTeamViewer%==1 taskkill /f /im teamviewer.exe
+if %removeTeamViewer%==1 taskkill /f /im TeamViewer.exe
+if %removeTeamViewer%==1 taskkill /f /im TeamViewer_Desktop.exe
+if %removeTeamViewer%==1 taskkill /f /im tv_w32.exe
+if %removeTeamViewer%==1 taskkill /f /im tv_x64.exe
 set removeTeamViewer=0
+set teamViewerSuRequest=0
 
 %shell% am start -a android.intent.action.MAIN -n com.teamviewer.quicksupport.market/com.teamviewer.quicksupport.ui.QSActivity
 
+%sleep% 3
+
+
+%teamviewer%
 
 :: Launch Teamviewer
 cls
+%_color% 0e
 echo Teamviewer on PC and FireStick should be open!
 echo.
+echo IF YOU GET A "Some Files Could Not Be Created" ERROR, CLICK OK AND CLOSE!
 echo.
 echo.
+echo.
+%_color% 0c
 echo *** YOU MUST ACT FAST TO ALLOW SU PERMISSIONS ***
 echo.
 echo *** YOU WILL NEED TO PRESS RIGHT AND ENTER TO ALLOW PERMISSIONS ***
@@ -1078,6 +1237,7 @@ echo *** IF TEAMVIEWER GETS DENIED SU PERMISSIONS, PRESS R TO RETRY ***
 echo.
 echo.
 echo.
+%_color% 0e
 echo Login to FireStick from PC, press Allow for Client and then SU Request
 echo.
 echo Once you have remote control access, press ENTER to continue....
@@ -1100,34 +1260,58 @@ echo.
 
 %shell% am start -a android.intent.action.MAIN -n com.kingroot.kinguser/.activitys.SliderMainActivity
 
-%sleep% 3
-%swipeUp%
+::%sleep% 3
+::%swipeUp%
+::%sleep% 2
+::%swipeUp%
+::%sleep% 2
+::%keyTab%
 %sleep% 2
-%swipeUp%
-%sleep% 2
-%keyTab%
-%sleep% 2
-%keyEnter%
+::%keyEnter%
 
 cls
+%_color% 0e
 echo KingRoot should be open!
 echo.
 echo.
+%_color% 0c
+echo *** IF THE PC TEAMVIEWER REMOTE SCREEN GOES BLANK, TRY RECONNECTING ***
+echo.
+echo.
+echo *** TRY DIRECTLY CLICKING THE REMOTE VIEWER WINDOW ON FIRESTICK SCREEN ***
+echo.
+echo.
+echo.
+%_color% 0e
 echo Use TeamViewer to select the top-right menu and click "General Settings"
 echo.
 echo.
 echo.
-echo From there, proceeed to uninstall/unroot option
+echo Then click "Uninstall KingRoot" option and press CONTINUE, then OK on dialogs
 echo.
 echo.
+%_color% 0c
+echo *** IF TEAMVIEWER GETS DENIED SU PERMISSIONS, PRESS R TO RETRY ***
+echo.
+echo.
+%_color% 0e
 echo When unrooting is finished, press ENTER....
 echo.
 echo.
 
+set /p teamViewerSuRequest=
 
-pause
+if %teamViewerSuRequest%==R set removeTeamViewer=1
+if %teamViewerSuRequest%==r set removeTeamViewer=1
 
-taskkill /f /im teamviewer.exe
+if %teamViewerSuRequest%==R goto retryTV
+if %teamViewerSuRequest%==r goto retryTV
+
+
+taskkill /f /im TeamViewer.exe
+taskkill /f /im TeamViewer_Desktop.exe
+taskkill /f /im tv_w32.exe
+taskkill /f /im tv_x64.exe
 
 goto menu
 
@@ -1139,9 +1323,17 @@ echo Making sure FireStarter is installed as a HOME Menu....
 echo.
 echo.
 echo.
+echo.
+%_color% 0c
+echo *** BE SURE TO ALLOW SU PERMISSIONS IF REQUESTED ***
+%_color% 0e
+echo.
+echo.
 
 %install% "%~dp0apps\system\firestopper.apk"
 
+
+%shell% "su -c rm /data/local/tmp/bloat-disable.sh"
 
 cls
 %push% "%~dp0scripts\debloat\bloat-disable.sh" /data/local/tmp/
@@ -1158,9 +1350,17 @@ echo Making sure FireStarter is installed as a HOME Menu....
 echo.
 echo.
 echo.
+echo.
+%_color% 0c
+echo *** BE SURE TO ALLOW SU PERMISSIONS IF REQUESTED ***
+%_color% 0e
+echo.
+echo.
 
 %install% "%~dp0apps\system\firestopper.apk"
 
+
+%shell% "su -c rm /data/local/tmp/full-debloat.sh"
 
 cls
 %push% "%~dp0scripts\debloat\full-debloat.sh" /data/local/tmp/
@@ -1334,13 +1534,16 @@ echo Clearing Device Caches....
 echo.
 echo.
 echo.
+%_color% 0c
 echo *** THE DEVICE WILL REBOOT WHEN FINISHED TO REBUILD DALVIK CACHES ***
+%_color% 0e
 echo.
 echo.
 
 %shell% "su -c rm -r /data/dalvik-cache"
 %shell% "su -c rm -r /cache/dalvik-cache"
 %shell% "su -c rm -f /cache/*.apk"
+%shell% "su -c rm -f /cache/*.bin"
 %shell% "su -c rm -f /cache/signed_com.amazon.kso.blackbird-1550000810.apk"
 
 %sleep% 5
@@ -1348,6 +1551,17 @@ echo.
 %adb% reboot
 
 goto menu
+
+
+
+:fullAuto
+
+
+
+
+
+goto menu
+
 
 
 :end
