@@ -1,6 +1,6 @@
 #!/system/bin/sh
 
-clear
+#clear
 echo "Factory Resetting...."
 echo ""
 echo ""
