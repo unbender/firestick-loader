@@ -386,7 +386,9 @@ echo 1) Fix Connectivity To Android FireTV Remote App
 echo.
 echo 2) Launch FireStarter
 echo.
+echo 3) Remove Boot Animation (Leaves Stock FIRE Text)
 echo.
+echo 4) Remove and Replace Boot Animation (Replaces Stock FIRE Text)
 echo.
 echo.
 echo.
@@ -410,6 +412,8 @@ set /p fchoice=
 
 if %fchoice%==1 goto fixRemote
 if %fchoice%==2 goto launchFS
+if %fchoice%==3 goto bootanim
+if %fchoice%==4 goto bootanimR
 if %fchoice%==B goto menu
 if %fchoice%==b goto menu
 if %fchoice%==X goto end
@@ -1631,6 +1635,31 @@ cls
 %push% "%~dp0scripts\fixes\fix-amazon-android-remote-app.sh" /data/local/tmp/
 %shell% "su -c chmod 755 /data/local/tmp/fix-amazon-android-remote-app.sh"
 %shell% "su -c sh /data/local/tmp/fix-amazon-android-remote-app.sh"
+
+goto fixesMenu
+
+
+:bootanim
+
+cls
+%push% "%~dp0scripts\remove-bootanimation.sh" /data/local/tmp/
+%shell% "su -c chmod 755 /data/local/tmp/remove-bootanimation.sh"
+%shell% "su -c sh /data/local/tmp/remove-bootanimation.sh"
+
+::%adb% reboot
+
+goto fixesMenu
+
+
+:bootanimR
+
+cls
+%push% "%~dp0apps\system\framework-res__mod.apk" /data/local/tmp/framework-res.apk
+%push% "%~dp0scripts\replace-bootanimation.sh" /data/local/tmp/
+%shell% "su -c chmod 755 /data/local/tmp/replace-bootanimation.sh"
+%shell% "su -c sh /data/local/tmp/replace-bootanimation.sh"
+
+::%adb% reboot
 
 goto fixesMenu
 
