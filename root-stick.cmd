@@ -226,6 +226,10 @@ if %dgchoice%==x goto end
 if %dgchoice%==M goto menu
 if %dgchoice%==m goto menu
 
+:: Fix Amazon Android Remote App (Only if loaded from 20160802 and earlier builds)
+if %dgchoice%==V goto fixRemote
+if %dgchoice%==v goto fixRemote
+
 goto menu
 
 
@@ -1559,6 +1563,16 @@ goto menu
 
 
 
+
+goto menu
+
+
+:fixRemote
+
+cls
+%push% "%~dp0scripts\fixes\fix-amazon-android-remote-app.sh" /data/local/tmp/
+%shell% "su -c chmod 755 /data/local/tmp/fix-amazon-android-remote-app.sh"
+%shell% "su -c sh /data/local/tmp/fix-amazon-android-remote-app.sh"
 
 goto menu
 
