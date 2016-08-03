@@ -181,7 +181,8 @@ echo Press U to unroot
 echo.
 echo Press P to replace kingroot with SuperSU
 echo.
-echo Press F to launch firestopper
+::echo Press F to launch firestopper
+echo Press F to run fixes and tweaks
 echo.
 echo Press Z to directly invoke Amazon Settings menu items
 echo.
@@ -195,8 +196,10 @@ set /p dgchoice=
 
 if %dgchoice%==B goto busybox
 if %dgchoice%==b goto busybox
-if %dgchoice%==F goto launchFS
-if %dgchoice%==f goto launchFS
+::if %dgchoice%==F goto launchFS
+::if %dgchoice%==f goto launchFS
+if %dgchoice%==F goto fixesMenu
+if %dgchoice%==f goto fixesMenu
 if %dgchoice%==U goto unrootKing
 if %dgchoice%==u goto unrootKing
 if %dgchoice%==I goto installRoot
@@ -227,8 +230,8 @@ if %dgchoice%==M goto menu
 if %dgchoice%==m goto menu
 
 :: Fix Amazon Android Remote App (Only if loaded from 20160802 and earlier builds)
-if %dgchoice%==V goto fixRemote
-if %dgchoice%==v goto fixRemote
+::if %dgchoice%==V goto fixRemote
+::if %dgchoice%==v goto fixRemote
 
 goto menu
 
@@ -365,6 +368,54 @@ if %ichoice%==Y goto advInvoke
 if %ichoice%==y goto advInvoke
 
 goto advInvoke
+
+
+
+:fixesMenu
+
+%_color% 0e
+
+set fchoice=y
+
+cls
+echo Fixes and Tweaks Menu [FireTV Stick]
+echo.
+echo.
+echo.
+echo 1) Fix Connectivity To Android FireTV Remote App
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo Press B to go back to previous page
+echo.
+echo Press X to exit
+echo.
+echo.
+echo Make a choice and press ENTER....
+echo.
+
+set /p fchoice=
+
+if %fchoice%==1 goto fixRemote
+if %fchoice%==1 goto fixRemote
+if %fchoice%==B goto menu
+if %fchoice%==b goto menu
+if %fchoice%==X goto end
+if %fchoice%==x goto end
+
+goto fixesMenu
 
 
 
@@ -1574,7 +1625,7 @@ cls
 %shell% "su -c chmod 755 /data/local/tmp/fix-amazon-android-remote-app.sh"
 %shell% "su -c sh /data/local/tmp/fix-amazon-android-remote-app.sh"
 
-goto menu
+goto fixesMenu
 
 
 
