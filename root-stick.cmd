@@ -168,7 +168,7 @@ echo Press R to root
 echo.
 echo Press S to issue an "su" request to the device
 echo.
-echo Press D to downgrade
+echo Press D to downgrade to stock 5.0.5
 echo.
 echo Press B to install busybox
 echo.
