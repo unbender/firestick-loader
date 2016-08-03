@@ -183,7 +183,7 @@ echo Press P to replace kingroot with SuperSU
 echo.
 echo Press F to launch firestopper
 echo.
-echo Press Z to open direct activity invoking menu
+echo Press Z to directly invoke Amazon Settings menu items
 echo.
 echo Press X to exit
 echo.
