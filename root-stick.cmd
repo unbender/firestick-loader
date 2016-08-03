@@ -140,7 +140,7 @@ set returnTo=menu
 
 :menu
 
-::%adbKill%
+%adbKill%
 ::%adbStart%
 
 %_color% 0e
