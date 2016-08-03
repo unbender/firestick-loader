@@ -590,8 +590,6 @@ echo.
 %shell% "su -c chmod 755 /data/local/tmp/king2su.sh"
 %shell% "su -c sh /data/local/tmp/king2su.sh"
 
-
-
 pause
 
 %sleep% 3
@@ -1060,7 +1058,33 @@ echo.
 goto menu
 
 
+
 :busybox
+
+set app=Busybox
+
+cls
+echo Installing %app%....
+echo.
+echo.
+
+%sleep% 3
+
+%shell% "su -c mount -o remount,rw /system"
+
+%push% "%~dp0rooting\king2su\busybox" /data/local/tmp/
+%shell% "su -c chmod 755 /data/local/tmp/busybox"
+%shell% "su -c /data/local/tmp/busybox --install -s /system/xbin"
+
+::%shell% "su -c mount -o remount,ro /system"
+
+%sleep% 3
+
+goto menu
+
+
+
+:oldbusybox
 :: Install Busybox
 set apk="rooting\busybox.apk"
 set app=Busybox
