@@ -1595,11 +1595,12 @@ echo *** THE DEVICE WILL REBOOT WHEN FINISHED TO REBUILD DALVIK CACHES ***
 echo.
 echo.
 
-%shell% "su -c rm -r /data/dalvik-cache"
-%shell% "su -c rm -r /cache/dalvik-cache"
-%shell% "su -c rm -f /cache/*.apk"
-%shell% "su -c rm -f /cache/*.bin"
-%shell% "su -c rm -f /cache/signed_com.amazon.kso.blackbird-1550000810.apk"
+%shell% "su -c rm -rf /data/dalvik-cache/"
+%shell% "su -c rm -rf /cache/"
+::%shell% "su -c rm -r /cache/dalvik-cache"
+::%shell% "su -c rm -f /cache/*.apk"
+::%shell% "su -c rm -f /cache/*.bin"
+::%shell% "su -c rm -f /cache/signed_com.amazon.kso.blackbird-1550000810.apk"
 
 %sleep% 5
 
