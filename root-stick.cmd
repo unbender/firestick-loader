@@ -384,7 +384,7 @@ echo.
 echo.
 echo 1) Fix Connectivity To Android FireTV Remote App
 echo.
-echo.
+echo 2) Launch FireStarter
 echo.
 echo.
 echo.
@@ -409,7 +409,7 @@ echo.
 set /p fchoice=
 
 if %fchoice%==1 goto fixRemote
-if %fchoice%==1 goto fixRemote
+if %fchoice%==2 goto launchFS
 if %fchoice%==B goto menu
 if %fchoice%==b goto menu
 if %fchoice%==X goto end
