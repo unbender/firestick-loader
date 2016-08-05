@@ -130,9 +130,14 @@ set launchAceStream=%shell% am start -a android.intent.action.MAIN -n org.acestr
 set launchSopCast=%shell% am start -a android.intent.action.MAIN -n org.acestream cmp=org.acestream/.player.gui.MainActivity
 
 set suRequest=%shell% am start -a android.intent.action.MAIN -n com.android.internal.os.RuntimeInit uid 0
+set removeSuperSU=%uninstall% eu.chainfire.supersu
 
 
 set cleanPackages=%shell% "su -c dumpsys package"
+
+
+:: Misc
+set showFireTvRemotePin=%shell% am start -a com.amazon.storm.lightning.tutorial.authentication.SHOW -n com.amazon.storm.lightning.tutorial/.authentication.JpakePinActivity
 
 
 set returnTo=menu
@@ -642,6 +647,14 @@ echo.
 %push% "%~dp0rooting\king2su\busybox" /data/local/tmp/
 %push% "%~dp0rooting\king2su\su" /data/local/tmp/
 %push% "%~dp0rooting\king2su\superuser.apk" /data/local/tmp/
+%push% "%~dp0rooting\king2su\99-supersu.sh" /data/local/tmp/
+%push% "%~dp0rooting\king2su\99SuperSUDaemon" /data/local/tmp/
+%push% "%~dp0rooting\king2su\chattr" /data/local/tmp/
+%push% "%~dp0rooting\king2su\chattr.arm" /data/local/tmp/
+%push% "%~dp0rooting\king2su\chattr.pie" /data/local/tmp/
+%push% "%~dp0rooting\king2su\install-recovery.sh" /data/local/tmp/
+%push% "%~dp0rooting\king2su\otasurvival.sh" /data/local/tmp/
+%push% "%~dp0rooting\king2su\supolicy" /data/local/tmp/
 
 
 %shell% "su -c rm /data/local/tmp/king2su.sh"
@@ -649,7 +662,7 @@ echo.
 %shell% "su -c chmod 755 /data/local/tmp/king2su.sh"
 %shell% "su -c sh /data/local/tmp/king2su.sh"
 
-pause
+::pause
 
 %sleep% 3
 
@@ -1175,7 +1188,12 @@ echo The Busybox installer should be open!
 echo.
 echo.
 %_color% 0c
+echo *** IF DEVICE REBOOTS, CLOSE SCRIPT AND RUN AGAIN ***
+echo.
+echo.
+echo.
 echo *** BE SURE TO ALLOW SU PERMISSIONS UPON LAUNCH ***
+echo.
 echo.
 echo.
 echo.
