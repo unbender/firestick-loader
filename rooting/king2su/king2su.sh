@@ -114,6 +114,7 @@ cat /data/local/tmp/su > /system/xbin/su
 cat /data/local/tmp/su > /system/xbin/daemonsu
 cat /data/local/tmp/su > /system/xbin/sugote
 cat /system/bin/sh > /system/xbin/sugote-mksh
+cat /data/local/tmp/superuser.apk > /system/app/Superuser.apk
 
 sleep 1
 
@@ -125,6 +126,8 @@ chown 0.0 /system/xbin/sugote-mksh
 chmod 0755 /system/xbin/sugote-mksh
 chown 0.0 /system/xbin/daemonsu
 chmod 0755 /system/xbin/daemonsu
+chown 0.0 /system/app/Superuser.apk
+chmod 0644 /system/app/Superuser.apk
 
 /data/local/tmp/chattr -i /system/xbin/.su
 /data/local/tmp/chattr.pie -i /system/xbin/.su
@@ -154,7 +157,6 @@ chmod 06755 /system/xbin/su
 
 chmod 0755 /system/etc/init.d/99SuperSUDaemon
 chmod 0644 /system/etc/.installed_su_daemon
-chmod 0644 /system/app/Superuser.apk
 
 chcon /system/bin/.ext/.su
 chcon /system/xbin/su
@@ -168,16 +170,16 @@ chcon /system/app/Superuser.apk
 
 /system/xbin/su --install
 
-sleep 1
+#sleep 1
 
-mount -o rw,remount /system
-pm uninstall eu.chainfire.supersu >/dev/null  2>&1
+#mount -o rw,remount /system
+#pm uninstall eu.chainfire.supersu >/dev/null  2>&1
 #pm install /data/local/tmp/superuser.apk
-mkdir /system/app/Superuser/
-mkdir /system/app/Superuser/arm
-cat /data/local/tmp/superuser.apk > /system/app/Superuser/Superuser.apk
-chown 0.0 /system/app/Superuser/Superuser.apk
-chmod 0644 /system/app/Superuser/Superuser.apk
+#mkdir /system/app/Superuser/
+#mkdir /system/app/Superuser/arm
+#cat /data/local/tmp/superuser.apk > /system/app/Superuser/Superuser.apk
+#chown 0.0 /system/app/Superuser/Superuser.apk
+#chmod 0644 /system/app/Superuser/Superuser.apk
 
 sleep 1
 
