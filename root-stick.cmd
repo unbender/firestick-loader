@@ -613,13 +613,17 @@ echo.
 echo *** YOU MAY SPAWN A NEW CMD WINDOW AND ISSUE AN 
 echo "ADB SHELL" and "SU" COMMAND AROUND 27%% TO SPEED THINGS UP***
 echo.
-echo *** TO LAUNCH PC VERSION, TYPE "PC" AND PRESS ENTER
+echo.
+echo.
+%_color% 0e
+echo *** TO LAUNCH PC VERSION, TYPE "PC" AND PRESS ENTER ***
 echo.
 echo.
 %_color% 0e
 
 set /p check=
 
+if %check%==pc taskkill /f /im KingRoot.exe
 if %check%==pc %kingrootPC%
 if %check%==pc goto rootActive
 
