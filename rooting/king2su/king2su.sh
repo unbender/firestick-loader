@@ -49,10 +49,6 @@ rm /system/xbin/supolicy
 busybox chattr -ia /system/xbin/pidof >/dev/null 2>&1
 rm /system/xbin/pidof >/dev/null 2>&1
 
-sleep 1
-
-daemonsu -d
-
 mount -o rw,remount /system
 busybox chattr -ia /system/xbin/daemonsu
 rm -r /system/xbin/daemonsu
@@ -109,6 +105,15 @@ pm uninstall com.kingstudio.purify
 rm /system/bin/.ext/.su
 rm /system/bin/install-recovery.sh
 
+busybox chattr -i /system/xbin/.su
+#busybox chattr.pie -i /system/xbin/.su
+busybox chattr -i /system/bin/.ext/.su
+#busybox chattr.pie -i /system/bin/.ext/.su
+busybox chattr -i /system/xbin/daemonsu
+#busybox chattr.pie -i /system/xbin/daemonsu
+busybox chattr -i /system/etc/install-recovery.sh
+#busybox chattr.pie -i /system/etc/install-recovery.sh
+
 sleep 1
 
 mount -o rw,remount /system
@@ -156,14 +161,17 @@ chown 0.0 /system/etc/.installed_su_daemon
 chmod 0644 /system/etc/.installed_su_daemon
 
 
-/data/local/tmp/chattr -i /system/xbin/.su
-/data/local/tmp/chattr.pie -i /system/xbin/.su
-/data/local/tmp/chattr -i /system/bin/.ext/.su
-/data/local/tmp/chattr.pie -i /system/bin/.ext/.su
-/data/local/tmp/chattr -i /system/xbin/daemonsu
-/data/local/tmp/chattr.pie -i /system/xbin/daemonsu
-/data/local/tmp/chattr -i /system/etc/install-recovery.sh
-/data/local/tmp/chattr.pie -i /system/etc/install-recovery.sh
+chown 0.0 /data/local/tmp/chattr
+chmod 0755 /data/local/tmp/chattr
+
+busybox chattr +i /system/xbin/.su
+#busybox chattr.pie +i /system/xbin/.su
+busybox chattr +i /system/bin/.ext/.su
+#busybox chattr.pie +i /system/bin/.ext/.su
+busybox chattr +i /system/xbin/daemonsu
+#busybox chattr.pie +i /system/xbin/daemonsu
+busybox chattr +i /system/etc/install-recovery.sh
+#busybox chattr.pie +i /system/etc/install-recovery.sh
 
 
 chcon /system/bin/.ext/.su
@@ -177,6 +185,8 @@ chcon /system/etc/.installed_su_daemon
 chcon /system/app/Superuser.apk
 
 /system/xbin/su --install
+
+daemonsu -d
 
 #sleep 1
 
