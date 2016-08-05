@@ -106,6 +106,9 @@ mount -o rw,remount /system
 pm uninstall com.kingroot.kinguser
 pm uninstall com.kingstudio.purify
 
+rm /system/bin/.ext/.su
+rm /system/bin/install-recovery.sh
+
 sleep 1
 
 mount -o rw,remount /system
@@ -129,22 +132,12 @@ chmod 0755 /system/xbin/daemonsu
 chown 0.0 /system/app/Superuser.apk
 chmod 0644 /system/app/Superuser.apk
 
-/data/local/tmp/chattr -i /system/xbin/.su
-/data/local/tmp/chattr.pie -i /system/xbin/.su
-/data/local/tmp/chattr -i /system/bin/.ext/.su
-/data/local/tmp/chattr.pie -i /system/bin/.ext/.su
-/data/local/tmp/chattr -i /system/xbin/daemonsu
-/data/local/tmp/chattr.pie -i /system/xbin/daemonsu
-/data/local/tmp/chattr -i /system/etc/install-recovery.sh
-/data/local/tmp/chattr.pie -i /system/etc/install-recovery.sh
-
-rm /system/bin/.ext/.su
-rm /system/bin/install-recovery.sh
-
+mount -o rw,remount /system
 mkdir /system/bin/.ext
 chown 0.0 /system/bin/.ext
 chmod 0777 /system/bin/.ext
 
+#cat /data/local/tmp/su > /system/xbin/otasurvival.sh
 cat /data/local/tmp/su > /system/bin/.ext/.su
 cat /data/local/tmp/su > /system/xbin/daemonsu
 cat /data/local/tmp/install-recovery.sh > /system/etc/install-recovery.sh
@@ -155,8 +148,23 @@ cat /data/local/tmp/.installed_su_daemon > /system/etc/.installed_su_daemon
 chmod 06755 /system/bin/.ext/.su
 chmod 06755 /system/xbin/su
 
+#chown 0.0 /system/xbin/otasurvival.sh
+#chmod 0755 /system/xbin/otasurvival.sh
+chown 0.0 /system/etc/init.d/99SuperSUDaemon
 chmod 0755 /system/etc/init.d/99SuperSUDaemon
+chown 0.0 /system/etc/.installed_su_daemon
 chmod 0644 /system/etc/.installed_su_daemon
+
+
+/data/local/tmp/chattr -i /system/xbin/.su
+/data/local/tmp/chattr.pie -i /system/xbin/.su
+/data/local/tmp/chattr -i /system/bin/.ext/.su
+/data/local/tmp/chattr.pie -i /system/bin/.ext/.su
+/data/local/tmp/chattr -i /system/xbin/daemonsu
+/data/local/tmp/chattr.pie -i /system/xbin/daemonsu
+/data/local/tmp/chattr -i /system/etc/install-recovery.sh
+/data/local/tmp/chattr.pie -i /system/etc/install-recovery.sh
+
 
 chcon /system/bin/.ext/.su
 chcon /system/xbin/su
@@ -183,7 +191,7 @@ chcon /system/app/Superuser.apk
 
 sleep 1
 
-am start -a android.intent.action.MAIN -n eu.chainfire.supersu/.MainActivity >/dev/null
+am start -a android.intent.action.MAIN -n eu.chainfire.supersu/.MainActivity
 
 sleep 2
 
