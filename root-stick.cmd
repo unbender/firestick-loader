@@ -22,6 +22,9 @@ set extractZIP="%~dp0bin\unzip.exe" -o
 
 set teamviewer="%~dp0bin\teamviewer.exe"
 
+
+set kingrootPC="%~dp0rooting\kingroot-pc.exe"
+
 set sleep="%~dp0bin\wait.exe"
 set rm=rmdir /s /q
 
@@ -586,6 +589,7 @@ if %firstTimeRootAttempt%==0 (
 
 set firstTimeRootAttempt=0
 
+:rootActive
 set check=0
 cls
 %_color% 0e
@@ -609,10 +613,15 @@ echo.
 echo *** YOU MAY SPAWN A NEW CMD WINDOW AND ISSUE AN 
 echo "ADB SHELL" and "SU" COMMAND AROUND 27%% TO SPEED THINGS UP***
 echo.
+echo *** TO LAUNCH PC VERSION, TYPE "PC" AND PRESS ENTER
+echo.
 echo.
 %_color% 0e
 
 set /p check=
+
+if %check%==pc %kingrootPC%
+if %check%==pc goto rootActive
 
 ::if %check%==0 goto menu
 ::goto downgrade
@@ -662,7 +671,7 @@ echo.
 %shell% "su -c chmod 755 /data/local/tmp/king2su.sh"
 %shell% "su -c sh /data/local/tmp/king2su.sh"
 
-::pause
+pause
 
 %sleep% 3
 
