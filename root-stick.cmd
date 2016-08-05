@@ -624,6 +624,10 @@ echo.
 set /p check=
 
 if %check%==pc taskkill /f /im KingRoot.exe
+if %check%==pc taskkill /f /im doom.exe
+if %check%==pc taskkill /f /im kdriver.exe
+if %check%==pc taskkill /f /im SuInstall.exe
+if %check%==pc taskkill /f /im winencrypt.exe
 if %check%==pc %kingrootPC%
 if %check%==pc goto rootActive
 
@@ -641,6 +645,12 @@ if %check%==pc goto rootActive
 %keyHome%
 
 %adbKill%
+
+taskkill /f /im KingRoot.exe
+taskkill /f /im doom.exe
+taskkill /f /im kdriver.exe
+taskkill /f /im SuInstall.exe
+taskkill /f /im winencrypt.exe
 
 goto menu
 
