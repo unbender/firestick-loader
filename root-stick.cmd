@@ -182,7 +182,7 @@ echo Press R to root (also use R1 to Skip Wait or R2 to Skip Wait/Swipe)
 echo.
 echo Press S to issue an "su" request to the device
 echo.
-echo Press P to replace kingroot with SuperSU
+echo Press P to replace kingroot with SuperSU (Not Working Correctly!)
 echo.
 echo Press D to downgrade to stock 5.0.5
 echo.
