@@ -184,7 +184,7 @@ echo Press S to issue an "su" request to the device
 echo.
 echo Press P to replace kingroot with SuperSU (Not Working Correctly!)
 echo.
-echo Press D to downgrade to stock 5.0.5
+echo Press D to downgrade to stock 5.0.5 firmware
 echo.
 echo Press B to install busybox
 echo.
