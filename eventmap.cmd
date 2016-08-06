@@ -299,9 +299,9 @@ echo Enter next event (number or name) and press ENTER:
 echo.
 echo Examples: HOME (3), MENU (1), BACK (4), SEARCH (84)
 echo.
-echo Type "textmode" without quotes to send text strings to phone
+echo Type "text" without quotes to send text strings to phone
 echo.
-echo Type "mainmenu" without quotes to return to Previous Menu
+echo Type "exit" without quotes to close script
 echo.
 echo.
 
@@ -311,9 +311,9 @@ set /p event=
 
 if %event%==0 goto startnow
 
-if %event%==textmode goto txtmode
+if %event%==text goto txtmode
 
-if %event%==mainmenu goto end
+if %event%==exit goto end
 
 ::if %event% gtr 85 goto startnow
 
