@@ -64,11 +64,17 @@ echo.
 pause
 
 
+%shell% am start -a android.intent.action.MAIN -n com.amazon.tv.settings/.tv.FactoryResetActivity
 
-%push% "%~dp0scripts\debloat\factory-reset.sh" /data/local/tmp/
-%shell% "su -c chmod 755 /data/local/tmp/factory-reset.sh"
-%shell% "su -c sh /data/local/tmp/factory-reset.sh"
+%sleep% 3
 
+%keyArrowLeft%
+
+%sleep% 1
+
+%keyEnter%
+
+goto end
 
 
 

@@ -223,4 +223,6 @@ echo ""
 sleep 2
 
 
-#exit
+exit
+sleep 1
+exit
