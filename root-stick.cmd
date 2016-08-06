@@ -418,7 +418,7 @@ echo 7) Replace Boot Fallback Images (Replaces Stock FIRE Text)
 echo.
 echo 8) Restore Boot Fallback Images (Restores framework-res.apk)
 echo.
-echo.
+echo 9) Launch Boot Animation Factory
 echo.
 echo.
 echo.
@@ -442,6 +442,7 @@ if %fchoice%==5 goto bootanimReplace
 if %fchoice%==6 goto bootanimRestore
 if %fchoice%==5 goto bootanimReplaceFBI
 if %fchoice%==8 goto bootanimRestoreFBI
+if %fchoice%==9 "%~dp0bin\boot-animation-factory.exe"
 if %fchoice%==B goto menu
 if %fchoice%==b goto menu
 if %fchoice%==X goto end
