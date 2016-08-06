@@ -63,7 +63,7 @@ rm -r /system/priv-app/com.amazon.tcomm/
 #rm -r /system/priv-app/DeviceMessagingAndroidSDK/
 rm -r /system/priv-app/DeviceSoftwareOTA/
 #rm -r /system/priv-app/DeviceSoftwareOTAContracts/
-#rm -r /system/priv-app/DeviceSoftwareOTAIdleOverride/
+rm -r /system/priv-app/DeviceSoftwareOTAIdleOverride/
 #rm -r /system/priv-app/DownloadProvider/
 #rm -r /system/priv-app/DownloadProviderUi/
 #rm -r /system/priv-app/ExternalStorageProvider/
@@ -162,7 +162,7 @@ rm -r /data/data/com.amazon.tcomm/
 #rm -r /data/data/DeviceMessagingAndroidSDK/
 rm -r /data/data/DeviceSoftwareOTA/
 #rm -r /data/data/DeviceSoftwareOTAContracts/
-#rm -r /data/data/DeviceSoftwareOTAIdleOverride/
+rm -r /data/data/DeviceSoftwareOTAIdleOverride/
 #rm -r /data/data/DownloadProvider/
 #rm -r /data/data/DownloadProviderUi/
 #rm -r /data/data/ExternalStorageProvider/
