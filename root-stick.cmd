@@ -1739,12 +1739,16 @@ goto fixesMenu
 
 :bootanimReplace
 
+set newBootAnimation=none
+
 cls
 echo Enter Path To New Boot Animation (bootanimation.zip):
 echo.
 echo.
 
 set /p newBootAnimation=
+
+if %newBootAnimation%==none goto bootanimReplace
 
 %shell% "rm -f /data/local/tmp/bootanimation.zip"
 %push% "%newBootAnimation%" /data/local/tmp/
