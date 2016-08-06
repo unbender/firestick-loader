@@ -1787,9 +1787,11 @@ cls
 %sleep% 5
 
 if %factoryReset%==1 (
-%push% "%~dp0scripts\debloat\factory-reset.sh" /data/local/tmp/
-%shell% "su -c chmod 755 /data/local/tmp/factory-reset.sh"
-%shell% "su -c sh /data/local/tmp/factory-reset.sh"
+%shell% am start -a android.intent.action.MAIN -n com.amazon.tv.settings/.tv.FactoryResetActivity
+%sleep% 3
+%keyArrowLeft%
+%sleep% 1
+%keyEnter%
 )
 
 ::pause
