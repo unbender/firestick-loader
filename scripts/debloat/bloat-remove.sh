@@ -33,13 +33,13 @@ rm -r /system/priv-app/com.amazon.avod/
 #rm -r /system/priv-app/com.amazon.metrics.api/
 #rm -r /system/priv-app/com.amazon.ods.kindleconnect/
 #rm -r /system/priv-app/com.amazon.parentalcontrols/
-#rm -r /system/priv-app/com.amazon.precog/
+rm -r /system/priv-app/com.amazon.precog/
 #rm -r /system/priv-app/com.amazon.securitysyncclient/
 #rm -r /system/priv-app/com.amazon.sharingservice.android.client.proxy.release/
 rm -r /system/priv-app/com.amazon.shoptv.client/
 #rm -r /system/priv-app/com.amazon.storm.lightning.services/
 #rm -r /system/priv-app/com.amazon.storm.lightning.tutorial/
-#rm -r /system/priv-app/com.amazon.tcomm/
+rm -r /system/priv-app/com.amazon.tcomm/
 #rm -r /system/priv-app/com.amazon.tmm.tutorial/
 #rm -r /system/priv-app/com.amazon.tv.aiv.support/
 #rm -r /system/priv-app/com.amazon.tv.csapp/
