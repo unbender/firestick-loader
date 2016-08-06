@@ -129,11 +129,15 @@ set showDeviceNotifications=%shell% am start -a android.intent.action.MAIN -n co
 
 :: Launch Different Apps
 set launchSuperSU=%shell% am start -a android.intent.action.MAIN -n com.koushikdutta.superuser/.MainActivity
-set launchAceStream=%shell% am start -a android.intent.action.MAIN -n org.acestream cmp=org.acestream/.player.gui.MainActivity
-set launchSopCast=%shell% am start -a android.intent.action.MAIN -n org.acestream cmp=org.acestream/.player.gui.MainActivity
+set launchAceStream=%shell% am start -a android.intent.action.MAIN -n org.acestream/.player.gui.MainActivity
+set launchSopCast=%shell% am start -a android.intent.action.MAIN -n org.acestream/.player.gui.MainActivity
 
-set suRequest=%shell% am start -a android.intent.action.MAIN -n com.android.internal.os.RuntimeInit uid 0
+::set suRequest=%shell% am start -a android.intent.action.MAIN -n com.android.internal.os.RuntimeInit uid 0
+
 set removeSuperSU=%uninstall% eu.chainfire.supersu
+
+
+set test1=%shell% am start -a android.content.ContextWrapper.startService -n com.amazon.tv.launcher.Navigator.gotoMenu
 
 
 set cleanPackages=%shell% "su -c dumpsys package"

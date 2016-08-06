@@ -331,53 +331,53 @@ echo.
 )
 
 
-::cls
-::%_color% 0e
-::set appName=Amazon Underground
-::set apk=
-::echo Install %appName%?
-::echo.
-::echo 1) Yes   2) No
-::echo.
-::echo.
-::%_color% 0b
-::echo Requirements: NONE
-::echo.
-::echo Info: Amazon Store and Media Access
-::echo.
-::set /p choice=
-::if %choice%==1 (
-::echo.
-::echo.
-::echo Installing %appName%...
-::echo.
+cls
+%_color% 0e
+set appName=Amazon Underground
+set apk=
+echo Install %appName%?
+echo.
+echo 1) Yes   2) No
+echo.
+echo.
+%_color% 0b
+echo Requirements: NONE
+echo.
+echo Info: Amazon Store and Media Access
+echo.
+set /p choice=
+if %choice%==1 (
+echo.
+echo.
+echo Installing %appName%...
+echo.
 
-::%install% "apps\media\amazon-underground.apk"
+%install% "apps\media\amazon-underground.apk"
 ::)
 
 
-::cls
-::%_color% 0e
-::set appName=Amazon Video
-::set apk=
-::echo Install %appName%?
-::echo.
-::echo 1) Yes   2) No
-::echo.
-::echo.
-::%_color% 0b
-::echo Requirements: Amazon Underground
-::echo.
-::echo Info: Amazon Video App
-::echo.
-::set /p choice=
-::if %choice%==1 (
-::echo.
-::echo.
-::echo Installing %appName%...
-::echo.
+cls
+%_color% 0e
+set appName=Amazon Video
+set apk=
+echo Install %appName%?
+echo.
+echo 1) Yes   2) No
+echo.
+echo.
+%_color% 0b
+echo Requirements: Amazon Underground
+echo.
+echo Info: Amazon Video App
+echo.
+set /p choice=
+if %choice%==1 (
+echo.
+echo.
+echo Installing %appName%...
+echo.
 
-::%install% "apps\media\amazon-video.apk"
+%install% "apps\media\amazon-video.apk"
 ::)
 
 
