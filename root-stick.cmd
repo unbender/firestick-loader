@@ -155,6 +155,8 @@ set dgVersion=5.0.5
 ::set dgVersion=5.2.1.0
 
 
+set fullAutoMode=0
+set fullAutoModeDG=0
 set returnTo=menu
 
 
@@ -474,44 +476,6 @@ goto fixesMenu
 goto fixesMenu
 
 
-:doSU
-
-%shell% am start -a android.intent.action.MAIN -n com.kingroot.kinguser/.activitys.SliderMainActivity
-
-%sleep% 5
-
-::%shell% "su"
-%runShellTerminate% ""%~dp0bin\adb.exe" shell "su""
-
-cls
-echo Find the new open window!
-echo.
-echo It should display a hash symbol [#]
-echo.
-echo If a dollar sign [$] is shown or an error occurs, restart device and try again
-echo.
-echo.
-echo.
-echo.
-echo If the hash is displayed, you may close the window and continue
-echo.
-echo.
-echo.
-echo.
-echo Press ENTER when you are ready to continue....
-echo.
-echo.
-
-pause>nul
-
-:: Root Authorization Button
-::%tap% 100 1100
-
-%keyHome%
-
-goto menu
-
-
 :checkCanRoot
 
 set firstCheck=1
@@ -551,6 +515,8 @@ echo.
 %sleep% 8
 
 if %rootAfterInstall%==1 goto root
+
+if %fullAutoMode%==1 goto root
 
 goto menu
 
@@ -698,6 +664,49 @@ taskkill /f /im kdriver.exe
 taskkill /f /im SuInstall.exe
 taskkill /f /im winencrypt.exe
 
+if %fullAutoMode%==1 goto doSU
+if %fullAutoModeDG%==1 goto doSU
+
+goto menu
+
+
+:doSU
+
+%shell% am start -a android.intent.action.MAIN -n com.kingroot.kinguser/.activitys.SliderMainActivity
+
+%sleep% 5
+
+::%shell% "su"
+%runShellTerminate% ""%~dp0bin\adb.exe" shell "su""
+
+cls
+echo Find the new open window!
+echo.
+echo It should display a hash symbol [#]
+echo.
+echo If a dollar sign [$] is shown or an error occurs, restart device and try again
+echo.
+echo.
+echo.
+echo.
+echo If the hash is displayed, you may close the window and continue
+echo.
+echo.
+echo.
+echo.
+echo Press ENTER when you are ready to continue....
+echo.
+echo.
+
+pause>nul
+
+:: Root Authorization Button
+::%tap% 100 1100
+
+%keyHome%
+
+if %fullAutoMode%==1 goto superSU
+
 goto menu
 
 
@@ -731,7 +740,7 @@ echo.
 %shell% "su -c chmod 755 /data/local/tmp/king2su.sh"
 %shell% "su -c sh /data/local/tmp/king2su.sh"
 
-pause
+::pause
 
 %sleep% 3
 
@@ -748,6 +757,9 @@ pause
 ::%sleep% 3
 
 ::%keyEnter%
+
+if %fullAutoMode%==1 goto downgrade
+if %fullAutoMode%==2 goto busybox
 
 goto menu
 
@@ -807,7 +819,7 @@ echo.
 %shell% "su -c chattr -ia /system/xbin/pidof"
 %rmSuper% /system/xbin/pidof"
 
-pause
+::pause
 
 :: Push king2su folder to sdcard
 %push% %~dp0rooting\king2su /%sdcard%/king2su
@@ -1165,6 +1177,8 @@ pause>nul
 
 ::goto root
 
+if %fullAutoMode%==1 goto root2
+
 :: Going to last part of KingRoot since the swiping shouldn't be needed again
 goto root2
 
@@ -1307,6 +1321,9 @@ pause
 %keyHome%
 %sleep% 1
 %uninstall% stericson.busybox
+
+if %fullAutoMode%==1 goto removeBloat
+if %fullAutoModeDG%==1 goto removeBloat
 
 goto menu
 
@@ -1568,6 +1585,9 @@ cls
 %shell% "su -c chmod 755 /data/local/tmp/bloat-remove.sh"
 %shell% "su -c sh /data/local/tmp/bloat-remove.sh"
 
+if %fullAutoMode%==1 goto clearCaches
+if %fullAutoModeDG%==1 goto clearCaches
+
 goto menu
 
 
@@ -1766,6 +1786,9 @@ if %factoryReset%==1 (
 
 %adb% reboot
 
+if %fullAutoMode%==1 goto unrootKing
+if %fullAutoModeDG%==1 goto unrootKing
+
 goto menu
 
 
@@ -1773,9 +1796,11 @@ goto menu
 :fullAuto
 
 
+set fullAutoMode=1
 
+goto installRoot
 
-
+:: This is a safety net. It should never land here!!!
 goto menu
 
 
