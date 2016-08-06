@@ -594,6 +594,30 @@ echo.
 )
 
 
+cls
+%_color% 0e
+set appName=ADB Insecure
+set apk=
+echo Install %appName%?
+echo.
+echo 1) Yes   2) No
+echo.
+echo.
+%_color% 0b
+echo Requirements: Root Access
+echo.
+echo Info: Enables Always-On Root Shell Over ADB
+echo.
+set /p choice=
+if %choice%==1 (
+echo.
+echo.
+echo Installing %appName%...
+echo.
+%install% "apps\system\adbd-insecure.apk"
+)
+
+
 :instWP
 cls
 %_color% 0e
