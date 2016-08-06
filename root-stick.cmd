@@ -1757,7 +1757,12 @@ if %newBootAnimation%==none goto bootanimReplace
 %shell% "su -c sh /data/local/tmp/replace-bootanimation.sh"
 
 cls
-echo Test New Boot Animation Now?
+echo Test New Boot Animation Now [Y/N]?
+echo.
+echo.
+echo.
+echo.
+echo Make a choice and press ENTER:
 echo.
 echo.
 
