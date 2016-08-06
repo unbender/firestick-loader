@@ -341,7 +341,7 @@ echo 1) Yes   2) No
 echo.
 echo.
 %_color% 0b
-echo Requirements: NONE
+echo Requirements: Remove "com.amazon.shoptv.client" *ROOT*
 echo.
 echo Info: Amazon Store and Media Access
 echo.
@@ -366,7 +366,7 @@ echo 1) Yes   2) No
 echo.
 echo.
 %_color% 0b
-echo Requirements: Amazon Underground
+echo Requirements: Remove "com.amazon.avod" *ROOT*
 echo.
 echo Info: Amazon Video App
 echo.
