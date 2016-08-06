@@ -632,8 +632,8 @@ echo *** IF THE ROOTING FAILS, OR GETS STUCK,
 echo PRESS ENTER TO RETURN TO MENU AND TRY AGAIN ***
 echo.
 echo.
-echo *** YOU MAY SPAWN A NEW CMD WINDOW AND ISSUE AN 
-echo "ADB SHELL" and "SU" COMMAND AROUND 27%% TO SPEED THINGS UP***
+echo *** YOU MAY ALSO PRESS "S" TO SPAWN A NEW CMD WINDOW AND
+echo ISSUE AN "ADB SHELL" and "SU" COMMAND AROUND 27%% TO SPEED THINGS UP***
 echo.
 echo.
 echo.
@@ -644,6 +644,11 @@ echo.
 %_color% 0e
 
 set /p check=
+
+if %check%==S %runShellTerminate% ""%~dp0bin\adb.exe" shell "su""
+if %check%==s %runShellTerminate% ""%~dp0bin\adb.exe" shell "su""
+if %check%==S goto rootActive
+if %check%==s goto rootActive
 
 if %check%==pc taskkill /f /im KingRoot.exe
 if %check%==pc taskkill /f /im doom.exe
