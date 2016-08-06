@@ -437,10 +437,10 @@ set /p fchoice=
 if %fchoice%==1 goto fixRemote
 if %fchoice%==2 goto launchFS
 if %fchoice%==3 goto eventmap
-if %fchoice%==3 goto bootanimRemove
-if %fchoice%==4 goto bootanimReplaceFBI
-if %fchoice%==5 goto bootanimReplace
-if %fchoice%==5 goto bootanimRestore
+if %fchoice%==4 goto bootanimRemove
+if %fchoice%==5 goto bootanimReplaceFBI
+if %fchoice%==6 goto bootanimReplace
+if %fchoice%==7 goto bootanimRestore
 if %fchoice%==B goto menu
 if %fchoice%==b goto menu
 if %fchoice%==X goto end
