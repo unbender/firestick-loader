@@ -74,6 +74,8 @@ set rootableText=NOT EXPLOITABLE
 set firstCheck=0
 set firstTimeRootAttempt=1
 
+set factoryReset=0
+
 
 set mountRW=%shell% "su -c mount -o rw,remount /system"
 set mountRO=%shell% "su -c mount -o ro,remount /system"
@@ -194,7 +196,7 @@ echo Press B to install busybox
 echo.
 echo Press A to disable Amazon Bloatware (also use AR to safe remove)
 echo.
-echo Press C to clear caches on device
+echo Press C to clear caches on device (also use CF to factory reset)
 echo.
 echo Press U to unroot
 echo.
@@ -246,6 +248,10 @@ if %dgchoice%==E goto bloatRemover
 if %dgchoice%==e goto bloatRemover
 if %dgchoice%==C goto clearCaches
 if %dgchoice%==c goto clearCaches
+if %dgchoice%==CR set factoryReset=1&&goto clearCaches
+if %dgchoice%==Cr set factoryReset=1&&goto clearCaches
+if %dgchoice%==cr set factoryReset=1&&goto clearCaches
+if %dgchoice%==cR set factoryReset=1&&goto clearCaches
 if %dgchoice%==P goto superSU
 if %dgchoice%==p goto superSU
 if %dgchoice%==Z goto invoke
@@ -1749,7 +1755,15 @@ cls
 %shell% "su -c sh /data/local/tmp/clear-all-caches.sh"
 
 %sleep% 5
+
+if %factoryReset%==1 (
+%push% "%~dp0scripts\debloat\factory-reset.sh" /data/local/tmp/
+%shell% "su -c chmod 755 /data/local/tmp/factory-reset.sh"
+%shell% "su -c sh /data/local/tmp/factory-reset.sh"
+)
+
 ::pause
+
 %adb% reboot
 
 goto menu
