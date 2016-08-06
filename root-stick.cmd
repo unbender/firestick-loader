@@ -172,7 +172,7 @@ echo.
 echo.
 echo Press I to install kingroot
 echo.
-echo Press R to root
+echo Press R to root (Alt: r1 or r2 to go directly to step 1 or 2)
 echo.
 echo Press S to issue an "su" request to the device
 echo.
@@ -216,6 +216,10 @@ if %dgchoice%==D goto downgrade
 if %dgchoice%==d goto downgrade
 if %dgchoice%==R goto root
 if %dgchoice%==r goto root
+if %dgchoice%==R1 goto root1
+if %dgchoice%==r1 goto root1
+if %dgchoice%==R2 goto root2
+if %dgchoice%==r2 goto root2
 if %dgchoice%==S goto doSU
 if %dgchoice%==s goto doSU
 if %dgchoice%==A set bloatAction=disable&&goto bloatBuster
@@ -531,7 +535,7 @@ if %firstTimeRootAttempt%==0 (
 	%sleep% 5
 )
 
-
+:root1
 cls
 %_color% 0c
 echo DO NOT TOUCH ANY KEYS ON THE FIRESTICK REMOTE UNTIL FINISHED!!!
@@ -578,6 +582,7 @@ if %firstTimeRootAttempt%==0 (
 	%sleep% 5
 )
 
+:root2
 :: Tab over to button
 %keyTab%
 %sleep% 2
