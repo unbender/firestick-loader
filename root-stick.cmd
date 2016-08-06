@@ -704,8 +704,15 @@ goto menu
 %runShellTerminate% ""%~dp0bin\adb.exe" shell "su""
 
 cls
+%_color% 0e
 echo Find the new open window!
 echo.
+echo.
+%_color% 0c
+echo *** BE SURE TO ALLOW SU PERMISSIONS WHEN REQUESTED FOR ADB ***
+echo.
+echo.
+%_color% 0e
 echo It should display a hash symbol [#]
 echo.
 echo If a dollar sign [$] is shown or an error occurs, restart device and try again
@@ -744,6 +751,12 @@ set app=SuperSU
 
 cls
 echo Installing %app%....
+echo.
+echo.
+echo.
+%_color% 0c
+echo *** BE SURE TO ALLOW SU PERMISSIONS WHEN REQUESTED FOR ADB ***
+%_color% 0e
 echo.
 echo.
 
