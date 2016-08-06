@@ -158,6 +158,8 @@ set dgVersion=5.0.5
 set fullAutoMode=0
 set fullAutoModeDG=0
 
+set doFullAutoMode=0
+
 set rootAfterInstall=0
 
 set returnTo=menu
@@ -1815,6 +1817,28 @@ goto menu
 
 :fullAuto
 
+set doFullAutoMode=1
+
+cls
+%_color% 0c
+echo This mode DOES NOT work as fully intended!
+%_color% 0e
+echo.
+echo.
+echo Press M and ENTER to return back to menu
+echo.
+echo.
+echo.
+echo.
+echo.
+echo Press ENTER to continue....
+echo.
+echo.
+
+set /p doFullAutoMode=
+
+if %doFullAutoMode%==M goto menu
+if %doFullAutoMode%==m goto menu
 
 set fullAutoMode=1
 
