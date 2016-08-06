@@ -440,7 +440,7 @@ if %fchoice%==3 goto eventmap
 if %fchoice%==4 goto bootanimRemove
 if %fchoice%==5 goto bootanimReplace
 if %fchoice%==6 goto bootanimRestore
-if %fchoice%==5 goto bootanimReplaceFBI
+if %fchoice%==7 goto bootanimReplaceFBI
 if %fchoice%==8 goto bootanimRestoreFBI
 if %fchoice%==9 "%~dp0bin\boot-animation-factory.exe"
 if %fchoice%==B goto menu
