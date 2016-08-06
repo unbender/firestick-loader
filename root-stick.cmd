@@ -424,8 +424,6 @@ echo.
 echo.
 echo.
 echo.
-echo.
-echo.
 echo Press B to go back to previous page
 echo.
 echo Press X to exit
