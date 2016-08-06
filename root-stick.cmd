@@ -1317,7 +1317,7 @@ echo.
 echo.
 echo.
 %_color% 0c
-echo *** TO CONTINUE NORMALLY, JUST PRESS ENTER ***
+echo *** TO CONTINUE USING TEAMVIEWER, JUST PRESS ENTER ***
 %_color% 0e
 echo.
 echo.
