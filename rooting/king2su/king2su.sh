@@ -98,7 +98,7 @@ rm -r /data/data-lib/king
 #rm -r /sdcard/Kingroot
 rm /sdcard/kr-stock-conf >/dev/null 2>&1
 
-mount -o rw,remount /system
+#mount -o rw,remount /system
 pm uninstall com.kingroot.kinguser
 pm uninstall com.kingstudio.purify
 
@@ -116,7 +116,7 @@ busybox chattr -i /system/etc/install-recovery.sh
 
 sleep 1
 
-mount -o rw,remount /system
+#mount -o rw,remount /system
 cat /data/local/tmp/su > /system/bin/su
 cat /data/local/tmp/su > /system/xbin/su
 cat /data/local/tmp/su > /system/xbin/daemonsu
@@ -137,7 +137,7 @@ chmod 0755 /system/xbin/daemonsu
 chown 0.0 /system/app/Superuser.apk
 chmod 0644 /system/app/Superuser.apk
 
-mount -o rw,remount /system
+#mount -o rw,remount /system
 mkdir /system/bin/.ext
 chown 0.0 /system/bin/.ext
 chmod 0777 /system/bin/.ext
