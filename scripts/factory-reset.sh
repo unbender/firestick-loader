@@ -6,7 +6,7 @@ echo ""
 echo ""
 
 
-#mount -o rw,remount /data
+mount -o rw,remount /data
 
 
 # Preserve ADB Settings
