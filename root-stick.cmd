@@ -192,7 +192,7 @@ echo Press D to downgrade to stock 5.0.5 firmware
 echo.
 echo Press B to install busybox
 echo.
-echo Press A to disable Amazon Bloatware
+echo Press A to disable Amazon Bloatware (also use AR to safe remove)
 echo.
 echo Press C to clear caches on device
 echo.
@@ -236,6 +236,10 @@ if %dgchoice%==S goto doSU
 if %dgchoice%==s goto doSU
 if %dgchoice%==A set bloatAction=disable&&goto bloatBuster
 if %dgchoice%==a set bloatAction=disable&&goto bloatBuster
+if %dgchoice%==AR goto removeBloat
+if %dgchoice%==Ar goto removeBloat
+if %dgchoice%==ar goto removeBloat
+if %dgchoice%==aR goto removeBloat
 ::if %dgchoice%==E set bloatAction=enable&&goto bloatBuster
 ::if %dgchoice%==e set bloatAction=enable&&goto bloatBuster
 if %dgchoice%==E goto bloatRemover
@@ -1530,6 +1534,33 @@ cls
 %push% "%~dp0scripts\debloat\full-debloat.sh" /data/local/tmp/
 %shell% "su -c chmod 755 /data/local/tmp/full-debloat.sh"
 %shell% "su -c sh /data/local/tmp/full-debloat.sh"
+
+goto menu
+
+
+:removeBloat
+
+cls
+echo Making sure FireStarter is installed as a HOME Menu....
+echo.
+echo.
+echo.
+echo.
+%_color% 0c
+echo *** BE SURE TO ALLOW SU PERMISSIONS IF REQUESTED ***
+%_color% 0e
+echo.
+echo.
+
+%install% "%~dp0apps\system\firestopper.apk"
+
+
+%shell% "su -c rm /data/local/tmp/bloat-remove.sh"
+
+cls
+%push% "%~dp0scripts\debloat\bloat-remove.sh" /data/local/tmp/
+%shell% "su -c chmod 755 /data/local/tmp/bloat-remove.sh"
+%shell% "su -c sh /data/local/tmp/bloat-remove.sh"
 
 goto menu
 

@@ -5,7 +5,7 @@ echo "Deleting Amazon Bloat...."
 echo ""
 echo ""
 
-#mount -o rw,remount /system
+mount -o rw,remount /system
 
 
 #rm -r /system/priv-app/amazon.jackson-19/
