@@ -1756,7 +1756,15 @@ if %newBootAnimation%==none goto bootanimReplace
 %shell% "su -c chmod 755 /data/local/tmp/replace-bootanimation.sh"
 %shell% "su -c sh /data/local/tmp/replace-bootanimation.sh"
 
-::%adb% reboot
+cls
+echo Test New Boot Animation Now?
+echo.
+echo.
+
+set /p testNow=
+
+if %testNow%==Y %adb% reboot
+if %testNow%==y %adb% reboot
 
 goto fixesMenu
 
