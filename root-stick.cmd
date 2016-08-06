@@ -176,8 +176,8 @@ echo Rooting/Downgrade Menu [FireTV Stick]
 echo.
 echo.
 echo.
-%_color% 0a
-echo Press Y To Use Full Automatic Mode
+%_color% 0b
+echo Press Y To Use Full Automatic Mode (also use YD to include downgrade)
 ::if %rootable%==0 %_color% 0c
 ::if %rootable%==1 %_color% 0a
 ::echo Device is currently %rootableText%
@@ -260,6 +260,10 @@ if %dgchoice%==Z goto invoke
 if %dgchoice%==z goto invoke
 if %dgchoice%==Y goto fullAuto
 if %dgchoice%==y goto fullAuto
+if %dgchoice%==YD set fullAutoModeDG=1&&goto fullAuto
+if %dgchoice%==Yd set fullAutoModeDG=1&&goto fullAuto
+if %dgchoice%==yd set fullAutoModeDG=1&&goto fullAuto
+if %dgchoice%==yD set fullAutoModeDG=1&&goto fullAuto
 if %dgchoice%==X goto end
 if %dgchoice%==x goto end
 if %dgchoice%==M goto menu
@@ -758,8 +762,8 @@ echo.
 
 ::%keyEnter%
 
-if %fullAutoMode%==1 goto downgrade
-if %fullAutoMode%==2 goto busybox
+if %fullAutoModeDG%==1 goto downgrade
+if %fullAutoMode%==1 goto busybox
 
 goto menu
 
