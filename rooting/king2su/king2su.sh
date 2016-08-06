@@ -201,28 +201,11 @@ daemonsu -d
 
 sleep 1
 
+pm install /data/local/tmp/superuser.apk
+
+sleep 1
+
 am start -a android.intent.action.MAIN -n eu.chainfire.supersu/.MainActivity
 
-sleep 2
-
-echo ""
-echo ""
-echo ""
-echo "Done!"
-echo ""
-echo ""
-echo "*** CLICK NO THANKS AND THEN CONTINUE ON SUPERSU WINDOW ***"
-echo ""
-echo ""
-echo "*** IF SU BINARY UPDATE IS SUCCESSFUL, CLICK OK"
-echo ""
-echo ""
-echo ""
 
 
-sleep 2
-
-
-exit
-sleep 1
-exit
