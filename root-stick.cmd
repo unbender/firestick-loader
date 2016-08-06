@@ -162,6 +162,8 @@ set doFullAutoMode=0
 
 set rootAfterInstall=0
 
+set superSuReinstall=0
+
 set returnTo=menu
 
 
@@ -745,7 +747,7 @@ goto menu
 
 :superSU
 
-:: Install SuperSuMe
+:: Install SuperSu
 set apk="rooting\king2su\Superuser.apk"
 set app=SuperSU
 
@@ -773,16 +775,39 @@ echo.
 %push% "%~dp0rooting\king2su\supolicy" /data/local/tmp/
 
 
+if %superSuReinstall%==0 (
 %shell% "su -c rm /data/local/tmp/king2su.sh"
 %push% "%~dp0rooting\king2su\king2su.sh" /data/local/tmp/
 %shell% "su -c chmod 755 /data/local/tmp/king2su.sh"
 %shell% "su -c sh /data/local/tmp/king2su.sh"
+)
+
+if %superSuReinstall%==1 (
+%shell% "su -c rm /data/local/tmp/install-supersu.sh"
+%push% "%~dp0rooting\king2su\install-supersu.sh" /data/local/tmp/
+%shell% "su -c chmod 755 /data/local/tmp/install-supersu.sh"
+%shell% "su -c sh /data/local/tmp/install-supersu.sh"
+)
 
 ::pause
 
 %sleep% 3
 
-%adb% reboot
+set superSuSuccess=0
+
+cls
+echo Was the SuperSU installation successful? [Y/N]:
+echo.
+echo.
+
+set /p superSuSuccess=
+
+if %superSuSuccess%==Y set superSuReinstall=0
+if %superSuSuccess%==y set superSuReinstall=0
+if %superSuSuccess%==N set superSuReinstall=1&&goto superSU
+if %superSuSuccess%==n set superSuReinstall=1&&goto superSU
+
+::%adb% reboot
 
 ::%shell% am start -a android.intent.action.MAIN -n darkslide.com.supersumepro/.MainActivity
 
