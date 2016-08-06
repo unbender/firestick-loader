@@ -253,10 +253,10 @@ if %dgchoice%==E goto bloatRemover
 if %dgchoice%==e goto bloatRemover
 if %dgchoice%==C goto clearCaches
 if %dgchoice%==c goto clearCaches
-if %dgchoice%==CR set factoryReset=1&&goto clearCaches
-if %dgchoice%==Cr set factoryReset=1&&goto clearCaches
-if %dgchoice%==cr set factoryReset=1&&goto clearCaches
-if %dgchoice%==cR set factoryReset=1&&goto clearCaches
+if %dgchoice%==CF set factoryReset=1&&goto clearCaches
+if %dgchoice%==Cf set factoryReset=1&&goto clearCaches
+if %dgchoice%==cf set factoryReset=1&&goto clearCaches
+if %dgchoice%==cF set factoryReset=1&&goto clearCaches
 if %dgchoice%==P goto superSU
 if %dgchoice%==p goto superSU
 if %dgchoice%==Z goto invoke
