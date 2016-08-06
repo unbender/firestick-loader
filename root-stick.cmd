@@ -424,7 +424,7 @@ echo 8) Restore Boot Fallback Images (Restores framework-res.apk)
 echo.
 echo 9) Launch Boot Animation Factory
 echo.
-echo.
+echo 10) Accept Opera Mini License Agreement
 echo.
 echo.
 echo.
@@ -447,6 +447,7 @@ if %fchoice%==6 goto bootanimRestore
 if %fchoice%==7 goto bootanimReplaceFBI
 if %fchoice%==8 goto bootanimRestoreFBI
 if %fchoice%==9 "%~dp0bin\boot-animation-factory.exe"
+if %fchoice%==10 %tap% 20 1030
 if %fchoice%==B goto menu
 if %fchoice%==b goto menu
 if %fchoice%==X goto end
