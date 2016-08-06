@@ -1792,6 +1792,7 @@ if %factoryReset%==1 (
 %keyArrowLeft%
 %sleep% 1
 %keyEnter%
+%sleep% 3
 )
 
 ::pause
