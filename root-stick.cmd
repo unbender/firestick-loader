@@ -143,6 +143,12 @@ set cleanPackages=%shell% "su -c dumpsys package"
 set showFireTvRemotePin=%shell% am start -a com.amazon.storm.lightning.tutorial.authentication.SHOW -n com.amazon.storm.lightning.tutorial/.authentication.JpakePinActivity
 
 
+:: Downgrade Version Options
+set dgVersion=5.0.5
+::set dgVersion=5.0.5.1
+::set dgVersion=5.2.1.0
+
+
 set returnTo=menu
 
 
@@ -176,20 +182,18 @@ echo Press R to root (Alt: r1 or r2 to go directly to step 1 or 2)
 echo.
 echo Press S to issue an "su" request to the device
 echo.
+echo Press P to replace kingroot with SuperSU
+echo.
 echo Press D to downgrade to stock 5.0.5
 echo.
 echo Press B to install busybox
 echo.
 echo Press A to disable Amazon Bloatware
-::echo Press E to remove Amazon Bloatware
 echo.
 echo Press C to clear caches on device
 echo.
 echo Press U to unroot
 echo.
-echo Press P to replace kingroot with SuperSU
-echo.
-::echo Press F to launch firestopper
 echo Press F to run fixes, tweaks, and misc
 echo.
 echo Press Z to directly invoke Amazon Settings menu items
@@ -1016,7 +1020,7 @@ echo.
 echo.
 echo.
 %_color% 0e
-echo Script will continue when device is at the Optimizing System Storage screen....
+echo Script will continue when at the Optimizing System Storage screen....
 echo.
 echo.
 
@@ -1024,7 +1028,7 @@ echo.
 
 %adbWait%
 
-%sleep% 30
+%sleep% 40
 
 ::%adbWait%
 
@@ -1038,7 +1042,7 @@ echo The TV screen should be on the Optimizing System Storage screen.
 echo.
 echo.
 %_color% 0c
-echo *** If this is not the case, try restarting the device and script. ***
+echo *** If this is not the case, try unplugging/re-plugging the device ***
 echo.
 echo.
 echo.
@@ -1060,7 +1064,7 @@ pause
 %keyHome%
 
 cls
-echo The device is now on version 5.0.5 and needs to reboot again to continue!
+echo The device is now on version %dgVersion% and needs to reboot again to continue!
 echo.
 echo.
 echo.
@@ -1078,7 +1082,7 @@ echo Rebooting....
 echo.
 echo.
 
-%sleep% 10
+%sleep% 12
 
 %adbWait%
 
@@ -1087,7 +1091,7 @@ echo Waiting For Boot Animation....
 echo.
 echo.
 
-%sleep% 15
+%sleep% 20
 
 cls
 echo Waiting For Home Screen To Finish Loading....
@@ -1099,7 +1103,7 @@ echo If the Home Screen is ready now, please wait a few moments!
 echo.
 echo.
 
-%sleep% 20
+%sleep% 16
 
 cls
 echo The device should now be at the HOME screen!
@@ -1122,7 +1126,10 @@ pause>nul
 
 %sleep% 5
 
-goto root
+::goto root
+
+:: Going to last part of KingRoot since the swiping shouldn't be needed again
+goto root2
 
 
 :noOTA
