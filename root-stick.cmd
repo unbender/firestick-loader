@@ -200,7 +200,7 @@ echo Press C to clear caches on device (also use CF to factory reset)
 echo.
 echo Press U to unroot
 echo.
-echo Press F to run fixes, tweaks, and misc
+echo Press F to run fixes, tweaks, and misc options
 echo.
 echo Press Z to directly invoke Amazon Settings menu items
 echo.
