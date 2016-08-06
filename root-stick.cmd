@@ -176,7 +176,7 @@ echo Press Y To Use Full Automatic Mode
 %_color% 0e
 echo.
 echo.
-echo Press I to install kingroot
+echo Press I to install kingroot (also use IR to install and root)
 echo.
 echo Press R to root (also use r1 or r2 to go directly to step 1 or 2)
 echo.
@@ -216,6 +216,10 @@ if %dgchoice%==U goto unrootKing
 if %dgchoice%==u goto unrootKing
 if %dgchoice%==I goto installRoot
 if %dgchoice%==i goto installRoot
+if %dgchoice%==IR set rootAfterInstall=1&&goto installRoot
+if %dgchoice%==Ir set rootAfterInstall=1&&goto installRoot
+if %dgchoice%==iR set rootAfterInstall=1&&goto installRoot
+if %dgchoice%==ir set rootAfterInstall=1&&goto installRoot
 if %dgchoice%==D goto downgrade
 if %dgchoice%==d goto downgrade
 if %dgchoice%==R goto root
@@ -406,7 +410,9 @@ echo 3) Remove Boot Animation (Leaves Stock FIRE Text)
 echo.
 echo 4) Remove and Replace Boot Animation (Replaces Stock FIRE Text)
 echo.
-echo 5) Launch Android Event Keymap (Press Keys Over ADB)
+echo 5) Restore Boot Animation (Restores Stock Boot Animation)
+echo.
+echo 6) Launch Android Event Keymap (Press Keys Over ADB)
 echo.
 echo.
 echo.
@@ -430,7 +436,8 @@ if %fchoice%==1 goto fixRemote
 if %fchoice%==2 goto launchFS
 if %fchoice%==3 goto bootanim
 if %fchoice%==4 goto bootanimR
-if %fchoice%==5 goto eventmap
+if %fchoice%==5 goto bootanimS
+if %fchoice%==6 goto eventmap
 if %fchoice%==B goto menu
 if %fchoice%==b goto menu
 if %fchoice%==X goto end
@@ -522,6 +529,8 @@ echo.
 %install% %apk%
 
 %sleep% 8
+
+if %rootAfterInstall%==1 goto root
 
 goto menu
 
@@ -1719,6 +1728,19 @@ cls
 %push% "%~dp0scripts\replace-bootanimation.sh" /data/local/tmp/
 %shell% "su -c chmod 755 /data/local/tmp/replace-bootanimation.sh"
 %shell% "su -c sh /data/local/tmp/replace-bootanimation.sh"
+
+::%adb% reboot
+
+goto fixesMenu
+
+
+:bootanimS
+
+cls
+%push% "%~dp0restore\%dgVersion%\system\media\bootanimation.zip" /data/local/tmp/
+%push% "%~dp0scripts\restore-bootanimation.sh" /data/local/tmp/
+%shell% "su -c chmod 755 /data/local/tmp/restore-bootanimation.sh"
+%shell% "su -c sh /data/local/tmp/restore-bootanimation.sh"
 
 ::%adb% reboot
 
