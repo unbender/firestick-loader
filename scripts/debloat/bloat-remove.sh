@@ -61,7 +61,7 @@ rm -r /system/priv-app/com.amazon.tcomm/
 #rm -r /system/priv-app/DeviceMessagingAndroid/
 #rm -r /system/priv-app/DeviceMessagingAndroidInternalSDK/
 #rm -r /system/priv-app/DeviceMessagingAndroidSDK/
-#rm -r /system/priv-app/DeviceSoftwareOTA/
+rm -r /system/priv-app/DeviceSoftwareOTA/
 #rm -r /system/priv-app/DeviceSoftwareOTAContracts/
 #rm -r /system/priv-app/DeviceSoftwareOTAIdleOverride/
 #rm -r /system/priv-app/DownloadProvider/
@@ -113,7 +113,7 @@ cp /data/data/com.amazon.tv.settings/shared_prefs/com.amazon.tv.settings_prefere
 #rm -r /data/data/BackupRestoreConfirmation/
 #rm -r /data/data/CaptivePortalLauncher/
 #rm -r /data/data/com.amazon.ags.app/
-#rm -r /data/data/com.amazon.avod/
+rm -r /data/data/com.amazon.avod/
 #rm -r /data/data/com.amazon.bueller.music/
 #rm -r /data/data/com.amazon.bueller.photos/
 #rm -r /data/data/com.amazon.communication/
@@ -132,13 +132,13 @@ cp /data/data/com.amazon.tv.settings/shared_prefs/com.amazon.tv.settings_prefere
 #rm -r /data/data/com.amazon.metrics.api/
 #rm -r /data/data/com.amazon.ods.kindleconnect/
 #rm -r /data/data/com.amazon.parentalcontrols/
-#rm -r /data/data/com.amazon.precog/
+rm -r /data/data/com.amazon.precog/
 #rm -r /data/data/com.amazon.securitysyncclient/
 #rm -r /data/data/com.amazon.sharingservice.android.client.proxy.release/
-#rm -r /data/data/com.amazon.shoptv.client/
+rm -r /data/data/com.amazon.shoptv.client/
 #rm -r /data/data/com.amazon.storm.lightning.services/
 #rm -r /data/data/com.amazon.storm.lightning.tutorial/
-#rm -r /data/data/com.amazon.tcomm/
+rm -r /data/data/com.amazon.tcomm/
 #rm -r /data/data/com.amazon.tmm.tutorial/
 #rm -r /data/data/com.amazon.tv.aiv.support/
 #rm -r /data/data/com.amazon.tv.csapp/
@@ -160,7 +160,7 @@ cp /data/data/com.amazon.tv.settings/shared_prefs/com.amazon.tv.settings_prefere
 #rm -r /data/data/DeviceMessagingAndroid/
 #rm -r /data/data/DeviceMessagingAndroidInternalSDK/
 #rm -r /data/data/DeviceMessagingAndroidSDK/
-#rm -r /data/data/DeviceSoftwareOTA/
+rm -r /data/data/DeviceSoftwareOTA/
 #rm -r /data/data/DeviceSoftwareOTAContracts/
 #rm -r /data/data/DeviceSoftwareOTAIdleOverride/
 #rm -r /data/data/DownloadProvider/
