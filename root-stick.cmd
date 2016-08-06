@@ -178,7 +178,7 @@ echo.
 echo.
 echo Press I to install kingroot
 echo.
-echo Press R to root (Alt: r1 or r2 to go directly to step 1 or 2)
+echo Press R to root (also use r1 or r2 to go directly to step 1 or 2)
 echo.
 echo Press S to issue an "su" request to the device
 echo.
