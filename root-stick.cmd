@@ -410,11 +410,11 @@ echo 3) Launch Android Event Keymap (Press Keys Over ADB)
 echo.
 echo 4) Remove Boot Animation (Leaves Stock FIRE Text)
 echo.
-echo 5) Replace Boot Fallback Images (Replaces Stock FIRE Text)
+echo 5) Replace Boot Animation (Replaces Stock Boot Animation)
 echo.
-echo 6) Replace Boot Animation (Replaces Stock Boot Animation)
+echo 6) Restore Boot Animation (Restores Stock Boot Animation)
 echo.
-echo 7) Restore Boot Animation (Restores Stock Boot Animation)
+echo 7) Replace Boot Fallback Images (Replaces Stock FIRE Text)
 echo.
 echo 8) Restore Boot Fallback Images (Restores framework-res.apk)
 echo.
@@ -440,9 +440,9 @@ if %fchoice%==1 goto fixRemote
 if %fchoice%==2 goto launchFS
 if %fchoice%==3 goto eventmap
 if %fchoice%==4 goto bootanimRemove
+if %fchoice%==5 goto bootanimReplace
+if %fchoice%==6 goto bootanimRestore
 if %fchoice%==5 goto bootanimReplaceFBI
-if %fchoice%==6 goto bootanimReplace
-if %fchoice%==7 goto bootanimRestore
 if %fchoice%==8 goto bootanimRestoreFBI
 if %fchoice%==B goto menu
 if %fchoice%==b goto menu
