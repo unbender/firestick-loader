@@ -406,13 +406,15 @@ echo 1) Fix Connectivity To Android FireTV Remote App
 echo.
 echo 2) Launch FireStarter
 echo.
-echo 3) Remove Boot Animation (Leaves Stock FIRE Text)
+echo 3) Launch Android Event Keymap (Press Keys Over ADB)
 echo.
-echo 4) Remove and Replace Boot Animation (Replaces Stock FIRE Text)
+echo 4) Remove Boot Animation (Leaves Stock FIRE Text)
 echo.
-echo 5) Restore Boot Animation (Restores Stock Boot Animation)
+echo 5) Replace Boot Fallback Images (Replaces Stock FIRE Text)
 echo.
-echo 6) Launch Android Event Keymap (Press Keys Over ADB)
+echo 6) Replace Boot Animation (Replaces Stock Boot Animation)
+echo.
+echo 7) Restore Boot Animation (Restores Stock Boot Animation)
 echo.
 echo.
 echo.
@@ -434,10 +436,11 @@ set /p fchoice=
 
 if %fchoice%==1 goto fixRemote
 if %fchoice%==2 goto launchFS
-if %fchoice%==3 goto bootanim
-if %fchoice%==4 goto bootanimR
-if %fchoice%==5 goto bootanimS
-if %fchoice%==6 goto eventmap
+if %fchoice%==3 goto eventmap
+if %fchoice%==3 goto bootanimRemove
+if %fchoice%==4 goto bootanimReplaceFBI
+if %fchoice%==5 goto bootanimReplace
+if %fchoice%==5 goto bootanimRestore
 if %fchoice%==B goto menu
 if %fchoice%==b goto menu
 if %fchoice%==X goto end
@@ -1709,7 +1712,7 @@ cls
 goto fixesMenu
 
 
-:bootanim
+:bootanimRemove
 
 cls
 %push% "%~dp0scripts\remove-bootanimation.sh" /data/local/tmp/
@@ -1721,10 +1724,24 @@ cls
 goto fixesMenu
 
 
-:bootanimR
+:bootanimReplaceFBI
 
 cls
 %push% "%~dp0apps\system\framework-res__mod.apk" /data/local/tmp/framework-res.apk
+%push% "%~dp0scripts\replace-boot-fallback-image.sh" /data/local/tmp/
+%shell% "su -c chmod 755 /data/local/tmp/replace-boot-fallback-image.sh"
+%shell% "su -c sh /data/local/tmp/replace-boot-fallback-image.sh"
+
+::%adb% reboot
+
+goto fixesMenu
+
+
+:bootanimReplace
+
+cls
+%shell% "rm -f /data/local/tmp/bootanimation.zip"
+%push% "%~dp0restore\%dgVersion%\system\media\bootanimation.zip" /data/local/tmp/
 %push% "%~dp0scripts\replace-bootanimation.sh" /data/local/tmp/
 %shell% "su -c chmod 755 /data/local/tmp/replace-bootanimation.sh"
 %shell% "su -c sh /data/local/tmp/replace-bootanimation.sh"
@@ -1734,9 +1751,10 @@ cls
 goto fixesMenu
 
 
-:bootanimS
+:bootanimRestore
 
 cls
+%shell% "rm -f /data/local/tmp/bootanimation.zip"
 %push% "%~dp0restore\%dgVersion%\system\media\bootanimation.zip" /data/local/tmp/
 %push% "%~dp0scripts\restore-bootanimation.sh" /data/local/tmp/
 %shell% "su -c chmod 755 /data/local/tmp/restore-bootanimation.sh"
