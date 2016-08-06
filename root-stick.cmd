@@ -1437,6 +1437,8 @@ echo.
 
 :btMouse
 %_color% 0e
+if %isMouse%==M cls
+if %isMouse%==m cls
 if %isMouse%==0 echo Using Teamviewer, select the top-right menu and click "General Settings"
 if %isMouse%==M echo In KingRoot, select the top-right menu and click "General Settings"
 if %isMouse%==m echo In KingRoot, select the top-right menu and click "General Settings"
@@ -1447,7 +1449,7 @@ echo Then click "Uninstall KingRoot" option and press CONTINUE, then OK on dialo
 echo.
 echo.
 %_color% 0c
-echo *** IF TEAMVIEWER GETS DENIED SU PERMISSIONS, PRESS R TO RETRY ***
+if %isMouse%==0 echo *** IF TEAMVIEWER GETS DENIED SU PERMISSIONS, PRESS R TO RETRY ***
 echo.
 echo.
 %_color% 0e
