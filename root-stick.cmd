@@ -770,6 +770,7 @@ echo.
 ::%keyEnter%
 
 if %fullAutoModeDG%==1 goto downgrade
+if %fullAutoModeDG%==2 goto busybox
 if %fullAutoMode%==1 goto busybox
 
 goto menu
@@ -1188,6 +1189,7 @@ pause>nul
 
 ::goto root
 
+if %fullAutoModeDG%==1 set fullAutoModeDG=2
 if %fullAutoMode%==1 goto root2
 
 :: Going to last part of KingRoot since the swiping shouldn't be needed again
