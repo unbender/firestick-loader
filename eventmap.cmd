@@ -2,7 +2,7 @@
 
 title Android Event Keymap Script [Pulled From ADB Toolkit]  [esc0rtd3w]
 
-color 0e
+color 0b
 
 ::mode con lines=50
 
@@ -299,9 +299,10 @@ echo Enter next event (number or name) and press ENTER:
 echo.
 echo Examples: HOME (3), MENU (1), BACK (4), SEARCH (84)
 echo.
-echo Type "text" without quotes to send text strings to phone
 echo.
-echo Type "exit" without quotes to close script
+echo Type "text" without quotes to send text strings to phone
+::echo.
+::echo Type "exit" without quotes to close script
 echo.
 echo.
 
@@ -320,6 +321,7 @@ if %event%==exit goto end
 goto bycmd
 
 :txtmode
+cls
 echo Enter text to send (no spaces):
 echo.
 

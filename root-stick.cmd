@@ -406,7 +406,7 @@ echo 3) Remove Boot Animation (Leaves Stock FIRE Text)
 echo.
 echo 4) Remove and Replace Boot Animation (Replaces Stock FIRE Text)
 echo.
-echo.
+echo 5) Launch Android Event Keymap (Press Keys Over ADB)
 echo.
 echo.
 echo.
@@ -430,6 +430,7 @@ if %fchoice%==1 goto fixRemote
 if %fchoice%==2 goto launchFS
 if %fchoice%==3 goto bootanim
 if %fchoice%==4 goto bootanimR
+if %fchoice%==5 goto eventmap
 if %fchoice%==B goto menu
 if %fchoice%==b goto menu
 if %fchoice%==X goto end
@@ -437,6 +438,13 @@ if %fchoice%==x goto end
 
 goto fixesMenu
 
+
+
+:eventmap
+
+%runShellTerminate% "%~dp0eventmap.cmd"
+
+goto fixesMenu
 
 
 :doSU
