@@ -168,7 +168,6 @@ set returnTo=menu
 :menu
 
 %adbKill%
-::%adbStart%
 
 %_color% 0e
 
