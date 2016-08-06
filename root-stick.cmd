@@ -1309,6 +1309,25 @@ goto menu
 
 :unrootKing
 
+set isMouse=0
+
+cls
+echo If you have a bluetooth mouse, press M now and ENTER....
+echo.
+echo.
+echo.
+%_color% 0c
+echo *** TO CONTINUE NORMALLY, JUST PRESS ENTER ***
+%_color% 0e
+echo.
+echo.
+
+set /p isMouse=
+
+if %isMouse%==M goto btMouse
+if %isMouse%==m goto btMouse
+
+
 set teamViewerSuRequest=0
 set removeTeamViewer=0
 
@@ -1415,8 +1434,12 @@ echo *** TRY DIRECTLY CLICKING THE REMOTE VIEWER WINDOW ON FIRESTICK SCREEN ***
 echo.
 echo.
 echo.
+
+:btMouse
 %_color% 0e
-echo Use TeamViewer to select the top-right menu and click "General Settings"
+if %isMouse%==0 echo Using Teamviewer, select the top-right menu and click "General Settings"
+if %isMouse%==M echo In KingRoot, select the top-right menu and click "General Settings"
+if %isMouse%==m echo In KingRoot, select the top-right menu and click "General Settings"
 echo.
 echo.
 echo.
