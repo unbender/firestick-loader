@@ -1,7 +1,3 @@
-
-
-
-
 pm uninstall com.amazon.avod
 rm -r /system/priv-app/com.amazon.avod/
 
