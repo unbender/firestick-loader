@@ -641,6 +641,11 @@ echo THAT MEANS THE ROOT HAS NOT YET FINISHED, IF SO, JUST WAIT ***
 echo.
 echo.
 echo.
+%_color% 0c
+echo *** BE SURE TO ALLOW SU PERMISSIONS WHEN REQUESTED FOR ADB ***
+echo.
+echo.
+echo.
 %_color% 0e
 echo *** TO LAUNCH PC VERSION, TYPE "PC" AND PRESS ENTER ***
 echo.
