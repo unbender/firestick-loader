@@ -1750,7 +1750,7 @@ set /p newBootAnimation=
 
 if %newBootAnimation%==none goto bootanimReplace
 
-%shell% "rm -f /data/local/tmp/bootanimation.zip"
+%shell% "rm /data/local/tmp/bootanimation.zip"
 %push% "%newBootAnimation%" /data/local/tmp/
 %push% "%~dp0scripts\replace-bootanimation.sh" /data/local/tmp/
 %shell% "su -c chmod 755 /data/local/tmp/replace-bootanimation.sh"
@@ -1777,7 +1777,7 @@ goto fixesMenu
 :bootanimRestore
 
 cls
-%shell% "rm -f /data/local/tmp/bootanimation.zip"
+%shell% "rm /data/local/tmp/bootanimation.zip"
 %push% "%~dp0restore\%dgVersion%\system\media\bootanimation.zip" /data/local/tmp/
 %push% "%~dp0scripts\restore-bootanimation.sh" /data/local/tmp/
 %shell% "su -c chmod 755 /data/local/tmp/restore-bootanimation.sh"
