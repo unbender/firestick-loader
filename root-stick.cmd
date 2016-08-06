@@ -1795,6 +1795,12 @@ if %factoryReset%==1 (
 %sleep% 3
 )
 
+if %factoryReset%==2 (
+%push% "%~dp0scripts\debloat\factory-reset.sh" /data/local/tmp/
+%shell% "su -c chmod 755 /data/local/tmp/factory-reset.sh"
+%shell% "su -c sh /data/local/tmp/factory-reset.sh"
+)
+
 ::pause
 
 %adb% reboot
