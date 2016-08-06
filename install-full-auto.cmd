@@ -83,15 +83,15 @@ md "%temp%\firestick-loader\apps\media\kodi\data\%kodiBuild%"
 %rm% "%temp%\firestick-loader\apps\media\kodi"
 
 
-cls
-%_color% 0e
-set appName=XBMC Launcher
-set apk=
-echo.
-echo.
-echo Installing %appName%...
-echo.
-%install% "apps\system\xbmclauncher.apk"
+::cls
+::%_color% 0e
+::set appName=XBMC Launcher
+::set apk=
+::echo.
+::echo.
+::echo Installing %appName%...
+::echo.
+::%install% "apps\system\xbmclauncher.apk"
 
 
 cls
