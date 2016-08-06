@@ -8,6 +8,12 @@ rm -r /system/priv-app/com.amazon.avod/
 pm uninstall com.amazon.avod
 rm -r /system/priv-app/com.amazon.shoptv.client/
 
+pm uninstall com.amazon.precog
+rm -r /system/priv-app/com.amazon.precog/
+
+pm uninstall com.amazon.tcomm
+rm -r /system/priv-app/com.amazon.tcomm/
+
 
 
 
