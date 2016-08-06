@@ -1727,6 +1727,7 @@ goto testBootAnim
 :bootanimReplaceFBI
 
 cls
+%shell% "rm /data/local/tmp/framework-res.apk"
 %push% "%~dp0apps\system\framework-res__mod.apk" /data/local/tmp/framework-res.apk
 %push% "%~dp0scripts\replace-boot-fallback-image.sh" /data/local/tmp/
 %shell% "su -c chmod 755 /data/local/tmp/replace-boot-fallback-image.sh"
@@ -1767,6 +1768,20 @@ cls
 %push% "%~dp0scripts\restore-bootanimation.sh" /data/local/tmp/
 %shell% "su -c chmod 755 /data/local/tmp/restore-bootanimation.sh"
 %shell% "su -c sh /data/local/tmp/restore-bootanimation.sh"
+
+goto testBootAnim
+
+
+:bootanimRestoreFBI
+
+cls
+%shell% "rm /data/local/tmp/framework-res.apk"
+%push% "%~dp0apps\system\framework-res__%dgVersion%.apk" /data/local/tmp/framework-res.apk
+%push% "%~dp0scripts\restore-boot-fallback-image.sh" /data/local/tmp/
+%shell% "su -c chmod 755 /data/local/tmp/restore-boot-fallback-image.sh"
+%shell% "su -c sh /data/local/tmp/restore-boot-fallback-image.sh"
+
+::%adb% reboot
 
 goto testBootAnim
 
