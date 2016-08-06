@@ -157,6 +157,9 @@ set dgVersion=5.0.5
 
 set fullAutoMode=0
 set fullAutoModeDG=0
+
+set rootAfterInstall=0
+
 set returnTo=menu
 
 
@@ -522,6 +525,8 @@ if %rootAfterInstall%==1 goto root
 
 if %fullAutoMode%==1 goto root
 
+::pause
+
 goto menu
 
 
@@ -710,6 +715,7 @@ pause>nul
 %keyHome%
 
 if %fullAutoMode%==1 goto superSU
+if %fullAutoModeDG%==1 goto superSU
 
 goto menu
 
