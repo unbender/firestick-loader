@@ -83,6 +83,7 @@ if %choice%==1 (
 
 	
 cls
+set isKodi=0
 %_color% 0e
 set appName=Kodi
 set apk=
@@ -98,6 +99,7 @@ echo Info: XBMC: XBOX Media Center
 echo.
 set /p choice=
 if %choice%==1 (
+	set isKodi=1
 	echo.
 	echo.
 	echo Installing %appName%...
@@ -113,6 +115,8 @@ if %choice%==1 (
 )
 
 
+:: Skip Kodi Data if Kodi Is Not Requested To Install
+if %isKodi%==0 goto skipKodi
 cls
 set kodiBuildSelect=2
 %_color% 0e
@@ -176,6 +180,7 @@ if %kodiBuildSelect%==3 (
 )
 
 
+:skipKodi
 cls
 %_color% 0e
 set appName=XBMC Launcher
