@@ -416,6 +416,8 @@ echo 6) Replace Boot Animation (Replaces Stock Boot Animation)
 echo.
 echo 7) Restore Boot Animation (Restores Stock Boot Animation)
 echo.
+echo 8) Restore Boot Fallback Images (Restores framework-res.apk)
+echo.
 echo.
 echo.
 echo.
@@ -441,6 +443,7 @@ if %fchoice%==4 goto bootanimRemove
 if %fchoice%==5 goto bootanimReplaceFBI
 if %fchoice%==6 goto bootanimReplace
 if %fchoice%==7 goto bootanimRestore
+if %fchoice%==8 goto bootanimRestoreFBI
 if %fchoice%==B goto menu
 if %fchoice%==b goto menu
 if %fchoice%==X goto end
