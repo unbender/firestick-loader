@@ -1783,7 +1783,20 @@ cls
 %shell% "su -c chmod 755 /data/local/tmp/restore-bootanimation.sh"
 %shell% "su -c sh /data/local/tmp/restore-bootanimation.sh"
 
-::%adb% reboot
+cls
+echo Test New Boot Animation Now [Y/N]?
+echo.
+echo.
+echo.
+echo.
+echo Make a choice and press ENTER:
+echo.
+echo.
+
+set /p testNow=
+
+if %testNow%==Y %adb% reboot
+if %testNow%==y %adb% reboot
 
 goto fixesMenu
 
