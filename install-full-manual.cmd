@@ -523,7 +523,7 @@ echo.
 echo.
 echo Installing %appName%...
 echo.
-%install% "apps\system\serversultimate.apk"
+%install% "apps\web\servers-ultimate.apk"
 )
 
 
