@@ -77,8 +77,8 @@ rm -r /system/priv-app/FireApplicationCompatibilityEnforcer/
 rm -r /system/priv-app/FireApplicationCompatibilityEnforcerSDK/
 rm -r /system/priv-app/FireOsMiddlewareDebugApp/
 rm -r /system/priv-app/FireRecessProxy/
-#rm -r /system/priv-app/FireTVDefaultMediaReceiver/
-#rm -r /system/priv-app/FireTvNotificationService/
+rm -r /system/priv-app/FireTVDefaultMediaReceiver/
+rm -r /system/priv-app/FireTvNotificationService/
 #rm -r /system/priv-app/FireTVSystemUI/
 #rm -r /system/priv-app/FusedLocation/
 rm -r /system/priv-app/LogManager/
@@ -111,6 +111,10 @@ rm -r /system/priv-app/UnifiedShareActivityChooser/
 
 
 # From /system/app/
+
+# Amazon Enterprise Controls
+rm -r /system/app/DeviceControlService/
+
 rm -r /system/app/DocumentsUI/
 rm -r /system/app/UnifiedSettingsProvider/
 rm -r /system/app/PicoTts/
@@ -192,8 +196,8 @@ rm -r /data/data/FireApplicationCompatibilityEnforcer/
 rm -r /data/data/FireApplicationCompatibilityEnforcerSDK/
 rm -r /data/data/FireOsMiddlewareDebugApp/
 rm -r /data/data/FireRecessProxy/
-#rm -r /data/data/FireTVDefaultMediaReceiver/
-#rm -r /data/data/FireTvNotificationService/
+rm -r /data/data/FireTVDefaultMediaReceiver/
+rm -r /data/data/FireTvNotificationService/
 #rm -r /data/data/FireTVSystemUI/
 #rm -r /data/data/FusedLocation/
 rm -r /data/data/LogManager/
@@ -224,6 +228,7 @@ rm -r /data/data/UnifiedShareActivityChooser/
 
 
 # From /system/app/
+rm -r /data/data/DeviceControlService/
 rm -r /data/data/DocumentsUI/
 rm -r /data/data/UnifiedSettingsProvider/
 rm -r /data/data/PicoTts/
