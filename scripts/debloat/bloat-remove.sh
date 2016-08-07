@@ -15,8 +15,8 @@ rm -r /system/priv-app/AmazonNetworkMonitor/
 #rm -r /system/priv-app/CaptivePortalLauncher/
 #rm -r /system/priv-app/com.amazon.ags.app/
 rm -r /system/priv-app/com.amazon.avod/
-#rm -r /system/priv-app/com.amazon.bueller.music/
-#rm -r /system/priv-app/com.amazon.bueller.photos/
+rm -r /system/priv-app/com.amazon.bueller.music/
+rm -r /system/priv-app/com.amazon.bueller.photos/
 #rm -r /system/priv-app/com.amazon.communication/
 #rm -r /system/priv-app/com.amazon.communication.discovery/
 #rm -r /system/priv-app/com.amazon.device.bluetoothdfu/
@@ -114,8 +114,8 @@ rm -r /data/data/AmazonNetworkMonitor/
 #rm -r /data/data/CaptivePortalLauncher/
 #rm -r /data/data/com.amazon.ags.app/
 rm -r /data/data/com.amazon.avod/
-#rm -r /data/data/com.amazon.bueller.music/
-#rm -r /data/data/com.amazon.bueller.photos/
+rm -r /data/data/com.amazon.bueller.music/
+rm -r /data/data/com.amazon.bueller.photos/
 #rm -r /data/data/com.amazon.communication/
 #rm -r /data/data/com.amazon.communication.discovery/
 #rm -r /data/data/com.amazon.device.bluetoothdfu/
