@@ -76,6 +76,8 @@ set firstTimeRootAttempt=1
 
 set factoryReset=0
 
+set msgbox=%~dp0bin\msgbox.exe
+
 
 set mountRW=%shell% "su -c mount -o rw,remount /system"
 set mountRO=%shell% "su -c mount -o ro,remount /system"
@@ -135,6 +137,8 @@ set launchAceStream=%shell% am start -a android.intent.action.MAIN -n org.acestr
 set launchSopCast=%shell% am start -a android.intent.action.MAIN -n org.acestream/.player.gui.MainActivity
 
 ::set suRequest=%shell% am start -a android.intent.action.MAIN -n com.android.internal.os.RuntimeInit uid 0
+
+::set usbPowerWarning=Window{24f60778 u0 com.amazon.tv.settings/com.amazon.tv.settings.tv.BuellerAboutSettingsActivity
 
 set removeSuperSU=%uninstall% eu.chainfire.supersu
 
