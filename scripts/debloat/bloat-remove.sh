@@ -80,7 +80,7 @@ rm -r /system/priv-app/DeviceSoftwareOTAIdleOverride/
 #rm -r /system/priv-app/FusedLocation/
 rm -r /system/priv-app/LogManager/
 #rm -r /system/priv-app/ManagedProvisioning/
-#rm -r /system/priv-app/marketplace_service_receiver/
+rm -r /system/priv-app/marketplace_service_receiver/
 #rm -r /system/priv-app/MediaProvider/
 rm -r /system/priv-app/MetricsApi/
 rm -r /system/priv-app/MetricsService/
@@ -182,7 +182,7 @@ rm -r /data/data/DeviceSoftwareOTAIdleOverride/
 #rm -r /data/data/FusedLocation/
 rm -r /data/data/LogManager/
 #rm -r /data/data/ManagedProvisioning/
-#rm -r /data/data/marketplace_service_receiver/
+rm -r /data/data/marketplace_service_receiver/
 #rm -r /data/data/MediaProvider/
 rm -r /data/data/MetricsApi/
 rm -r /data/data/MetricsService/
