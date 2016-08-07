@@ -150,4 +150,10 @@ pm disable com.amazon.settings.systemupdates/.OTAEventReceiver
 # Disable Factory Reset Option
 #pm disable com.amazon.tv.settings/com.amazon.tv.settings.tv.FactoryResetActivity
 
+# Amazon Download Manager
+pm disable com.android.providers.downloads
+
+# Amazon Documents UI
+pm disable com.android.documentsui
+
 

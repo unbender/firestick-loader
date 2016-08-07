@@ -1,6 +1,6 @@
 #!/system/bin/sh
 
-clear
+#clear
 echo "Deleting Amazon Bloat...."
 echo ""
 echo ""
@@ -70,7 +70,7 @@ rm -r /system/priv-app/DeviceMessagingAndroidSDK/
 rm -r /system/priv-app/DeviceSoftwareOTA/
 #rm -r /system/priv-app/DeviceSoftwareOTAContracts/
 rm -r /system/priv-app/DeviceSoftwareOTAIdleOverride/
-#rm -r /system/priv-app/DownloadProvider/
+rm -r /system/priv-app/DownloadProvider/
 #rm -r /system/priv-app/DownloadProviderUi/
 #rm -r /system/priv-app/ExternalStorageProvider/
 rm -r /system/priv-app/FireApplicationCompatibilityEnforcer/
@@ -106,6 +106,14 @@ rm -r /system/priv-app/UnifiedShareActivityChooser/
 #rm -r /system/priv-app/WhisperlinkSdk/
 #rm -r /system/priv-app/WhisperplayCore/
 #rm -r /system/priv-app/WhisperplayInstall/
+
+
+
+
+# From /system/app/
+rm -r /system/app/DocumentsUI/
+
+
 
 
 
@@ -175,7 +183,7 @@ rm -r /data/data/DeviceMessagingAndroidSDK/
 rm -r /data/data/DeviceSoftwareOTA/
 #rm -r /data/data/DeviceSoftwareOTAContracts/
 rm -r /data/data/DeviceSoftwareOTAIdleOverride/
-#rm -r /data/data/DownloadProvider/
+rm -r /data/data/DownloadProvider/
 #rm -r /data/data/DownloadProviderUi/
 #rm -r /data/data/ExternalStorageProvider/
 rm -r /data/data/FireApplicationCompatibilityEnforcer/
@@ -211,6 +219,10 @@ rm -r /data/data/UnifiedShareActivityChooser/
 #rm -r /data/data/WhisperlinkSdk/
 #rm -r /data/data/WhisperplayCore/
 #rm -r /data/data/WhisperplayInstall/
+
+
+# From /system/app/
+rm -r /data/data/DocumentsUI/
 
 
 

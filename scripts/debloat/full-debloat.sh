@@ -68,8 +68,11 @@ pm disable com.amazon.sharingservice.android.client.proxy
 pm disable com.amazon.shoptv.client
 pm disable com.amazon.shpm
 pm disable com.amazon.ssm
+
+# Amazon Remote Android App
 #pm disable com.amazon.storm.lightning.services
 #pm disable com.amazon.storm.lightning.tutorial
+
 pm disable com.amazon.sync.provider.ipc
 pm disable com.amazon.sync.service
 pm disable com.amazon.tcomm
@@ -97,6 +100,8 @@ pm disable com.amazon.visualonawv
 
 pm disable com.amazon.wcast.sink
 pm disable com.amazon.webview
+
+# Amazon Remote Android App
 #pm disable com.amazon.whisperlink.core.android
 #pm disable com.amazon.whisperplay.contracts
 #pm disable com.amazon.whisperplay.service.install
@@ -146,11 +151,16 @@ pm disable com.amazon.settings.systemupdates/.OTAEventReceiver
 # Disable Factory Reset Option
 #pm disable com.amazon.tv.settings/com.amazon.tv.settings.tv.FactoryResetActivity
 
+# Amazon Download Manager
+pm disable com.android.providers.downloads
+
+# Amazon Documents UI
+pm disable com.android.documentsui
 
 
 
 
-clear
+
 echo "Deleting Amazon Bloat...."
 echo ""
 echo ""
@@ -220,7 +230,7 @@ rm -r /system/priv-app/DeviceMessagingAndroidSDK/
 rm -r /system/priv-app/DeviceSoftwareOTA/
 #rm -r /system/priv-app/DeviceSoftwareOTAContracts/
 rm -r /system/priv-app/DeviceSoftwareOTAIdleOverride/
-#rm -r /system/priv-app/DownloadProvider/
+rm -r /system/priv-app/DownloadProvider/
 #rm -r /system/priv-app/DownloadProviderUi/
 #rm -r /system/priv-app/ExternalStorageProvider/
 rm -r /system/priv-app/FireApplicationCompatibilityEnforcer/
@@ -256,6 +266,14 @@ rm -r /system/priv-app/UnifiedShareActivityChooser/
 #rm -r /system/priv-app/WhisperlinkSdk/
 #rm -r /system/priv-app/WhisperplayCore/
 #rm -r /system/priv-app/WhisperplayInstall/
+
+
+
+
+# From /system/app/
+rm -r /system/app/DocumentsUI/
+
+
 
 
 
@@ -325,7 +343,7 @@ rm -r /data/data/DeviceMessagingAndroidSDK/
 rm -r /data/data/DeviceSoftwareOTA/
 #rm -r /data/data/DeviceSoftwareOTAContracts/
 rm -r /data/data/DeviceSoftwareOTAIdleOverride/
-#rm -r /data/data/DownloadProvider/
+rm -r /data/data/DownloadProvider/
 #rm -r /data/data/DownloadProviderUi/
 #rm -r /data/data/ExternalStorageProvider/
 rm -r /data/data/FireApplicationCompatibilityEnforcer/
@@ -361,6 +379,10 @@ rm -r /data/data/UnifiedShareActivityChooser/
 #rm -r /data/data/WhisperlinkSdk/
 #rm -r /data/data/WhisperplayCore/
 #rm -r /data/data/WhisperplayInstall/
+
+
+# From /system/app/
+rm -r /data/data/DocumentsUI/
 
 
 
