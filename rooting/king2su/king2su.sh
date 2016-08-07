@@ -36,7 +36,7 @@ chmod 0755 /system/bin/busybox
 
 sleep 1
 
-mount -o rw,remount /system
+#mount -o rw,remount /system
 
 busybox chattr -ia /system/xbin/ku.sud
 rm /system/xbin/ku.sud
@@ -49,13 +49,13 @@ rm /system/xbin/supolicy
 busybox chattr -ia /system/xbin/pidof >/dev/null 2>&1
 rm /system/xbin/pidof >/dev/null 2>&1
 
-mount -o rw,remount /system
+#mount -o rw,remount /system
 busybox chattr -ia /system/xbin/daemonsu
 rm -r /system/xbin/daemonsu
 
 sleep 1
 
-mount -o rw,remount /system
+#mount -o rw,remount /system
 
 rm -r /data/app/com.kingroot.RushRoot-1 >/dev/null 2>&1
 rm -r /data/data/com.kingroot.RushRoot
