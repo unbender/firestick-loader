@@ -180,7 +180,7 @@ rm -r /system/priv-app/com.amazon.kindle.cms-service/
 rm -r /system/priv-app/com.amazon.kindle.devicecontrols/
 #rm -r /system/priv-app/com.amazon.kindleautomatictimezone/
 rm -r /system/priv-app/com.amazon.kso.blackbird/
-rm -r /system/priv-app/com.amazon.metrics.api/
+#rm -r /system/priv-app/com.amazon.metrics.api/
 rm -r /system/priv-app/com.amazon.ods.kindleconnect/
 rm -r /system/priv-app/com.amazon.parentalcontrols/
 rm -r /system/priv-app/com.amazon.precog/
@@ -227,10 +227,10 @@ rm -r /system/priv-app/DeviceSoftwareOTAIdleOverride/
 #rm -r /system/priv-app/FusedLocation/
 rm -r /system/priv-app/LogManager/
 #rm -r /system/priv-app/ManagedProvisioning/
-rm -r /system/priv-app/marketplace_service_receiver/
+#rm -r /system/priv-app/marketplace_service_receiver/
 #rm -r /system/priv-app/MediaProvider/
-rm -r /system/priv-app/MetricsApi/
-rm -r /system/priv-app/MetricsService/
+#rm -r /system/priv-app/MetricsApi/
+#rm -r /system/priv-app/MetricsService/
 #rm -r /system/priv-app/OneTimeInitializer/
 #rm -r /system/priv-app/ProxyHandler/
 #rm -r /system/priv-app/RemoteSettingsAndroid/
@@ -282,7 +282,7 @@ rm -r /data/data/com.amazon.kindle.cms-service/
 rm -r /data/data/com.amazon.kindle.devicecontrols/
 #rm -r /data/data/com.amazon.kindleautomatictimezone/
 rm -r /data/data/com.amazon.kso.blackbird/
-rm -r /data/data/com.amazon.metrics.api/
+#rm -r /data/data/com.amazon.metrics.api/
 rm -r /data/data/com.amazon.ods.kindleconnect/
 rm -r /data/data/com.amazon.parentalcontrols/
 rm -r /data/data/com.amazon.precog/
@@ -329,10 +329,10 @@ rm -r /data/data/DeviceSoftwareOTAIdleOverride/
 #rm -r /data/data/FusedLocation/
 rm -r /data/data/LogManager/
 #rm -r /data/data/ManagedProvisioning/
-rm -r /data/data/marketplace_service_receiver/
+#rm -r /data/data/marketplace_service_receiver/
 #rm -r /data/data/MediaProvider/
-rm -r /data/data/MetricsApi/
-rm -r /data/data/MetricsService/
+#rm -r /data/data/MetricsApi/
+#rm -r /data/data/MetricsService/
 #rm -r /data/data/OneTimeInitializer/
 #rm -r /data/data/ProxyHandler/
 #rm -r /data/data/RemoteSettingsAndroid/
