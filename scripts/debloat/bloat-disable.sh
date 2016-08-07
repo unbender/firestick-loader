@@ -90,7 +90,10 @@ pm disable com.amazon.tz.webcryptotzservice
 pm disable com.amazon.venezia
 pm disable com.amazon.videoads.app
 pm disable com.amazon.visualonawv
-pm disable com.amazon.vizzini
+
+# Amazon Voice Support
+#pm disable com.amazon.vizzini
+
 pm disable com.amazon.wcast.sink
 pm disable com.amazon.webview
 #pm disable com.amazon.whisperlink.core.android

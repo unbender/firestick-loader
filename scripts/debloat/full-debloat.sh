@@ -91,7 +91,10 @@ pm disable com.amazon.tz.webcryptotzservice
 pm disable com.amazon.venezia
 pm disable com.amazon.videoads.app
 pm disable com.amazon.visualonawv
-pm disable com.amazon.vizzini
+
+# Amazon Voice Support
+#pm disable com.amazon.vizzini
+
 pm disable com.amazon.wcast.sink
 pm disable com.amazon.webview
 #pm disable com.amazon.whisperlink.core.android
@@ -192,7 +195,7 @@ rm -r /system/priv-app/com.amazon.shoptv.client/
 rm -r /system/priv-app/com.amazon.tcomm/
 rm -r /system/priv-app/com.amazon.tmm.tutorial/
 rm -r /system/priv-app/com.amazon.tv.aiv.support/
-#rm -r /system/priv-app/com.amazon.tv.csapp/
+rm -r /system/priv-app/com.amazon.tv.csapp/
 #rm -r /system/priv-app/com.amazon.tv.ime/
 #rm -r /system/priv-app/com.amazon.tv.launcher/
 rm -r /system/priv-app/com.amazon.tv.legal.notices/
@@ -202,7 +205,10 @@ rm -r /system/priv-app/com.amazon.tv.parentalcontrols/
 rm -r /system/priv-app/com.amazon.venezia/
 rm -r /system/priv-app/com.amazon.videoads.app/
 rm -r /system/priv-app/com.amazon.visualonawv/
+
+# Amazon Voice Support
 #rm -r /system/priv-app/com.amazon.vizzini/
+
 #rm -r /system/priv-app/ConnectivityDiag/
 #rm -r /system/priv-app/ContentSupportProvider/
 rm -r /system/priv-app/CrashManager/
@@ -294,7 +300,7 @@ rm -r /data/data/com.amazon.shoptv.client/
 rm -r /data/data/com.amazon.tcomm/
 rm -r /data/data/com.amazon.tmm.tutorial/
 rm -r /data/data/com.amazon.tv.aiv.support/
-#rm -r /data/data/com.amazon.tv.csapp/
+rm -r /data/data/com.amazon.tv.csapp/
 #rm -r /data/data/com.amazon.tv.ime/
 #rm -r /data/data/com.amazon.tv.launcher/
 rm -r /data/data/com.amazon.tv.legal.notices/
@@ -304,7 +310,10 @@ rm -r /data/data/com.amazon.tv.parentalcontrols/
 rm -r /data/data/com.amazon.venezia/
 rm -r /data/data/com.amazon.videoads.app/
 rm -r /data/data/com.amazon.visualonawv/
+
+# Amazon Voice Support
 #rm -r /data/data/com.amazon.vizzini/
+
 #rm -r /data/data/ConnectivityDiag/
 #rm -r /data/data/ContentSupportProvider/
 rm -r /data/data/CrashManager/
