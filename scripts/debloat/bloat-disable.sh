@@ -67,8 +67,11 @@ pm disable com.amazon.sharingservice.android.client.proxy
 pm disable com.amazon.shoptv.client
 pm disable com.amazon.shpm
 pm disable com.amazon.ssm
+
+# Amazon Remote Android App
 #pm disable com.amazon.storm.lightning.services
 #pm disable com.amazon.storm.lightning.tutorial
+
 pm disable com.amazon.sync.provider.ipc
 pm disable com.amazon.sync.service
 pm disable com.amazon.tcomm
@@ -96,6 +99,8 @@ pm disable com.amazon.visualonawv
 
 pm disable com.amazon.wcast.sink
 pm disable com.amazon.webview
+
+# Amazon Remote Android App
 #pm disable com.amazon.whisperlink.core.android
 #pm disable com.amazon.whisperplay.contracts
 #pm disable com.amazon.whisperplay.service.install
