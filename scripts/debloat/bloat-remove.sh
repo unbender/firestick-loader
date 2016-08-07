@@ -22,7 +22,7 @@ rm -r /system/priv-app/com.amazon.bueller.photos/
 #rm -r /system/priv-app/com.amazon.device.bluetoothdfu/
 #rm -r /system/priv-app/com.amazon.device.sync/
 #rm -r /system/priv-app/com.amazon.device.sync.sdk.internal/
-#rm -r /system/priv-app/com.amazon.dp.logger/
+rm -r /system/priv-app/com.amazon.dp.logger/
 #rm -r /system/priv-app/com.amazon.fireinputdevices/
 #rm -r /system/priv-app/com.amazon.identity.auth.device.authorization/
 #rm -r /system/priv-app/com.amazon.imp/
@@ -75,7 +75,7 @@ rm -r /system/priv-app/DeviceSoftwareOTAIdleOverride/
 #rm -r /system/priv-app/FireTvNotificationService/
 #rm -r /system/priv-app/FireTVSystemUI/
 #rm -r /system/priv-app/FusedLocation/
-#rm -r /system/priv-app/LogManager/
+rm -r /system/priv-app/LogManager/
 #rm -r /system/priv-app/ManagedProvisioning/
 #rm -r /system/priv-app/marketplace_service_receiver/
 #rm -r /system/priv-app/MediaProvider/
@@ -121,7 +121,7 @@ rm -r /data/data/com.amazon.bueller.photos/
 #rm -r /data/data/com.amazon.device.bluetoothdfu/
 #rm -r /data/data/com.amazon.device.sync/
 #rm -r /data/data/com.amazon.device.sync.sdk.internal/
-#rm -r /data/data/com.amazon.dp.logger/
+rm -r /data/data/com.amazon.dp.logger/
 #rm -r /data/data/com.amazon.fireinputdevices/
 #rm -r /data/data/com.amazon.identity.auth.device.authorization/
 #rm -r /data/data/com.amazon.imp/
@@ -174,7 +174,7 @@ rm -r /data/data/DeviceSoftwareOTAIdleOverride/
 #rm -r /data/data/FireTvNotificationService/
 #rm -r /data/data/FireTVSystemUI/
 #rm -r /data/data/FusedLocation/
-#rm -r /data/data/LogManager/
+rm -r /data/data/LogManager/
 #rm -r /data/data/ManagedProvisioning/
 #rm -r /data/data/marketplace_service_receiver/
 #rm -r /data/data/MediaProvider/
