@@ -12,7 +12,10 @@ mount -o rw,remount /system
 #rm -r /system/priv-app/AmazonKKWebViewLib/
 rm -r /system/priv-app/AmazonNetworkMonitor/
 #rm -r /system/priv-app/BackupRestoreConfirmation/
+
+# Captive Portal Launcher
 #rm -r /system/priv-app/CaptivePortalLauncher/
+
 rm -r /system/priv-app/com.amazon.ags.app/
 rm -r /system/priv-app/com.amazon.avod/
 rm -r /system/priv-app/com.amazon.bueller.music/
@@ -111,7 +114,10 @@ cp /data/data/com.amazon.tv.settings/shared_prefs/com.amazon.tv.settings_prefere
 #rm -r /data/data/AmazonKKWebViewLib/
 rm -r /data/data/AmazonNetworkMonitor/
 #rm -r /data/data/BackupRestoreConfirmation/
+
+# Captive Portal Launcher
 #rm -r /data/data/CaptivePortalLauncher/
+
 rm -r /data/data/com.amazon.ags.app/
 rm -r /data/data/com.amazon.avod/
 rm -r /data/data/com.amazon.bueller.music/

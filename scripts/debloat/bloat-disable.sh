@@ -23,7 +23,10 @@ pm disable com.amazon.client.metrics
 pm disable com.amazon.client.metrics.api
 pm disable com.amazon.communication.discovery
 pm disable com.amazon.connectivitydiag
-pm disable com.amazon.cpl
+
+# Captive Portal Launcher
+#pm disable com.amazon.cpl
+
 pm disable com.amazon.dcp
 pm disable com.amazon.dcp.contracts.framework.library
 pm disable com.amazon.dcp.contracts.library
