@@ -172,7 +172,7 @@ rm -r /system/priv-app/com.amazon.communication.discovery/
 #rm -r /system/priv-app/com.amazon.device.bluetoothdfu/
 rm -r /system/priv-app/com.amazon.device.sync/
 rm -r /system/priv-app/com.amazon.device.sync.sdk.internal/
-rm -r /system/priv-app/com.amazon.dp.logger/
+#rm -r /system/priv-app/com.amazon.dp.logger/
 #rm -r /system/priv-app/com.amazon.fireinputdevices/
 rm -r /system/priv-app/com.amazon.identity.auth.device.authorization/
 #rm -r /system/priv-app/com.amazon.imp/
