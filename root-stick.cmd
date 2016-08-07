@@ -170,6 +170,8 @@ set rootAfterInstall=0
 
 set superSuReinstall=0
 
+set rebootAfterBloatRemoval=0
+
 set returnTo=menu
 
 
@@ -1645,6 +1647,20 @@ cls
 %shell% "su -c chmod 755 /data/local/tmp/full-debloat.sh"
 %shell% "su -c sh /data/local/tmp/full-debloat.sh"
 
+cls
+echo Clear Caches and Reboot (Recommended) [Y/N]?
+echo.
+echo.
+echo.
+echo Make a choice and press ENTER:
+echo.
+echo.
+
+set /p rebootAfterBloatRemoval=
+
+if %rebootAfterBloatRemoval%==Y %adb% reboot
+if %rebootAfterBloatRemoval%==y %adb% reboot
+
 goto menu
 
 
@@ -1679,6 +1695,20 @@ cls
 
 if %fullAutoMode%==1 goto clearCaches
 if %fullAutoModeDG%==1 goto clearCaches
+
+cls
+echo Clear Caches and Reboot (Recommended) [Y/N]?
+echo.
+echo.
+echo.
+echo Make a choice and press ENTER:
+echo.
+echo.
+
+set /p rebootAfterBloatRemoval=
+
+if %rebootAfterBloatRemoval%==Y %adb% reboot
+if %rebootAfterBloatRemoval%==y %adb% reboot
 
 goto menu
 
