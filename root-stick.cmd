@@ -742,8 +742,12 @@ pause>nul
 
 %keyHome%
 
-if %fullAutoMode%==1 goto superSU
-if %fullAutoModeDG%==1 goto superSU
+:: Temp Fix Until SuperSU Works Properly
+::if %fullAutoMode%==1 goto superSU
+::if %fullAutoModeDG%==1 goto superSU
+if %fullAutoModeDG%==1 goto downgrade
+if %fullAutoModeDG%==2 goto busybox
+if %fullAutoMode%==1 goto busybox
 
 goto menu
 
