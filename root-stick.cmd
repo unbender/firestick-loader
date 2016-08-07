@@ -1658,8 +1658,8 @@ echo.
 
 set /p rebootAfterBloatRemoval=
 
-if %rebootAfterBloatRemoval%==Y %adb% reboot
-if %rebootAfterBloatRemoval%==y %adb% reboot
+if %rebootAfterBloatRemoval%==Y goto clearCaches
+if %rebootAfterBloatRemoval%==y goto clearCaches
 
 goto menu
 
@@ -1707,8 +1707,8 @@ echo.
 
 set /p rebootAfterBloatRemoval=
 
-if %rebootAfterBloatRemoval%==Y %adb% reboot
-if %rebootAfterBloatRemoval%==y %adb% reboot
+if %rebootAfterBloatRemoval%==Y goto clearCaches
+if %rebootAfterBloatRemoval%==y goto clearCaches
 
 goto menu
 
@@ -1917,6 +1917,8 @@ if %factoryReset%==2 (
 ::pause
 
 %adb% reboot
+
+%adbWait%
 
 if %fullAutoMode%==1 goto unrootKing
 if %fullAutoModeDG%==1 goto unrootKing
