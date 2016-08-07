@@ -1534,6 +1534,7 @@ echo.
 echo.
 
 :btMouse
+set teamViewerSuRequest=0
 %_color% 0e
 if %isMouse%==M cls
 if %isMouse%==m cls
