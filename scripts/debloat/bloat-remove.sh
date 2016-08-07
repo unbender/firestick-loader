@@ -10,7 +10,7 @@ mount -o rw,remount /system
 
 #rm -r /system/priv-app/amazon.jackson-19/
 #rm -r /system/priv-app/AmazonKKWebViewLib/
-#rm -r /system/priv-app/AmazonNetworkMonitor/
+rm -r /system/priv-app/AmazonNetworkMonitor/
 #rm -r /system/priv-app/BackupRestoreConfirmation/
 #rm -r /system/priv-app/CaptivePortalLauncher/
 #rm -r /system/priv-app/com.amazon.ags.app/
@@ -29,7 +29,7 @@ rm -r /system/priv-app/com.amazon.avod/
 #rm -r /system/priv-app/com.amazon.kindle.cms-service/
 #rm -r /system/priv-app/com.amazon.kindle.devicecontrols/
 #rm -r /system/priv-app/com.amazon.kindleautomatictimezone/
-#rm -r /system/priv-app/com.amazon.kso.blackbird/
+rm -r /system/priv-app/com.amazon.kso.blackbird/
 #rm -r /system/priv-app/com.amazon.metrics.api/
 #rm -r /system/priv-app/com.amazon.ods.kindleconnect/
 #rm -r /system/priv-app/com.amazon.parentalcontrols/
@@ -109,7 +109,7 @@ cp /data/data/com.amazon.tv.settings/shared_prefs/com.amazon.tv.settings_prefere
 
 #rm -r /data/data/amazon.jackson-19/
 #rm -r /data/data/AmazonKKWebViewLib/
-#rm -r /data/data/AmazonNetworkMonitor/
+rm -r /data/data/AmazonNetworkMonitor/
 #rm -r /data/data/BackupRestoreConfirmation/
 #rm -r /data/data/CaptivePortalLauncher/
 #rm -r /data/data/com.amazon.ags.app/
@@ -128,7 +128,7 @@ rm -r /data/data/com.amazon.avod/
 #rm -r /data/data/com.amazon.kindle.cms-service/
 #rm -r /data/data/com.amazon.kindle.devicecontrols/
 #rm -r /data/data/com.amazon.kindleautomatictimezone/
-#rm -r /data/data/com.amazon.kso.blackbird/
+rm -r /data/data/com.amazon.kso.blackbird/
 #rm -r /data/data/com.amazon.metrics.api/
 #rm -r /data/data/com.amazon.ods.kindleconnect/
 #rm -r /data/data/com.amazon.parentalcontrols/
