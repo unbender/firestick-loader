@@ -204,7 +204,7 @@ echo Press B to install busybox
 echo.
 echo Press A to disable Amazon Bloatware (also use AR to safe remove)
 echo.
-echo Press C to clear caches on device (also use CF to factory reset)
+echo Press C to clear all caches on device (also use CF to factory reset)
 echo.
 echo Press U to unroot
 echo.
