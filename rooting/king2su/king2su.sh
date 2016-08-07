@@ -201,10 +201,6 @@ daemonsu -d
 
 sleep 1
 
-pm install /data/local/tmp/superuser.apk
-
-sleep 1
-
 am start -a android.intent.action.MAIN -n eu.chainfire.supersu/.MainActivity
 
 sleep 1
