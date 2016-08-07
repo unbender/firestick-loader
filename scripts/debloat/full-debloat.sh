@@ -1,7 +1,6 @@
 #!/system/bin/sh
 
 
-clear
 echo "Disabling Amazon Bloat...."
 echo ""
 echo ""
@@ -24,9 +23,6 @@ pm disable com.amazon.client.metrics
 pm disable com.amazon.client.metrics.api
 pm disable com.amazon.communication.discovery
 pm disable com.amazon.connectivitydiag
-
-# Captive Portal Launcher
-#pm disable com.amazon.cpl
 
 pm disable com.amazon.dcp
 pm disable com.amazon.dcp.contracts.framework.library
@@ -68,11 +64,6 @@ pm disable com.amazon.sharingservice.android.client.proxy
 pm disable com.amazon.shoptv.client
 pm disable com.amazon.shpm
 pm disable com.amazon.ssm
-
-# Amazon Remote Android App
-#pm disable com.amazon.storm.lightning.services
-#pm disable com.amazon.storm.lightning.tutorial
-
 pm disable com.amazon.sync.provider.ipc
 pm disable com.amazon.sync.service
 pm disable com.amazon.tcomm
@@ -95,19 +86,23 @@ pm disable com.amazon.venezia
 pm disable com.amazon.videoads.app
 pm disable com.amazon.visualonawv
 
+# Captive Portal Launcher
+#pm disable com.amazon.cpl
+#pm disable com.android.captiveportallogin
+
 # Amazon Voice Support
 #pm disable com.amazon.vizzini
 
-pm disable com.amazon.wcast.sink
-pm disable com.amazon.webview
-
 # Amazon Remote Android App
+#pm disable com.amazon.storm.lightning.services
+#pm disable com.amazon.storm.lightning.tutorial
 #pm disable com.amazon.whisperlink.core.android
 #pm disable com.amazon.whisperplay.contracts
 #pm disable com.amazon.whisperplay.service.install
 
+pm disable com.amazon.wcast.sink
+pm disable com.amazon.webview
 pm disable com.svox.pico
-pm disable com.android.captiveportallogin
 
 # Home may kill enough by itself (untested)
 pm disable com.amazon.tv.launcher/.ui.HomeActivity
@@ -188,7 +183,7 @@ rm -r /system/priv-app/com.amazon.device.sync.sdk.internal/
 #rm -r /system/priv-app/com.amazon.dp.logger/
 #rm -r /system/priv-app/com.amazon.fireinputdevices/
 rm -r /system/priv-app/com.amazon.identity.auth.device.authorization/
-#rm -r /system/priv-app/com.amazon.imp/
+rm -r /system/priv-app/com.amazon.imp/
 rm -r /system/priv-app/com.amazon.kindle.cms-service/
 rm -r /system/priv-app/com.amazon.kindle.devicecontrols/
 #rm -r /system/priv-app/com.amazon.kindleautomatictimezone/
@@ -272,6 +267,8 @@ rm -r /system/priv-app/UnifiedShareActivityChooser/
 
 # From /system/app/
 rm -r /system/app/DocumentsUI/
+rm -r /system/app/UnifiedSettingsProvider/
+rm -r /system/app/PicoTts/
 
 
 
@@ -301,7 +298,7 @@ rm -r /data/data/com.amazon.device.sync.sdk.internal/
 #rm -r /data/data/com.amazon.dp.logger/
 #rm -r /data/data/com.amazon.fireinputdevices/
 rm -r /data/data/com.amazon.identity.auth.device.authorization/
-#rm -r /data/data/com.amazon.imp/
+rm -r /data/data/com.amazon.imp/
 rm -r /data/data/com.amazon.kindle.cms-service/
 rm -r /data/data/com.amazon.kindle.devicecontrols/
 #rm -r /data/data/com.amazon.kindleautomatictimezone/
@@ -383,7 +380,8 @@ rm -r /data/data/UnifiedShareActivityChooser/
 
 # From /system/app/
 rm -r /data/data/DocumentsUI/
-
+rm -r /data/data/UnifiedSettingsProvider/
+rm -r /data/data/PicoTts/
 
 
 

@@ -24,9 +24,6 @@ pm disable com.amazon.client.metrics.api
 pm disable com.amazon.communication.discovery
 pm disable com.amazon.connectivitydiag
 
-# Captive Portal Launcher
-#pm disable com.amazon.cpl
-
 pm disable com.amazon.dcp
 pm disable com.amazon.dcp.contracts.framework.library
 pm disable com.amazon.dcp.contracts.library
@@ -67,11 +64,6 @@ pm disable com.amazon.sharingservice.android.client.proxy
 pm disable com.amazon.shoptv.client
 pm disable com.amazon.shpm
 pm disable com.amazon.ssm
-
-# Amazon Remote Android App
-#pm disable com.amazon.storm.lightning.services
-#pm disable com.amazon.storm.lightning.tutorial
-
 pm disable com.amazon.sync.provider.ipc
 pm disable com.amazon.sync.service
 pm disable com.amazon.tcomm
@@ -94,19 +86,23 @@ pm disable com.amazon.venezia
 pm disable com.amazon.videoads.app
 pm disable com.amazon.visualonawv
 
+# Captive Portal Launcher
+#pm disable com.amazon.cpl
+#pm disable com.android.captiveportallogin
+
 # Amazon Voice Support
 #pm disable com.amazon.vizzini
 
-pm disable com.amazon.wcast.sink
-pm disable com.amazon.webview
-
 # Amazon Remote Android App
+#pm disable com.amazon.storm.lightning.services
+#pm disable com.amazon.storm.lightning.tutorial
 #pm disable com.amazon.whisperlink.core.android
 #pm disable com.amazon.whisperplay.contracts
 #pm disable com.amazon.whisperplay.service.install
 
+pm disable com.amazon.wcast.sink
+pm disable com.amazon.webview
 pm disable com.svox.pico
-pm disable com.android.captiveportallogin
 
 # Home may kill enough by itself (untested)
 pm disable com.amazon.tv.launcher/.ui.HomeActivity

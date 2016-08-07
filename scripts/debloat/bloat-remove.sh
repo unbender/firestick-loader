@@ -28,7 +28,7 @@ rm -r /system/priv-app/com.amazon.device.sync.sdk.internal/
 #rm -r /system/priv-app/com.amazon.dp.logger/
 #rm -r /system/priv-app/com.amazon.fireinputdevices/
 rm -r /system/priv-app/com.amazon.identity.auth.device.authorization/
-#rm -r /system/priv-app/com.amazon.imp/
+rm -r /system/priv-app/com.amazon.imp/
 rm -r /system/priv-app/com.amazon.kindle.cms-service/
 rm -r /system/priv-app/com.amazon.kindle.devicecontrols/
 #rm -r /system/priv-app/com.amazon.kindleautomatictimezone/
@@ -112,6 +112,8 @@ rm -r /system/priv-app/UnifiedShareActivityChooser/
 
 # From /system/app/
 rm -r /system/app/DocumentsUI/
+rm -r /system/app/UnifiedSettingsProvider/
+rm -r /system/app/PicoTts/
 
 
 
@@ -141,7 +143,7 @@ rm -r /data/data/com.amazon.device.sync.sdk.internal/
 #rm -r /data/data/com.amazon.dp.logger/
 #rm -r /data/data/com.amazon.fireinputdevices/
 rm -r /data/data/com.amazon.identity.auth.device.authorization/
-#rm -r /data/data/com.amazon.imp/
+rm -r /data/data/com.amazon.imp/
 rm -r /data/data/com.amazon.kindle.cms-service/
 rm -r /data/data/com.amazon.kindle.devicecontrols/
 #rm -r /data/data/com.amazon.kindleautomatictimezone/
@@ -223,7 +225,8 @@ rm -r /data/data/UnifiedShareActivityChooser/
 
 # From /system/app/
 rm -r /data/data/DocumentsUI/
-
+rm -r /data/data/UnifiedSettingsProvider/
+rm -r /data/data/PicoTts/
 
 
 
