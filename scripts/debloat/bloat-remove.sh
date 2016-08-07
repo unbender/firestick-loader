@@ -32,7 +32,7 @@ rm -r /system/priv-app/com.amazon.dp.logger/
 rm -r /system/priv-app/com.amazon.kso.blackbird/
 #rm -r /system/priv-app/com.amazon.metrics.api/
 #rm -r /system/priv-app/com.amazon.ods.kindleconnect/
-#rm -r /system/priv-app/com.amazon.parentalcontrols/
+rm -r /system/priv-app/com.amazon.parentalcontrols/
 rm -r /system/priv-app/com.amazon.precog/
 #rm -r /system/priv-app/com.amazon.securitysyncclient/
 #rm -r /system/priv-app/com.amazon.sharingservice.android.client.proxy.release/
@@ -131,7 +131,7 @@ rm -r /data/data/com.amazon.dp.logger/
 rm -r /data/data/com.amazon.kso.blackbird/
 #rm -r /data/data/com.amazon.metrics.api/
 #rm -r /data/data/com.amazon.ods.kindleconnect/
-#rm -r /data/data/com.amazon.parentalcontrols/
+rm -r /data/data/com.amazon.parentalcontrols/
 rm -r /data/data/com.amazon.precog/
 #rm -r /data/data/com.amazon.securitysyncclient/
 #rm -r /data/data/com.amazon.sharingservice.android.client.proxy.release/
