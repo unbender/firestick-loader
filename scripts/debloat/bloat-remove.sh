@@ -13,7 +13,7 @@ mount -o rw,remount /system
 rm -r /system/priv-app/AmazonNetworkMonitor/
 #rm -r /system/priv-app/BackupRestoreConfirmation/
 #rm -r /system/priv-app/CaptivePortalLauncher/
-#rm -r /system/priv-app/com.amazon.ags.app/
+rm -r /system/priv-app/com.amazon.ags.app/
 rm -r /system/priv-app/com.amazon.avod/
 rm -r /system/priv-app/com.amazon.bueller.music/
 rm -r /system/priv-app/com.amazon.bueller.photos/
@@ -47,7 +47,7 @@ rm -r /system/priv-app/com.amazon.tmm.tutorial/
 #rm -r /system/priv-app/com.amazon.tv.launcher/
 rm -r /system/priv-app/com.amazon.tv.legal.notices/
 rm -r /system/priv-app/com.amazon.tv.oobe/
-#rm -r /system/priv-app/com.amazon.tv.parentalcontrols/
+rm -r /system/priv-app/com.amazon.tv.parentalcontrols/
 #rm -r /system/priv-app/com.amazon.tv.settings/
 rm -r /system/priv-app/com.amazon.venezia/
 rm -r /system/priv-app/com.amazon.videoads.app/
@@ -112,7 +112,7 @@ cp /data/data/com.amazon.tv.settings/shared_prefs/com.amazon.tv.settings_prefere
 rm -r /data/data/AmazonNetworkMonitor/
 #rm -r /data/data/BackupRestoreConfirmation/
 #rm -r /data/data/CaptivePortalLauncher/
-#rm -r /data/data/com.amazon.ags.app/
+rm -r /data/data/com.amazon.ags.app/
 rm -r /data/data/com.amazon.avod/
 rm -r /data/data/com.amazon.bueller.music/
 rm -r /data/data/com.amazon.bueller.photos/
@@ -146,7 +146,7 @@ rm -r /data/data/com.amazon.tmm.tutorial/
 #rm -r /data/data/com.amazon.tv.launcher/
 rm -r /data/data/com.amazon.tv.legal.notices/
 rm -r /data/data/com.amazon.tv.oobe/
-#rm -r /data/data/com.amazon.tv.parentalcontrols/
+rm -r /data/data/com.amazon.tv.parentalcontrols/
 #rm -r /data/data/com.amazon.tv.settings/
 rm -r /data/data/com.amazon.venezia/
 rm -r /data/data/com.amazon.videoads.app/
