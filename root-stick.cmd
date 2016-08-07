@@ -1932,8 +1932,12 @@ goto menu
 set doFullAutoMode=1
 
 cls
-%_color% 0c
-echo This mode DOES NOT work as fully intended!
+%_color% 0b
+echo *** This mode MAY NOT work as fully intended! ***
+echo.
+echo *** No damage will be done to device, but the script may crash! ***
+echo.
+echo.
 %_color% 0e
 echo.
 echo.
