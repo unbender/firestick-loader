@@ -187,8 +187,8 @@ rm -r /system/priv-app/com.amazon.kso.blackbird/
 rm -r /system/priv-app/com.amazon.ods.kindleconnect/
 rm -r /system/priv-app/com.amazon.parentalcontrols/
 rm -r /system/priv-app/com.amazon.precog/
-#rm -r /system/priv-app/com.amazon.securitysyncclient/
-#rm -r /system/priv-app/com.amazon.sharingservice.android.client.proxy.release/
+rm -r /system/priv-app/com.amazon.securitysyncclient/
+rm -r /system/priv-app/com.amazon.sharingservice.android.client.proxy.release/
 rm -r /system/priv-app/com.amazon.shoptv.client/
 #rm -r /system/priv-app/com.amazon.storm.lightning.services/
 #rm -r /system/priv-app/com.amazon.storm.lightning.tutorial/
@@ -210,7 +210,7 @@ rm -r /system/priv-app/com.amazon.visualonawv/
 #rm -r /system/priv-app/com.amazon.vizzini/
 
 #rm -r /system/priv-app/ConnectivityDiag/
-#rm -r /system/priv-app/ContentSupportProvider/
+rm -r /system/priv-app/ContentSupportProvider/
 rm -r /system/priv-app/CrashManager/
 #rm -r /system/priv-app/DefaultContainerService/
 #rm -r /system/priv-app/DeviceClientPlatformContractsFramework/
@@ -292,8 +292,8 @@ rm -r /data/data/com.amazon.kso.blackbird/
 rm -r /data/data/com.amazon.ods.kindleconnect/
 rm -r /data/data/com.amazon.parentalcontrols/
 rm -r /data/data/com.amazon.precog/
-#rm -r /data/data/com.amazon.securitysyncclient/
-#rm -r /data/data/com.amazon.sharingservice.android.client.proxy.release/
+rm -r /data/data/com.amazon.securitysyncclient/
+rm -r /data/data/com.amazon.sharingservice.android.client.proxy.release/
 rm -r /data/data/com.amazon.shoptv.client/
 #rm -r /data/data/com.amazon.storm.lightning.services/
 #rm -r /data/data/com.amazon.storm.lightning.tutorial/
@@ -315,7 +315,7 @@ rm -r /data/data/com.amazon.visualonawv/
 #rm -r /data/data/com.amazon.vizzini/
 
 #rm -r /data/data/ConnectivityDiag/
-#rm -r /data/data/ContentSupportProvider/
+rm -r /data/data/ContentSupportProvider/
 rm -r /data/data/CrashManager/
 #rm -r /data/data/DefaultContainerService/
 #rm -r /data/data/DeviceClientPlatformContractsFramework/
