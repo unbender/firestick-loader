@@ -74,6 +74,8 @@ set rootableText=NOT EXPLOITABLE
 set firstCheck=0
 set firstTimeRootAttempt=1
 
+set rootFromDG=1
+
 set factoryReset=0
 
 set msgbox=%~dp0bin\msgbox.exe
@@ -1212,7 +1214,7 @@ echo Waiting For Boot Animation....
 echo.
 echo.
 
-%sleep% 20
+%sleep% 30
 
 cls
 echo Waiting For Home Screen To Finish Loading....
@@ -1224,11 +1226,15 @@ echo If the Home Screen is ready now, please wait a few moments!
 echo.
 echo.
 
-%sleep% 16
+%sleep% 10
 
 cls
 echo The device should now be at the HOME screen!
 echo.
+echo.
+%_color% 0c
+echo *** PLEASE WAIT UNTIL HOME SCREEN IS LOADED BEFORE CONTINUING ***
+%_color% 0e
 echo.
 echo.
 echo.
@@ -1240,8 +1246,13 @@ echo.
 echo Press ENTER to continue with the rooting process....
 echo.
 echo.
+%_color% 0b
+echo *** YOU CAN ALSO PRESS "S" AND ENTER TO SKIP THE ROOT PROCESS ***
+%_color% 0e
+echo.
+echo.
 
-pause>nul
+set /p rootFromDG=
 
 %keyHome%
 
@@ -1252,8 +1263,10 @@ pause>nul
 if %fullAutoModeDG%==1 set fullAutoModeDG=2
 if %fullAutoMode%==1 goto root2
 
+if %rootFromDG%==S goto menu
+if %rootFromDG%==s goto menu
 :: Going to last part of KingRoot since the swiping shouldn't be needed again
-goto root2
+if %rootFromDG%==1 goto root2
 
 
 :noOTA
