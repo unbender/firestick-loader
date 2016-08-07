@@ -155,10 +155,10 @@ echo ""
 mount -o rw,remount /system
 
 
-#rm -r /system/priv-app/amazon.jackson-19/
+rm -r /system/priv-app/amazon.jackson-19/
 #rm -r /system/priv-app/AmazonKKWebViewLib/
 rm -r /system/priv-app/AmazonNetworkMonitor/
-#rm -r /system/priv-app/BackupRestoreConfirmation/
+rm -r /system/priv-app/BackupRestoreConfirmation/
 
 # Captive Portal Launcher
 #rm -r /system/priv-app/CaptivePortalLauncher/
@@ -167,8 +167,8 @@ rm -r /system/priv-app/com.amazon.ags.app/
 rm -r /system/priv-app/com.amazon.avod/
 rm -r /system/priv-app/com.amazon.bueller.music/
 rm -r /system/priv-app/com.amazon.bueller.photos/
-#rm -r /system/priv-app/com.amazon.communication/
-#rm -r /system/priv-app/com.amazon.communication.discovery/
+rm -r /system/priv-app/com.amazon.communication/
+rm -r /system/priv-app/com.amazon.communication.discovery/
 #rm -r /system/priv-app/com.amazon.device.bluetoothdfu/
 rm -r /system/priv-app/com.amazon.device.sync/
 rm -r /system/priv-app/com.amazon.device.sync.sdk.internal/
@@ -257,10 +257,10 @@ rm -r /system/priv-app/LogManager/
 cp /data/data/com.amazon.tv.settings/shared_prefs/com.amazon.tv.settings_preferences.xml /sdcard/
 
 
-#rm -r /data/data/amazon.jackson-19/
+rm -r /data/data/amazon.jackson-19/
 #rm -r /data/data/AmazonKKWebViewLib/
 rm -r /data/data/AmazonNetworkMonitor/
-#rm -r /data/data/BackupRestoreConfirmation/
+rm -r /data/data/BackupRestoreConfirmation/
 
 # Captive Portal Launcher
 #rm -r /data/data/CaptivePortalLauncher/
@@ -269,12 +269,12 @@ rm -r /data/data/com.amazon.ags.app/
 rm -r /data/data/com.amazon.avod/
 rm -r /data/data/com.amazon.bueller.music/
 rm -r /data/data/com.amazon.bueller.photos/
-#rm -r /data/data/com.amazon.communication/
-#rm -r /data/data/com.amazon.communication.discovery/
+rm -r /data/data/com.amazon.communication/
+rm -r /data/data/com.amazon.communication.discovery/
 #rm -r /data/data/com.amazon.device.bluetoothdfu/
 rm -r /data/data/com.amazon.device.sync/
 rm -r /data/data/com.amazon.device.sync.sdk.internal/
-rm -r /data/data/com.amazon.dp.logger/
+#rm -r /data/data/com.amazon.dp.logger/
 #rm -r /data/data/com.amazon.fireinputdevices/
 rm -r /data/data/com.amazon.identity.auth.device.authorization/
 #rm -r /data/data/com.amazon.imp/
