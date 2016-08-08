@@ -214,13 +214,16 @@ rm -r /system/priv-app/FireOsMiddlewareDebugApp/
 rm -r /system/priv-app/FireRecessProxy/
 rm -r /system/priv-app/FireTVDefaultMediaReceiver/
 rm -r /system/priv-app/FireTvNotificationService/
+rm -r /system/priv-app/FusedLocation/
 rm -r /system/priv-app/LogManager/
+rm -r /system/priv-app/ManagedProvisioning/
 rm -r /system/priv-app/marketplace_service_receiver/
 rm -r /system/priv-app/shipmode/
 rm -r /system/priv-app/sync-provider_ipc-release/
 rm -r /system/priv-app/sync-service-fireos-release/
 rm -r /system/priv-app/SystemStatusMonitor/
 rm -r /system/priv-app/UnifiedShareActivityChooser/
+rm -r /system/priv-app/WallpaperCropper/
 rm -r /system/priv-app/WhisperCastConnect/
 
 
@@ -239,8 +242,6 @@ rm -r /system/priv-app/WhisperCastConnect/
 #rm -r /system/priv-app/DownloadProviderUi/
 #rm -r /system/priv-app/ExternalStorageProvider/
 #rm -r /system/priv-app/FireTVSystemUI/
-#rm -r /system/priv-app/FusedLocation/
-#rm -r /system/priv-app/ManagedProvisioning/
 #rm -r /system/priv-app/MediaProvider/
 #rm -r /system/priv-app/MetricsApi/
 #rm -r /system/priv-app/MetricsService/
@@ -251,7 +252,6 @@ rm -r /system/priv-app/WhisperCastConnect/
 #rm -r /system/priv-app/Shell/
 #rm -r /system/priv-app/SystemUpdatesUI/
 #rm -r /system/priv-app/VpnDialogs/
-#rm -r /system/priv-app/WallpaperCropper/
 
 
 
@@ -374,9 +374,9 @@ rm -r /data/data/FireRecessProxy/
 rm -r /data/data/FireTVDefaultMediaReceiver/
 rm -r /data/data/FireTvNotificationService/
 #rm -r /data/data/FireTVSystemUI/
-#rm -r /data/data/FusedLocation/
+rm -r /data/data/FusedLocation/
 rm -r /data/data/LogManager/
-#rm -r /data/data/ManagedProvisioning/
+rm -r /data/data/ManagedProvisioning/
 rm -r /data/data/marketplace_service_receiver/
 #rm -r /data/data/MediaProvider/
 #rm -r /data/data/MetricsApi/
@@ -393,7 +393,7 @@ rm -r /data/data/SystemStatusMonitor/
 #rm -r /data/data/SystemUpdatesUI/
 rm -r /data/data/UnifiedShareActivityChooser/
 #rm -r /data/data/VpnDialogs/
-#rm -r /data/data/WallpaperCropper/
+rm -r /data/data/WallpaperCropper/
 rm -r /data/data/WhisperCastConnect/
 
 #rm -r /data/data/android.amazon.perm
