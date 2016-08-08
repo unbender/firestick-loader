@@ -57,12 +57,11 @@ rm -r /system/priv-app/com.amazon.visualonawv/
 rm -r /system/priv-app/ContentSupportProvider/
 rm -r /system/priv-app/CrashManager/
 #rm -r /system/priv-app/DefaultContainerService/
-#rm -r /system/priv-app/DeviceClientPlatformContractsFramework/
+rm -r /system/priv-app/DeviceClientPlatformContractsFramework/
 rm -r /system/priv-app/DeviceMessagingAndroid/
 rm -r /system/priv-app/DeviceMessagingAndroidInternalSDK/
 rm -r /system/priv-app/DeviceMessagingAndroidSDK/
 rm -r /system/priv-app/DeviceSoftwareOTA/
-#rm -r /system/priv-app/DeviceSoftwareOTAContracts/
 rm -r /system/priv-app/DeviceSoftwareOTAIdleOverride/
 rm -r /system/priv-app/DownloadProvider/
 #rm -r /system/priv-app/DownloadProviderUi/
@@ -109,6 +108,7 @@ rm -r /system/priv-app/UnifiedShareActivityChooser/
 #rm -r /system/priv-app/com.amazon.vizzini/
 
 # Needed For Amazon Settings UI
+#rm -r /system/priv-app/DeviceSoftwareOTAContracts/
 #rm -r /system/priv-app/RemoteSettingsAndroid/
 #rm -r /system/priv-app/RemoteSettingsInternalSDK/
 
@@ -180,7 +180,7 @@ rm -r /data/data/com.amazon.visualonawv/
 rm -r /data/data/ContentSupportProvider/
 rm -r /data/data/CrashManager/
 #rm -r /data/data/DefaultContainerService/
-#rm -r /data/data/DeviceClientPlatformContractsFramework/
+rm -r /data/data/DeviceClientPlatformContractsFramework/
 rm -r /data/data/DeviceMessagingAndroid/
 rm -r /data/data/DeviceMessagingAndroidInternalSDK/
 rm -r /data/data/DeviceMessagingAndroidSDK/
