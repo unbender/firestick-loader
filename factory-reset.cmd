@@ -70,7 +70,7 @@ pause
 %shell% "su -c sh /data/local/tmp/factory-reset.sh"
 
 
-
+pause
 
 
 :end
