@@ -51,6 +51,8 @@ mkdir /data/data/
 mkdir /data/local/
 mkdir /data/local/tmp/
 
+chmod 0755 /data/
+
 # Restoring ADB Settings
 mkdir /data/data/com.amazon.tv.settings
 mkdir /data/data/com.amazon.tv.settings/shared_prefs
