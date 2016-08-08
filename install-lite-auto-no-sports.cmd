@@ -69,7 +69,7 @@ echo.
 echo Installing %appName%...
 echo.
 
-set kodiBuild=no-sports
+set kodiBuild=default
 
 md "%temp%\firestick-loader\apps\media\kodi\data\%kodiBuild%"
 %extractRAR% "%~dp0apps\media\kodi.apk.split" "%temp%\firestick-loader\apps\media"
@@ -77,6 +77,13 @@ md "%temp%\firestick-loader\apps\media\kodi\data\%kodiBuild%"
 %install% "%temp%\firestick-loader\apps\media\kodi.apk"
 
 %extractRAR% "%~dp0apps\media\kodi\data\%kodiBuild%\kodi-data.split" "%temp%\firestick-loader\apps\media\kodi\data\%kodiBuild%"
+
+%sleep% 5
+
+call "%~dp0apps\media\kodi\clean-kodi-sports-alt.cmd"
+
+%sleep% 5
+
 %push% "%temp%\firestick-loader\apps\media\kodi\data\%kodiBuild%\addons" "/%sdcard%/%pathAndroid%/addons"
 %push% "%temp%\firestick-loader\apps\media\kodi\data\%kodiBuild%\userdata" "/%sdcard%/%pathAndroid%/userdata"
 

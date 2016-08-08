@@ -162,7 +162,7 @@ if %kodiBuildSelect%==2 (
 
 if %kodiBuildSelect%==3 (
 
-	set kodiBuild=no-sports
+	set kodiBuild=default
 
 	echo.
 	echo.
@@ -173,6 +173,13 @@ if %kodiBuildSelect%==3 (
 	md "%temp%\firestick-loader\apps\media\kodi\data\%kodiBuild%"
 
 	%extractRAR% "%~dp0apps\media\kodi\data\%kodiBuild%\kodi-data.split" "%temp%\firestick-loader\apps\media\kodi\data\%kodiBuild%"
+
+	%sleep% 5
+
+	call "%~dp0apps\media\kodi\clean-kodi-sports-alt.cmd"
+
+	%sleep% 5
+
 	%push% "%temp%\firestick-loader\apps\media\kodi\data\%kodiBuild%\addons" "/%sdcard%/%pathAndroid%/addons"
 	%push% "%temp%\firestick-loader\apps\media\kodi\data\%kodiBuild%\userdata" "/%sdcard%/%pathAndroid%/userdata"
 
