@@ -1436,7 +1436,7 @@ echo.
 echo.
 echo.
 %_color% 0e
-echo Once BusyBox is open, click BACK on the remote!
+echo Once BusyBox is open, click BACK on the remote to close info window!
 echo.
 echo.
 echo.
