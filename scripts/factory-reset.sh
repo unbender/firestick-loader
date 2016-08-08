@@ -10,19 +10,19 @@ mount -o rw,remount /data
 
 
 # Preserve ADB Settings
-cp /data/data/com.amazon.tv.settings/shared_prefs/com.amazon.tv.settings_preferences.xml /sdcard/
+cat /data/data/com.amazon.tv.settings/shared_prefs/com.amazon.tv.settings_preferences.xml /sdcard/com.amazon.tv.settings_preferences.xml
 
 # Preserve KingRoot Settings
-cp /data/data/com.kingroot.kinguser/shared_prefs/Access_Preferences.xml /sdcard/
-cp /data/data/com.kingroot.kinguser/shared_prefs/actionStats.xml /sdcard/
-cp /data/data/com.kingroot.kinguser/shared_prefs/ADSDKProperties.xml /sdcard/
-cp /data/data/com.kingroot.kinguser/shared_prefs/auto_start_statistic_manager_setting.xml /sdcard/
-cp /data/data/com.kingroot.kinguser/shared_prefs/common_setting.xml /sdcard/
-cp /data/data/com.kingroot.kinguser/shared_prefs/ImmediaDataStats.xml /sdcard/
-cp /data/data/com.kingroot.kinguser/shared_prefs/LOCKERSDKProperties.xml /sdcard/
-cp /data/data/com.kingroot.kinguser/shared_prefs/PermDataStats.xml /sdcard/
-cp /data/data/com.kingroot.kinguser/shared_prefs/RootManagerSetting.xml /sdcard/
-cp /data/data/com.kingroot.kinguser/shared_prefs/switchStats.xml /sdcard/
+cat /data/data/com.kingroot.kinguser/shared_prefs/Access_Preferences.xml /sdcard/Access_Preferences.xml
+cat /data/data/com.kingroot.kinguser/shared_prefs/actionStats.xml /sdcard/actionStats.xml
+cat /data/data/com.kingroot.kinguser/shared_prefs/ADSDKProperties.xml /sdcard/ADSDKProperties.xml
+cat /data/data/com.kingroot.kinguser/shared_prefs/auto_start_statistic_manager_setting.xml /sdcard/auto_start_statistic_manager_setting.xml
+cat /data/data/com.kingroot.kinguser/shared_prefs/common_setting.xml /sdcard/common_setting.xml
+cat /data/data/com.kingroot.kinguser/shared_prefs/ImmediaDataStats.xml /sdcard/ImmediaDataStats.xml
+cat /data/data/com.kingroot.kinguser/shared_prefs/LOCKERSDKProperties.xml /sdcard/LOCKERSDKProperties.xml
+cat /data/data/com.kingroot.kinguser/shared_prefs/PermDataStats.xml /sdcard/PermDataStats.xml
+cat /data/data/com.kingroot.kinguser/shared_prefs/RootManagerSetting.xml /sdcard/RootManagerSetting.xml
+cat /data/data/com.kingroot.kinguser/shared_prefs/switchStats.xml /sdcard/switchStats.xml
 
 
 #<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
@@ -52,23 +52,23 @@ mkdir /data/data/
 mkdir /data/data/com.amazon.tv.settings
 mkdir /data/data/com.amazon.tv.settings/shared_prefs
 
-cp /sdcard/com.amazon.tv.settings_preferences.xml /data/data/com.amazon.tv.settings/shared_prefs/com.amazon.tv.settings_preferences.xml
+cat /sdcard/com.amazon.tv.settings_preferences.xml /data/data/com.amazon.tv.settings/shared_prefs/com.amazon.tv.settings_preferences.xml
 
 
 # Restoring KingRoot Settings
 mkdir /data/data/com.kingroot.kinguser/
 mkdir /data/data/com.kingroot.kinguser/shared_prefs/
 
-cp /sdcard/Access_Preferences.xml /data/data/com.kingroot.kinguser/shared_prefs/Access_Preferences.xml
-cp /sdcard/actionStats.xml /data/data/com.kingroot.kinguser/shared_prefs/actionStats.xml
-cp /sdcard/ADSDKProperties.xml /data/data/com.kingroot.kinguser/shared_prefs/ADSDKProperties.xml
-cp /sdcard/auto_start_statistic_manager_setting.xml /data/data/com.kingroot.kinguser/shared_prefs/auto_start_statistic_manager_setting.xml
-cp /sdcard/common_setting.xml /data/data/com.kingroot.kinguser/shared_prefs/common_setting.xml
-cp /sdcard/ImmediaDataStats.xml /data/data/com.kingroot.kinguser/shared_prefs/ImmediaDataStats.xml
-cp /sdcard/LOCKERSDKProperties.xml /data/data/com.kingroot.kinguser/shared_prefs/LOCKERSDKProperties.xml
-cp /sdcard/PermDataStats.xml /data/data/com.kingroot.kinguser/shared_prefs/PermDataStats.xml
-cp /sdcard/RootManagerSetting.xml /data/data/com.kingroot.kinguser/shared_prefs/RootManagerSetting.xml
-cp /sdcard/switchStats.xml /data/data/com.kingroot.kinguser/shared_prefs/switchStats.xml
+cat /sdcard/Access_Preferences.xml /data/data/com.kingroot.kinguser/shared_prefs/Access_Preferences.xml
+cat /sdcard/actionStats.xml /data/data/com.kingroot.kinguser/shared_prefs/actionStats.xml
+cat /sdcard/ADSDKProperties.xml /data/data/com.kingroot.kinguser/shared_prefs/ADSDKProperties.xml
+cat /sdcard/auto_start_statistic_manager_setting.xml /data/data/com.kingroot.kinguser/shared_prefs/auto_start_statistic_manager_setting.xml
+cat /sdcard/common_setting.xml /data/data/com.kingroot.kinguser/shared_prefs/common_setting.xml
+cat /sdcard/ImmediaDataStats.xml /data/data/com.kingroot.kinguser/shared_prefs/ImmediaDataStats.xml
+cat /sdcard/LOCKERSDKProperties.xml /data/data/com.kingroot.kinguser/shared_prefs/LOCKERSDKProperties.xml
+cat /sdcard/PermDataStats.xml /data/data/com.kingroot.kinguser/shared_prefs/PermDataStats.xml
+cat /sdcard/RootManagerSetting.xml /data/data/com.kingroot.kinguser/shared_prefs/RootManagerSetting.xml
+cat /sdcard/switchStats.xml /data/data/com.kingroot.kinguser/shared_prefs/switchStats.xml
 
 
 
