@@ -1745,7 +1745,14 @@ echo *** BE SURE TO ALLOW SU PERMISSIONS IF REQUESTED ***
 echo.
 echo.
 
-%install% "%~dp0apps\system\firestopper.apk"
+%push% "%~dp0apps\system\firestopper.apk" /data/local/tmp/
+%shell% "su -c mkdir /system/app/FireStopper/"
+%shell% "su -c chmod 0755 /system/app/FireStopper/"
+%shell% "su -c cp /data/local/tmp/firestopper.apk" /system/app/FireStopper/FireStopper.apk"
+%shell% "su -c chmoc 0644 /system/app/FireStopper/FireStopper.apk"
+
+
+::%install% "%~dp0apps\system\firestopper.apk"
 
 
 ::%shell% "su -c rm /data/local/tmp/bloat-remove.sh"
