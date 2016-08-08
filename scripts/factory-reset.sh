@@ -38,20 +38,20 @@ cp -Rp /data/local/tmp/com.kingroot.kinguser/shared_prefs/ /system/backup/com.ki
 #</map>
 
 # Removing /data/
-#rm -rf /data/app/
-#rm -rf /data/data/
-rm -rf /data/
+rm -rf /data/app/
+rm -rf /data/data/
+#rm -rf /data/
 
 # Rebuilding empty /data/
-mkdir /data/
-mkdir /data/app/
+#mkdir /data/
+#mkdir /data/app/
 #mkdir /data/app/mcRegistry
 #mkdir /data/app/mcRegistry/TbStorage
-mkdir /data/data/
-mkdir /data/local/
-mkdir /data/local/tmp/
+#mkdir /data/data/
+#mkdir /data/local/
+#mkdir /data/local/tmp/
 
-chmod 0755 /data/
+#chmod 0755 /data/
 
 # Restoring ADB Settings
 mkdir /data/data/com.amazon.tv.settings

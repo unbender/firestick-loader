@@ -124,6 +124,7 @@ set showSettingsApplicationsManage=%shell% am start -a android.intent.action.MAI
 set showSettingsSystemMain=%shell% am start -a android.intent.action.MAIN -n com.amazon.tv.settings/.tv.BuellerSystemSettingsActivity
 set showSettingsSystemDeveloper=%shell% am start -a android.intent.action.MAIN -n com.amazon.tv.settings/.tv.BuellerDevelopmentSettingsActivity
 set showSettingsSystemFactoryReset=%shell% am start -a android.intent.action.MAIN -n com.amazon.tv.settings/.tv.FactoryResetActivity
+set showSettingsSystemFactoryReset=%shell% am start -a android.intent.action.MAIN -n com.amazon.tv.settings.tv.FactoryResetService.masterClear
 ::set showSettingsSystemFactoryResetNow=%shell% am start -a android.intent.action.MAIN -n com.amazon.tv.settings/.tv.FactoryResetActivity
 
 :: Settings -> My Account
