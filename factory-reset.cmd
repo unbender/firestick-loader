@@ -65,12 +65,13 @@ pause
 
 
 
+%push% "%~dp0rooting\kingroot.apk" /sdcard/
 %push% "%~dp0scripts\factory-reset.sh" /data/local/tmp/
 %shell% "su -c chmod 755 /data/local/tmp/factory-reset.sh"
 %shell% "su -c sh /data/local/tmp/factory-reset.sh"
 
 
-pause
+::pause
 
 
 :end

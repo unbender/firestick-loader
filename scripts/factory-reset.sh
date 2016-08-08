@@ -80,7 +80,8 @@ cp /sdcard/switchStats.xml /data/data/com.kingroot.kinguser/shared_prefs/switchS
 rm -rf /cache/
 mkdir /cache/
 
-
+# Reinstall KingRoot APK
+pm install /sdcard/kingroot.apk
 
 #reboot
 
