@@ -654,6 +654,9 @@ echo.
 %_color% 0c
 echo *** BE SURE TO ALLOW SU PERMISSIONS WHEN REQUESTED FOR ADB ***
 echo.
+%_color% 0b
+echo *** TO RELAUNCH KINGROOT, CLICK R AND PRESS ENTER ***
+echo.
 echo.
 echo.
 %_color% 0e
@@ -668,6 +671,11 @@ if %check%==S %runShellTerminate% ""%~dp0bin\adb.exe" shell "su""
 if %check%==s %runShellTerminate% ""%~dp0bin\adb.exe" shell "su""
 if %check%==S goto rootActive
 if %check%==s goto rootActive
+
+if %check%==R %shell% am start -a android.intent.action.MAIN -n com.kingroot.kinguser/.activitys.SliderMainActivity
+if %check%==r %shell% am start -a android.intent.action.MAIN -n com.kingroot.kinguser/.activitys.SliderMainActivity
+if %check%==R goto rootActive
+if %check%==r goto rootActive
 
 if %check%==pc taskkill /f /im KingRoot.exe
 if %check%==pc taskkill /f /im doom.exe
@@ -1207,7 +1215,7 @@ echo Rebooting....
 echo.
 echo.
 
-%sleep% 12
+%sleep% 15
 
 %adbWait%
 
@@ -1216,7 +1224,7 @@ echo Waiting For Boot Animation....
 echo.
 echo.
 
-%sleep% 30
+%sleep% 45
 
 cls
 echo Waiting For Home Screen To Finish Loading....
