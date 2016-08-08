@@ -162,9 +162,9 @@ echo ""
 
 mount -o rw,remount /system
 
-
+# Tested Removal OK
 rm -r /system/priv-app/amazon.jackson-19/
-#rm -r /system/priv-app/AmazonKKWebViewLib/
+rm -r /system/priv-app/AmazonKKWebViewLib/
 rm -r /system/priv-app/AmazonNetworkMonitor/
 rm -r /system/priv-app/BackupRestoreConfirmation/
 
@@ -174,44 +174,31 @@ rm -r /system/priv-app/com.amazon.bueller.music/
 rm -r /system/priv-app/com.amazon.bueller.photos/
 rm -r /system/priv-app/com.amazon.communication/
 rm -r /system/priv-app/com.amazon.communication.discovery/
-#rm -r /system/priv-app/com.amazon.device.bluetoothdfu/
 rm -r /system/priv-app/com.amazon.device.sync/
 rm -r /system/priv-app/com.amazon.device.sync.sdk.internal/
-#rm -r /system/priv-app/com.amazon.dp.logger/
-#rm -r /system/priv-app/com.amazon.fireinputdevices/
 rm -r /system/priv-app/com.amazon.identity.auth.device.authorization/
 rm -r /system/priv-app/com.amazon.imp/
 rm -r /system/priv-app/com.amazon.kindle.cms-service/
 rm -r /system/priv-app/com.amazon.kindle.devicecontrols/
-#rm -r /system/priv-app/com.amazon.kindleautomatictimezone/
 rm -r /system/priv-app/com.amazon.kso.blackbird/
-#rm -r /system/priv-app/com.amazon.metrics.api/
 rm -r /system/priv-app/com.amazon.ods.kindleconnect/
 rm -r /system/priv-app/com.amazon.parentalcontrols/
 rm -r /system/priv-app/com.amazon.precog/
 rm -r /system/priv-app/com.amazon.securitysyncclient/
 rm -r /system/priv-app/com.amazon.sharingservice.android.client.proxy.release/
 rm -r /system/priv-app/com.amazon.shoptv.client/
-#rm -r /system/priv-app/com.amazon.storm.lightning.services/
-#rm -r /system/priv-app/com.amazon.storm.lightning.tutorial/
 rm -r /system/priv-app/com.amazon.tcomm/
 rm -r /system/priv-app/com.amazon.tmm.tutorial/
 rm -r /system/priv-app/com.amazon.tv.aiv.support/
 rm -r /system/priv-app/com.amazon.tv.csapp/
-#rm -r /system/priv-app/com.amazon.tv.ime/
-#rm -r /system/priv-app/com.amazon.tv.launcher/
 rm -r /system/priv-app/com.amazon.tv.legal.notices/
 rm -r /system/priv-app/com.amazon.tv.oobe/
 rm -r /system/priv-app/com.amazon.tv.parentalcontrols/
-#rm -r /system/priv-app/com.amazon.tv.settings/
 rm -r /system/priv-app/com.amazon.venezia/
 rm -r /system/priv-app/com.amazon.videoads.app/
 rm -r /system/priv-app/com.amazon.visualonawv/
-
-#rm -r /system/priv-app/ConnectivityDiag/
 rm -r /system/priv-app/ContentSupportProvider/
 rm -r /system/priv-app/CrashManager/
-#rm -r /system/priv-app/DefaultContainerService/
 rm -r /system/priv-app/DeviceClientPlatformContractsFramework/
 rm -r /system/priv-app/DeviceMessagingAndroid/
 rm -r /system/priv-app/DeviceMessagingAndroidInternalSDK/
@@ -219,19 +206,39 @@ rm -r /system/priv-app/DeviceMessagingAndroidSDK/
 rm -r /system/priv-app/DeviceSoftwareOTA/
 rm -r /system/priv-app/DeviceSoftwareOTAIdleOverride/
 rm -r /system/priv-app/DownloadProvider/
-#rm -r /system/priv-app/DownloadProviderUi/
-#rm -r /system/priv-app/ExternalStorageProvider/
 rm -r /system/priv-app/FireApplicationCompatibilityEnforcer/
 rm -r /system/priv-app/FireApplicationCompatibilityEnforcerSDK/
 rm -r /system/priv-app/FireOsMiddlewareDebugApp/
 rm -r /system/priv-app/FireRecessProxy/
 rm -r /system/priv-app/FireTVDefaultMediaReceiver/
 rm -r /system/priv-app/FireTvNotificationService/
+rm -r /system/priv-app/LogManager/
+rm -r /system/priv-app/marketplace_service_receiver/
+rm -r /system/priv-app/shipmode/
+rm -r /system/priv-app/sync-provider_ipc-release/
+rm -r /system/priv-app/sync-service-fireos-release/
+rm -r /system/priv-app/UnifiedShareActivityChooser/
+
+
+# Still Needs Testing
+
+#rm -r /system/priv-app/com.amazon.device.bluetoothdfu/
+#rm -r /system/priv-app/com.amazon.dp.logger/
+#rm -r /system/priv-app/com.amazon.fireinputdevices/
+#rm -r /system/priv-app/com.amazon.kindleautomatictimezone/
+#rm -r /system/priv-app/com.amazon.metrics.api/
+#rm -r /system/priv-app/com.amazon.storm.lightning.services/
+#rm -r /system/priv-app/com.amazon.storm.lightning.tutorial/
+#rm -r /system/priv-app/com.amazon.tv.ime/
+#rm -r /system/priv-app/com.amazon.tv.launcher/
+#rm -r /system/priv-app/com.amazon.tv.settings/
+#rm -r /system/priv-app/ConnectivityDiag/
+#rm -r /system/priv-app/DefaultContainerService/
+#rm -r /system/priv-app/DownloadProviderUi/
+#rm -r /system/priv-app/ExternalStorageProvider/
 #rm -r /system/priv-app/FireTVSystemUI/
 #rm -r /system/priv-app/FusedLocation/
-rm -r /system/priv-app/LogManager/
 #rm -r /system/priv-app/ManagedProvisioning/
-rm -r /system/priv-app/marketplace_service_receiver/
 #rm -r /system/priv-app/MediaProvider/
 #rm -r /system/priv-app/MetricsApi/
 #rm -r /system/priv-app/MetricsService/
@@ -240,12 +247,8 @@ rm -r /system/priv-app/marketplace_service_receiver/
 #rm -r /system/priv-app/SettingsProvider/
 #rm -r /system/priv-app/SharedStorageBackup/
 #rm -r /system/priv-app/Shell/
-rm -r /system/priv-app/shipmode/
-rm -r /system/priv-app/sync-provider_ipc-release/
-rm -r /system/priv-app/sync-service-fireos-release/
 #rm -r /system/priv-app/SystemStatusMonitor/
 #rm -r /system/priv-app/SystemUpdatesUI/
-rm -r /system/priv-app/UnifiedShareActivityChooser/
 #rm -r /system/priv-app/VpnDialogs/
 #rm -r /system/priv-app/WallpaperCropper/
 #rm -r /system/priv-app/WhisperCastConnect/
@@ -253,6 +256,9 @@ rm -r /system/priv-app/UnifiedShareActivityChooser/
 #rm -r /system/priv-app/WhisperplayCore/
 #rm -r /system/priv-app/WhisperplayInstall/
 
+
+
+# Other Apps That May Be Wanted/Needed For Different People/Operations
 
 # Captive Portal Launcher
 #rm -r /system/priv-app/CaptivePortalLauncher/
@@ -263,7 +269,7 @@ rm -r /system/priv-app/UnifiedShareActivityChooser/
 #rm -r /system/priv-app/com.amazon.vizzini/
 
 
-# Needed For Amazon Settings UI
+# Needed For Amazon Settings UI (Removal Will Break Stock Settings)
 #rm -r /system/priv-app/DeviceSoftwareOTAContracts/
 #rm -r /system/priv-app/RemoteSettingsAndroid/
 #rm -r /system/priv-app/RemoteSettingsInternalSDK/
@@ -282,13 +288,22 @@ rm -r /system/app/PicoTts/
 
 
 
+# Other System Apps
+
+# Framework Directory
+#rm -r /system/framework/android.amazon.perm/
+
+
+
+# Some directories in /data/data/ may not exist. They are attempted to be removed anyways
+
 
 # Preserve ADB Settings
 cp /data/data/com.amazon.tv.settings/shared_prefs/com.amazon.tv.settings_preferences.xml /sdcard/
 
 
 rm -r /data/data/amazon.jackson-19/
-#rm -r /data/data/AmazonKKWebViewLib/
+rm -r /data/data/AmazonKKWebViewLib/
 rm -r /data/data/AmazonNetworkMonitor/
 rm -r /data/data/BackupRestoreConfirmation/
 
@@ -376,6 +391,8 @@ rm -r /data/data/UnifiedShareActivityChooser/
 #rm -r /data/data/WhisperlinkSdk/
 #rm -r /data/data/WhisperplayCore/
 #rm -r /data/data/WhisperplayInstall
+
+#rm -r /data/data/android.amazon.perm
 
 
 # Captive Portal Launcher
