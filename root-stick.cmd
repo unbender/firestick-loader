@@ -1412,7 +1412,7 @@ echo Once BusyBox installation is finished, press ENTER to continue....
 echo.
 echo.
 
-pause
+pause>nul
 
 %keyBack%
 %keyHome%
