@@ -13,9 +13,6 @@ rm -r /system/priv-app/amazon.jackson-19/
 rm -r /system/priv-app/AmazonNetworkMonitor/
 rm -r /system/priv-app/BackupRestoreConfirmation/
 
-# Captive Portal Launcher
-#rm -r /system/priv-app/CaptivePortalLauncher/
-
 rm -r /system/priv-app/com.amazon.ags.app/
 rm -r /system/priv-app/com.amazon.avod/
 rm -r /system/priv-app/com.amazon.bueller.music/
@@ -56,9 +53,6 @@ rm -r /system/priv-app/com.amazon.venezia/
 rm -r /system/priv-app/com.amazon.videoads.app/
 rm -r /system/priv-app/com.amazon.visualonawv/
 
-# Amazon Voice Support
-#rm -r /system/priv-app/com.amazon.vizzini/
-
 #rm -r /system/priv-app/ConnectivityDiag/
 rm -r /system/priv-app/ContentSupportProvider/
 rm -r /system/priv-app/CrashManager/
@@ -89,8 +83,6 @@ rm -r /system/priv-app/marketplace_service_receiver/
 #rm -r /system/priv-app/MetricsService/
 #rm -r /system/priv-app/OneTimeInitializer/
 #rm -r /system/priv-app/ProxyHandler/
-#rm -r /system/priv-app/RemoteSettingsAndroid/
-#rm -r /system/priv-app/RemoteSettingsInternalSDK/
 #rm -r /system/priv-app/SettingsProvider/
 #rm -r /system/priv-app/SharedStorageBackup/
 #rm -r /system/priv-app/Shell/
@@ -107,6 +99,18 @@ rm -r /system/priv-app/UnifiedShareActivityChooser/
 #rm -r /system/priv-app/WhisperplayCore/
 #rm -r /system/priv-app/WhisperplayInstall/
 
+
+# Captive Portal Launcher
+#rm -r /system/priv-app/CaptivePortalLauncher/
+#rm -r /system/app/CaptivePortalLogin/
+
+
+# Amazon Voice Support
+#rm -r /system/priv-app/com.amazon.vizzini/
+
+# Needed For Amazon Settings UI
+#rm -r /system/priv-app/RemoteSettingsAndroid/
+#rm -r /system/priv-app/RemoteSettingsInternalSDK/
 
 
 
@@ -131,9 +135,6 @@ rm -r /data/data/amazon.jackson-19/
 #rm -r /data/data/AmazonKKWebViewLib/
 rm -r /data/data/AmazonNetworkMonitor/
 rm -r /data/data/BackupRestoreConfirmation/
-
-# Captive Portal Launcher
-#rm -r /data/data/CaptivePortalLauncher/
 
 rm -r /data/data/com.amazon.ags.app/
 rm -r /data/data/com.amazon.avod/
@@ -175,9 +176,6 @@ rm -r /data/data/com.amazon.venezia/
 rm -r /data/data/com.amazon.videoads.app/
 rm -r /data/data/com.amazon.visualonawv/
 
-# Amazon Voice Support
-#rm -r /data/data/com.amazon.vizzini/
-
 #rm -r /data/data/ConnectivityDiag/
 rm -r /data/data/ContentSupportProvider/
 rm -r /data/data/CrashManager/
@@ -208,8 +206,6 @@ rm -r /data/data/marketplace_service_receiver/
 #rm -r /data/data/MetricsService/
 #rm -r /data/data/OneTimeInitializer/
 #rm -r /data/data/ProxyHandler/
-#rm -r /data/data/RemoteSettingsAndroid/
-#rm -r /data/data/RemoteSettingsInternalSDK/
 #rm -r /data/data/SettingsProvider/
 #rm -r /data/data/SharedStorageBackup/
 #rm -r /data/data/Shell/
@@ -224,7 +220,20 @@ rm -r /data/data/UnifiedShareActivityChooser/
 #rm -r /data/data/WhisperCastConnect/
 #rm -r /data/data/WhisperlinkSdk/
 #rm -r /data/data/WhisperplayCore/
-#rm -r /data/data/WhisperplayInstall/
+#rm -r /data/data/WhisperplayInstall
+
+
+# Captive Portal Launcher
+#rm -r /data/data/CaptivePortalLauncher/
+
+
+# Amazon Voice Support
+#rm -r /data/data/com.amazon.vizzini/
+
+
+# Needed For Amazon Settings UI
+#rm -r /data/data/RemoteSettingsAndroid/
+#rm -r /data/data/RemoteSettingsInternalSDK/
 
 
 # From /system/app/
