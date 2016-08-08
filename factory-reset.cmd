@@ -65,13 +65,22 @@ pause
 
 
 
-%push% "%~dp0rooting\kingroot.apk" /sdcard/
+%shell% mkdir /data/local/tmp/com.kingroot.kinguser/
+%shell% mkdir /data/local/tmp/com.kingroot.kinguser/shared_prefs/
+%shell% mkdir /data/local/tmp/com.amazon.tv.settings/
+%shell% mkdir /data/local/tmp/com.amazon.tv.settings/shared_prefs/
+
+%push% "%~dp0rooting\kingroot.apk" /data/local/tmp/
 %push% "%~dp0scripts\factory-reset.sh" /data/local/tmp/
+
+%push% "%~dp0config\data\kingroot\shared_prefs\" /data/local/tmp/com.kingroot.kinguser/shared_prefs/
+%push% "%~dp0config\data\com.amazon.tv.settings\shared_prefs\" /data/local/tmp/com.amazon.tv.settings/shared_prefs/
+
 %shell% "su -c chmod 755 /data/local/tmp/factory-reset.sh"
 %shell% "su -c sh /data/local/tmp/factory-reset.sh"
 
 
-::pause
+pause
 
 
 :end
