@@ -568,6 +568,13 @@ cls
 echo DO NOT TOUCH ANY KEYS ON THE FIRESTICK REMOTE UNTIL FINISHED!!!
 echo.
 echo.
+echo.
+%_color% 0b
+echo *** IF THE USB CONNECTION IS LOST, NAVIGATE ON THE FIRESTICK
+echo TO SETTINGS - SYSTEM - DEVELOPER OPTIONS - ADB DEBUGGING AND TURN
+echo THIS OPTION OFF AND BACK ON AGAIN TO CONTINUE ***
+echo.
+echo.
 %_color% 0e
 
 :: Swipe 1st Page Up
@@ -708,6 +715,7 @@ taskkill /f /im winencrypt.exe
 
 if %fullAutoMode%==1 goto doSU
 if %fullAutoModeDG%==1 goto doSU
+if %fullAutoModeDG%==2 goto doSU
 
 goto menu
 
@@ -735,12 +743,15 @@ echo It should display a hash symbol [#]
 echo.
 echo If a dollar sign [$] is shown or an error occurs, restart device and try again
 echo.
-echo.
-echo.
-echo.
 echo If the hash is displayed, you may close the window and continue
 echo.
 echo.
+echo.%_color% 0b
+echo *** IF THE USB CONNECTION IS LOST, NAVIGATE ON THE FIRESTICK
+echo TO SETTINGS - SYSTEM - DEVELOPER OPTIONS - ADB DEBUGGING AND TURN
+echo THIS OPTION OFF AND BACK ON AGAIN TO CONTINUE ***
+echo.
+echo.%_color% 0e
 echo.
 echo.
 echo Press ENTER when you are ready to continue....
@@ -1027,6 +1038,12 @@ echo *** BE SURE TO ALLOW SU PERMISSIONS WHEN REQUESTED FOR ADB ***
 echo.
 echo.
 echo.
+echo.%_color% 0b
+echo *** IF THE USB CONNECTION IS LOST, NAVIGATE ON THE FIRESTICK
+echo TO SETTINGS - SYSTEM - DEVELOPER OPTIONS - ADB DEBUGGING AND TURN
+echo THIS OPTION OFF AND BACK ON AGAIN TO CONTINUE ***
+echo.
+echo.
 %_color% 0e
 
 %push% "%temp%\firestick-loader\downgrade\stick\update-kindle-montoya-54.5.3.7_user_537174420.bin" /%sdcard%/update.bin
@@ -1043,6 +1060,12 @@ echo.
 %_color% 0c
 echo *** BE SURE TO ALLOW SU PERMISSIONS WHEN REQUESTED FOR ADB ***
 echo.
+echo.
+echo.
+echo.%_color% 0b
+echo *** IF THE USB CONNECTION IS LOST, NAVIGATE ON THE FIRESTICK
+echo TO SETTINGS - SYSTEM - DEVELOPER OPTIONS - ADB DEBUGGING AND TURN
+echo THIS OPTION OFF AND BACK ON AGAIN TO CONTINUE ***
 echo.
 echo.
 %_color% 0e
@@ -1087,6 +1110,12 @@ echo *** BE SURE TO ALLOW SU PERMISSIONS WHEN REQUESTED FOR ADB ***
 echo.
 echo.
 echo.
+echo.%_color% 0b
+echo *** IF THE USB CONNECTION IS LOST, NAVIGATE ON THE FIRESTICK
+echo TO SETTINGS - SYSTEM - DEVELOPER OPTIONS - ADB DEBUGGING AND TURN
+echo THIS OPTION OFF AND BACK ON AGAIN TO CONTINUE ***
+echo.
+echo.
 %_color% 0e
 
 %shell% "su -c mv /%sdcard%/update.bin /cache/"
@@ -1100,6 +1129,12 @@ echo.
 %_color% 0c
 echo *** BE SURE TO ALLOW SU PERMISSIONS WHEN REQUESTED FOR ADB ***
 echo.
+echo.
+echo.
+echo.%_color% 0b
+echo *** IF THE USB CONNECTION IS LOST, NAVIGATE ON THE FIRESTICK
+echo TO SETTINGS - SYSTEM - DEVELOPER OPTIONS - ADB DEBUGGING AND TURN
+echo THIS OPTION OFF AND BACK ON AGAIN TO CONTINUE ***
 echo.
 echo.
 %_color% 0e
@@ -1128,7 +1163,7 @@ echo --update_package=/cache/update.bin>"%temp%\tmpShit.txt"
 
 
 cls
-echo Rebooting....
+echo Taking The FireStick On A Pwny Ride....
 echo.
 echo.
 
@@ -1136,18 +1171,20 @@ echo.
 
 
 cls
-%_color% 0e
+%_color% 0a
 echo The Downgrade Process Should Be Happening!
 echo.
+%_color% 0e
 echo The TV screen should be on the Amazon Install screen.
 echo.
 echo.
-%_color% 0c
+%_color% 0b
 echo *** If this is not the case, try restarting the device and script. ***
 echo.
 echo *** If you are at the Android Recovery Screen, unplug and re-plug device ***
 echo.
 echo.
+%_color% 0c
 echo *** DO NOT PRESS ANY KEYS ON THE REMOTE OR UNPLUG THE DEVICE ***
 echo.
 echo.
@@ -1224,7 +1261,8 @@ echo Waiting For Boot Animation....
 echo.
 echo.
 
-%sleep% 45
+if %factoryReset%==0 %sleep% 20
+if %factoryReset%==1 %sleep% 45
 
 cls
 echo Waiting For Home Screen To Finish Loading....
@@ -1236,7 +1274,8 @@ echo If the Home Screen is ready now, please wait a few moments!
 echo.
 echo.
 
-%sleep% 10
+if %factoryReset%==0 %sleep% 15
+if %factoryReset%==1 %sleep% 20
 
 cls
 echo The device should now be at the HOME screen!
@@ -1253,16 +1292,30 @@ echo The device is now on stock firmware and needs rooted again to continue!
 echo.
 echo.
 echo.
-echo Press ENTER to continue with the rooting process....
+if %fullAutoMode%==0 echo Press ENTER to continue with the rooting process....
+if %fullAutoModeDG%==0 echo Press ENTER to continue with the rooting process....
+if %fullAutoMode%==1 echo.
+if %fullAutoModeDG%==1 echo.
 echo.
 echo.
 %_color% 0b
-echo *** YOU CAN ALSO PRESS "S" AND ENTER TO SKIP THE ROOT PROCESS ***
+if %fullAutoMode%==0 echo *** YOU CAN ALSO PRESS "S" AND ENTER TO SKIP THE ROOT PROCESS ***
+if %fullAutoModeDG%==0 echo *** YOU CAN ALSO PRESS "S" AND ENTER TO SKIP THE ROOT PROCESS ***
+if %fullAutoMode%==1 echo.
+if %fullAutoModeDG%==1 echo.
 %_color% 0e
 echo.
 echo.
 
+:: If Full Auto Mode, sleep for a safe amount of time before continuing and skip pause
+if %fullAutoMode%==1 %sleep% 90
+if %fullAutoModeDG%==1 %sleep% 90
+if %fullAutoMode%==1 goto skipPauseOne
+if %fullAutoModeDG%==1 goto skipPauseOne
+
 set /p rootFromDG=
+
+:skipPauseOne
 
 %keyHome%
 
