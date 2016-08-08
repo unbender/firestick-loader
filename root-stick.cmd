@@ -1746,10 +1746,14 @@ echo.
 echo.
 
 %push% "%~dp0apps\system\firestopper.apk" /data/local/tmp/
-%shell% "su -c mkdir /system/app/FireStopper/"
-%shell% "su -c chmod 0755 /system/app/FireStopper/"
-%shell% "su -c cp /data/local/tmp/firestopper.apk" /system/app/FireStopper/FireStopper.apk"
-%shell% "su -c chmoc 0644 /system/app/FireStopper/FireStopper.apk"
+::%shell% "su -c mkdir /system/app/FireStopper/"
+::%shell% "su -c chmod 0755 /system/app/FireStopper/"
+::%shell% "su -c cp /data/local/tmp/firestopper.apk" /system/app/FireStopper/FireStopper.apk"
+::%shell% "su -c chmoc 0644 /system/app/FireStopper/FireStopper.apk"
+
+%push% "%~dp0scripts\firestopper-as-system.sh" /data/local/tmp/
+%shell% "su -c chmod 755 /data/local/tmp/firestopper-as-system.sh"
+%shell% "su -c sh /data/local/tmp/firestopper-as-system.sh"
 
 
 ::%install% "%~dp0apps\system\firestopper.apk"

@@ -76,9 +76,9 @@ pause
 %push% "%~dp0config\data\com.kingroot.kinguser\shared_prefs\" /data/local/tmp/com.kingroot.kinguser/shared_prefs/
 %push% "%~dp0config\data\com.amazon.tv.settings\shared_prefs\" /data/local/tmp/com.amazon.tv.settings/shared_prefs/
 
-%shell% "su -c mount -o remount,rw /system"
-%shell% "su -c mkdir /system/backup/"
-%shell% "su -c cp /data/local/tmp/factory-reset.sh /system/backup/factory-reset.sh"
+::%shell% "su -c mount -o remount,rw /system"
+::%shell% "su -c mkdir /system/backup/"
+::%shell% "su -c cp /data/local/tmp/factory-reset.sh /system/backup/factory-reset.sh"
 %shell% "su -c chmod 755 /system/backup/factory-reset.sh"
 %shell% "su -c sh /system/backup/factory-reset.sh"
 
