@@ -1623,9 +1623,9 @@ echo.
 :btMouse
 set teamViewerSuRequest=0
 %_color% 0e
+if %isMouse%==0 echo Using Teamviewer, select the top-right menu and click "General Settings"
 if %isMouse%==M cls
 if %isMouse%==m cls
-if %isMouse%==0 echo Using Teamviewer, select the top-right menu and click "General Settings"
 if %isMouse%==M echo In KingRoot, select the top-right menu and click "General Settings"
 if %isMouse%==m echo In KingRoot, select the top-right menu and click "General Settings"
 echo.
