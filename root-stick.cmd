@@ -662,7 +662,7 @@ echo *** BE SURE TO ALLOW SU PERMISSIONS WHEN REQUESTED FOR ADB ***
 echo.
 echo.
 %_color% 0b
-echo *** TO RE-LAUNCH KINGROOT, TYPE "R" AND PRESS ENTER ***
+echo *** TO RE-LAUNCH KINGROOT AND CLICK BUTTON, TYPE "R" AND PRESS ENTER ***
 echo.
 echo.
 echo.
@@ -681,8 +681,8 @@ if %check%==s goto rootActive
 
 if %check%==R %shell% am start -a android.intent.action.MAIN -n com.kingroot.kinguser/.activitys.SliderMainActivity
 if %check%==r %shell% am start -a android.intent.action.MAIN -n com.kingroot.kinguser/.activitys.SliderMainActivity
-if %check%==R goto rootActive
-if %check%==r goto rootActive
+if %check%==R goto root2
+if %check%==r goto root2
 
 if %check%==pc taskkill /f /im KingRoot.exe
 if %check%==pc taskkill /f /im doom.exe
