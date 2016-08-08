@@ -300,7 +300,7 @@ rm -r /system/app/WhiteListedUrlProvider/
 # Other System Apps
 
 # Framework Directory
-#rm -r /system/framework/android.amazon.perm/
+rm -r /system/framework/android.amazon.perm/
 
 
 
@@ -429,6 +429,10 @@ rm -r /data/data/PicoTts/
 rm -r /data/data/UnifiedSettingsProvider/
 rm -r /data/data/WebCryptoTZService/
 rm -r /data/data/WhiteListedUrlProvider/
+
+
+# From /system/framework/
+rm -r /data/data/android.amazon.perm/
 
 
 
