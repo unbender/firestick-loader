@@ -1348,11 +1348,12 @@ echo Installing %app%....
 echo.
 echo.
 echo.
-%_color% 0c
+%_color% 0b
 echo *** IF DEVICE REBOOTS, CLOSE SCRIPT AND RUN AGAIN ***
 echo.
 echo.
 echo.
+%_color% 0c
 echo *** BE SURE TO ALLOW SU PERMISSIONS UPON LAUNCH ***
 echo.
 echo.
