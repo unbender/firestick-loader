@@ -107,6 +107,7 @@ rm -r /system/priv-app/UnifiedShareActivityChooser/
 # Amazon Voice Support
 #rm -r /system/priv-app/com.amazon.vizzini/
 
+
 # Needed For Amazon Settings UI
 #rm -r /system/priv-app/DeviceSoftwareOTAContracts/
 #rm -r /system/priv-app/RemoteSettingsAndroid/
@@ -185,7 +186,6 @@ rm -r /data/data/DeviceMessagingAndroid/
 rm -r /data/data/DeviceMessagingAndroidInternalSDK/
 rm -r /data/data/DeviceMessagingAndroidSDK/
 rm -r /data/data/DeviceSoftwareOTA/
-#rm -r /data/data/DeviceSoftwareOTAContracts/
 rm -r /data/data/DeviceSoftwareOTAIdleOverride/
 rm -r /data/data/DownloadProvider/
 #rm -r /data/data/DownloadProviderUi/
@@ -231,7 +231,8 @@ rm -r /data/data/UnifiedShareActivityChooser/
 #rm -r /data/data/com.amazon.vizzini/
 
 
-# Needed For Amazon Settings UI
+# Needed For Amazon Settings UI (ONLY FOR /system NOT /data/)
+#rm -r /data/data/DeviceSoftwareOTAContracts/
 #rm -r /data/data/RemoteSettingsAndroid/
 #rm -r /data/data/RemoteSettingsInternalSDK/
 
