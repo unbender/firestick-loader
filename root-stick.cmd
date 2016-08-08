@@ -1038,7 +1038,7 @@ echo *** BE SURE TO ALLOW SU PERMISSIONS WHEN REQUESTED FOR ADB ***
 echo.
 echo.
 echo.
-echo.%_color% 0b
+%_color% 0b
 echo *** IF THE USB CONNECTION IS LOST, NAVIGATE ON THE FIRESTICK
 echo TO SETTINGS - SYSTEM - DEVELOPER OPTIONS - ADB DEBUGGING AND TURN
 echo THIS OPTION OFF AND BACK ON AGAIN TO CONTINUE ***
@@ -1062,7 +1062,7 @@ echo *** BE SURE TO ALLOW SU PERMISSIONS WHEN REQUESTED FOR ADB ***
 echo.
 echo.
 echo.
-echo.%_color% 0b
+%_color% 0b
 echo *** IF THE USB CONNECTION IS LOST, NAVIGATE ON THE FIRESTICK
 echo TO SETTINGS - SYSTEM - DEVELOPER OPTIONS - ADB DEBUGGING AND TURN
 echo THIS OPTION OFF AND BACK ON AGAIN TO CONTINUE ***
@@ -1110,7 +1110,7 @@ echo *** BE SURE TO ALLOW SU PERMISSIONS WHEN REQUESTED FOR ADB ***
 echo.
 echo.
 echo.
-echo.%_color% 0b
+%_color% 0b
 echo *** IF THE USB CONNECTION IS LOST, NAVIGATE ON THE FIRESTICK
 echo TO SETTINGS - SYSTEM - DEVELOPER OPTIONS - ADB DEBUGGING AND TURN
 echo THIS OPTION OFF AND BACK ON AGAIN TO CONTINUE ***
@@ -1131,7 +1131,7 @@ echo *** BE SURE TO ALLOW SU PERMISSIONS WHEN REQUESTED FOR ADB ***
 echo.
 echo.
 echo.
-echo.%_color% 0b
+%_color% 0b
 echo *** IF THE USB CONNECTION IS LOST, NAVIGATE ON THE FIRESTICK
 echo TO SETTINGS - SYSTEM - DEVELOPER OPTIONS - ADB DEBUGGING AND TURN
 echo THIS OPTION OFF AND BACK ON AGAIN TO CONTINUE ***
@@ -1167,7 +1167,7 @@ echo Taking The FireStick On A Pwny Ride....
 echo.
 echo.
 
-%sleep% 5
+%sleep% 6
 
 
 cls
@@ -1211,13 +1211,15 @@ echo.
 echo The TV screen should be on the Optimizing System Storage screen.
 echo.
 echo.
-%_color% 0c
+%_color% 0b
 echo *** If this is not the case, try unplugging/re-plugging the device ***
 echo.
 echo.
 echo.
 echo.
+%_color% 0c
 echo *** DO NOT PRESS ANY KEYS ON THE REMOTE OR UNPLUG THE DEVICE ***
+echo.
 echo.
 echo.
 echo.
@@ -1226,7 +1228,7 @@ echo When device is back at HOME screen, press ENTER....
 echo.
 echo.
 
-pause
+pause>nul
 
 %sleep% 5
 
@@ -1293,16 +1295,16 @@ echo.
 echo.
 echo.
 if %fullAutoMode%==0 echo Press ENTER to continue with the rooting process....
-if %fullAutoModeDG%==0 echo Press ENTER to continue with the rooting process....
+::if %fullAutoModeDG%==0 echo Press ENTER to continue with the rooting process....
 if %fullAutoMode%==1 echo.
-if %fullAutoModeDG%==1 echo.
+::if %fullAutoModeDG%==1 echo.
 echo.
 echo.
 %_color% 0b
 if %fullAutoMode%==0 echo *** YOU CAN ALSO PRESS "S" AND ENTER TO SKIP THE ROOT PROCESS ***
-if %fullAutoModeDG%==0 echo *** YOU CAN ALSO PRESS "S" AND ENTER TO SKIP THE ROOT PROCESS ***
-if %fullAutoMode%==1 echo.
-if %fullAutoModeDG%==1 echo.
+::if %fullAutoModeDG%==0 echo *** YOU CAN ALSO PRESS "S" AND ENTER TO SKIP THE ROOT PROCESS ***
+if %fullAutoMode%==1 echo *** CONTINUING AUTOMATICALLY IN 90 SECONDS ***
+::if %fullAutoModeDG%==1 echo *** CONTINUING AUTOMATICALLY IN 90 SECONDS ***
 %_color% 0e
 echo.
 echo.
