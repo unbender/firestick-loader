@@ -1997,6 +1997,24 @@ if %factoryReset%==2 (
 
 %adbWait%
 
+if %fullAutoMode%==1 (
+
+set pauseForClearCache=0
+
+cls
+%_color% 0e
+echo The TV screen should be on the Optimizing System Storage screen.
+echo.
+echo.
+echo.
+echo When back at HOME screen, press ENTER to continue....
+echo.
+echo.
+
+set /p pauseForClearCache=
+
+)
+
 if %fullAutoMode%==1 goto unrootKing
 if %fullAutoModeDG%==1 goto unrootKing
 
