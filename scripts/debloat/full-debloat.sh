@@ -167,7 +167,6 @@ rm -r /system/priv-app/amazon.jackson-19/
 rm -r /system/priv-app/AmazonKKWebViewLib/
 rm -r /system/priv-app/AmazonNetworkMonitor/
 rm -r /system/priv-app/BackupRestoreConfirmation/
-
 rm -r /system/priv-app/com.amazon.ags.app/
 rm -r /system/priv-app/com.amazon.avod/
 rm -r /system/priv-app/com.amazon.bueller.music/
@@ -217,7 +216,9 @@ rm -r /system/priv-app/marketplace_service_receiver/
 rm -r /system/priv-app/shipmode/
 rm -r /system/priv-app/sync-provider_ipc-release/
 rm -r /system/priv-app/sync-service-fireos-release/
+rm -r /system/priv-app/SystemStatusMonitor/
 rm -r /system/priv-app/UnifiedShareActivityChooser/
+rm -r /system/priv-app/WhisperCastConnect/
 
 
 # Still Needs Testing
@@ -227,8 +228,6 @@ rm -r /system/priv-app/UnifiedShareActivityChooser/
 #rm -r /system/priv-app/com.amazon.fireinputdevices/
 #rm -r /system/priv-app/com.amazon.kindleautomatictimezone/
 #rm -r /system/priv-app/com.amazon.metrics.api/
-#rm -r /system/priv-app/com.amazon.storm.lightning.services/
-#rm -r /system/priv-app/com.amazon.storm.lightning.tutorial/
 #rm -r /system/priv-app/com.amazon.tv.ime/
 #rm -r /system/priv-app/com.amazon.tv.launcher/
 #rm -r /system/priv-app/com.amazon.tv.settings/
@@ -247,18 +246,22 @@ rm -r /system/priv-app/UnifiedShareActivityChooser/
 #rm -r /system/priv-app/SettingsProvider/
 #rm -r /system/priv-app/SharedStorageBackup/
 #rm -r /system/priv-app/Shell/
-rm -r /system/priv-app/SystemStatusMonitor/
 #rm -r /system/priv-app/SystemUpdatesUI/
 #rm -r /system/priv-app/VpnDialogs/
 #rm -r /system/priv-app/WallpaperCropper/
-#rm -r /system/priv-app/WhisperCastConnect/
-#rm -r /system/priv-app/WhisperlinkSdk/
-#rm -r /system/priv-app/WhisperplayCore/
-#rm -r /system/priv-app/WhisperplayInstall/
 
 
 
 # Other Apps That May Be Wanted/Needed For Different People/Operations
+
+
+# Amazon Remote Android App
+#rm -r /system/priv-app/com.amazon.storm.lightning.services/
+#rm -r /system/priv-app/com.amazon.storm.lightning.tutorial/
+#rm -r /system/priv-app/WhisperlinkSdk/
+#rm -r /system/priv-app/WhisperplayCore/
+#rm -r /system/priv-app/WhisperplayInstall/
+
 
 # Captive Portal Launcher
 #rm -r /system/priv-app/CaptivePortalLauncher/
@@ -282,8 +285,9 @@ rm -r /system/priv-app/SystemStatusMonitor/
 rm -r /system/app/DeviceControlService/
 
 rm -r /system/app/DocumentsUI/
-rm -r /system/app/UnifiedSettingsProvider/
+rm -r /system/app/fdrw/
 rm -r /system/app/PicoTts/
+rm -r /system/app/UnifiedSettingsProvider/
 rm -r /system/app/WebCryptoTZService/
 rm -r /system/app/WhiteListedUrlProvider/
 
@@ -333,8 +337,6 @@ rm -r /data/data/com.amazon.precog/
 rm -r /data/data/com.amazon.securitysyncclient/
 rm -r /data/data/com.amazon.sharingservice.android.client.proxy.release/
 rm -r /data/data/com.amazon.shoptv.client/
-#rm -r /data/data/com.amazon.storm.lightning.services/
-#rm -r /data/data/com.amazon.storm.lightning.tutorial/
 rm -r /data/data/com.amazon.tcomm/
 rm -r /data/data/com.amazon.tmm.tutorial/
 rm -r /data/data/com.amazon.tv.aiv.support/
@@ -389,12 +391,17 @@ rm -r /data/data/SystemStatusMonitor/
 rm -r /data/data/UnifiedShareActivityChooser/
 #rm -r /data/data/VpnDialogs/
 #rm -r /data/data/WallpaperCropper/
-#rm -r /data/data/WhisperCastConnect/
+rm -r /data/data/WhisperCastConnect/
+
+#rm -r /data/data/android.amazon.perm
+
+
+# Amazon Remote Android App
+#rm -r /data/data/com.amazon.storm.lightning.services/
+#rm -r /data/data/com.amazon.storm.lightning.tutorial/
 #rm -r /data/data/WhisperlinkSdk/
 #rm -r /data/data/WhisperplayCore/
 #rm -r /data/data/WhisperplayInstall
-
-#rm -r /data/data/android.amazon.perm
 
 
 # Captive Portal Launcher
@@ -414,8 +421,9 @@ rm -r /data/data/UnifiedShareActivityChooser/
 # From /system/app/
 rm -r /data/data/DeviceControlService/
 rm -r /data/data/DocumentsUI/
-rm -r /data/data/UnifiedSettingsProvider/
+rm -r /data/data/fdrw/
 rm -r /data/data/PicoTts/
+rm -r /data/data/UnifiedSettingsProvider/
 rm -r /data/data/WebCryptoTZService/
 rm -r /data/data/WhiteListedUrlProvider/
 

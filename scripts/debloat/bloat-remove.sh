@@ -63,6 +63,7 @@ rm -r /system/priv-app/sync-provider_ipc-release/
 rm -r /system/priv-app/sync-service-fireos-release/
 rm -r /system/priv-app/SystemStatusMonitor/
 rm -r /system/priv-app/UnifiedShareActivityChooser/
+rm -r /system/priv-app/WhisperCastConnect/
 
 
 # Still Needs Testing
@@ -93,7 +94,6 @@ rm -r /system/priv-app/UnifiedShareActivityChooser/
 #rm -r /system/priv-app/SystemUpdatesUI/
 #rm -r /system/priv-app/VpnDialogs/
 #rm -r /system/priv-app/WallpaperCropper/
-rm -r /system/priv-app/WhisperCastConnect/
 
 
 
@@ -130,8 +130,9 @@ rm -r /system/priv-app/WhisperCastConnect/
 rm -r /system/app/DeviceControlService/
 
 rm -r /system/app/DocumentsUI/
-rm -r /system/app/UnifiedSettingsProvider/
+rm -r /system/app/fdrw/
 rm -r /system/app/PicoTts/
+rm -r /system/app/UnifiedSettingsProvider/
 rm -r /system/app/WebCryptoTZService/
 rm -r /system/app/WhiteListedUrlProvider/
 
@@ -265,8 +266,9 @@ rm -r /data/data/WhisperCastConnect/
 # From /system/app/
 rm -r /data/data/DeviceControlService/
 rm -r /data/data/DocumentsUI/
-rm -r /data/data/UnifiedSettingsProvider/
+rm -r /data/data/fdrw/
 rm -r /data/data/PicoTts/
+rm -r /data/data/UnifiedSettingsProvider/
 rm -r /data/data/WebCryptoTZService/
 rm -r /data/data/WhiteListedUrlProvider/
 
