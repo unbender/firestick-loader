@@ -92,7 +92,7 @@ rm -r /system/priv-app/UnifiedShareActivityChooser/
 #rm -r /system/priv-app/SettingsProvider/
 #rm -r /system/priv-app/SharedStorageBackup/
 #rm -r /system/priv-app/Shell/
-#rm -r /system/priv-app/SystemStatusMonitor/
+rm -r /system/priv-app/SystemStatusMonitor/
 #rm -r /system/priv-app/SystemUpdatesUI/
 #rm -r /system/priv-app/VpnDialogs/
 #rm -r /system/priv-app/WallpaperCropper/
@@ -129,6 +129,8 @@ rm -r /system/app/DeviceControlService/
 rm -r /system/app/DocumentsUI/
 rm -r /system/app/UnifiedSettingsProvider/
 rm -r /system/app/PicoTts/
+rm -r /system/app/WebCryptoTZService/
+rm -r /system/app/WhiteListedUrlProvider/
 
 
 
@@ -227,7 +229,7 @@ rm -r /data/data/marketplace_service_receiver/
 rm -r /data/data/shipmode/
 rm -r /data/data/sync-provider_ipc-release/
 rm -r /data/data/sync-service-fireos-release/
-#rm -r /data/data/SystemStatusMonitor/
+rm -r /data/data/SystemStatusMonitor/
 #rm -r /data/data/SystemUpdatesUI/
 rm -r /data/data/UnifiedShareActivityChooser/
 #rm -r /data/data/VpnDialogs/
@@ -259,6 +261,8 @@ rm -r /data/data/DeviceControlService/
 rm -r /data/data/DocumentsUI/
 rm -r /data/data/UnifiedSettingsProvider/
 rm -r /data/data/PicoTts/
+rm -r /data/data/WebCryptoTZService/
+rm -r /data/data/WhiteListedUrlProvider/
 
 
 
