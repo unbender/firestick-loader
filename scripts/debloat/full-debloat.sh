@@ -152,6 +152,9 @@ pm disable com.android.providers.downloads
 # Amazon Documents UI
 pm disable com.android.documentsui
 
+# Device Provisioner
+pm disable com.android.managedprovisioning
+
 
 
 

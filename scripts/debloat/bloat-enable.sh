@@ -156,4 +156,7 @@ pm enable com.android.providers.downloads
 # Amazon Documents UI
 pm enable com.android.documentsui
 
+# Device Provisioner
+pm enable com.android.managedprovisioning
+
 
