@@ -64,6 +64,7 @@ rm -r /system/priv-app/shipmode/
 rm -r /system/priv-app/sync-provider_ipc-release/
 rm -r /system/priv-app/sync-service-fireos-release/
 rm -r /system/priv-app/SystemStatusMonitor/
+rm -r /system/priv-app/SystemUpdatesUI/
 rm -r /system/priv-app/UnifiedShareActivityChooser/
 rm -r /system/priv-app/WallpaperCropper/
 rm -r /system/priv-app/WhisperCastConnect/
@@ -92,7 +93,6 @@ rm -r /system/priv-app/WhisperCastConnect/
 #rm -r /system/priv-app/SettingsProvider/
 #rm -r /system/priv-app/SharedStorageBackup/
 #rm -r /system/priv-app/Shell/
-#rm -r /system/priv-app/SystemUpdatesUI/
 #rm -r /system/priv-app/VpnDialogs/
 
 
@@ -232,7 +232,7 @@ rm -r /data/data/shipmode/
 rm -r /data/data/sync-provider_ipc-release/
 rm -r /data/data/sync-service-fireos-release/
 rm -r /data/data/SystemStatusMonitor/
-#rm -r /data/data/SystemUpdatesUI/
+rm -r /data/data/SystemUpdatesUI/
 rm -r /data/data/UnifiedShareActivityChooser/
 #rm -r /data/data/VpnDialogs/
 rm -r /data/data/WallpaperCropper/
