@@ -454,6 +454,7 @@ echo.
 echo 10) Accept Opera Mini License Agreement
 echo.
 echo 11) Reboot Stick
+echo 12) Kill ADB Server
 echo.
 echo.
 echo.
@@ -478,6 +479,7 @@ if %fchoice%==8 goto bootanimRestoreFBI
 if %fchoice%==9 "%~dp0bin\boot-animation-factory.exe"
 if %fchoice%==10 %tap% 20 1030
 if %fchoice%==11 %adb% reboot
+if %fchoice%==12 %adb% kill-server
 if %fchoice%==B goto menu
 if %fchoice%==b goto menu
 if %fchoice%==X goto end
