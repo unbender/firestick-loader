@@ -56,6 +56,7 @@ rm -r /system/priv-app/FireOsMiddlewareDebugApp/
 rm -r /system/priv-app/FireRecessProxy/
 rm -r /system/priv-app/FireTVDefaultMediaReceiver/
 rm -r /system/priv-app/FireTvNotificationService/
+rm -r /system/priv-app/FireTVSystemUI/
 rm -r /system/priv-app/FusedLocation/
 rm -r /system/priv-app/LogManager/
 rm -r /system/priv-app/ManagedProvisioning/
@@ -84,7 +85,6 @@ rm -r /system/priv-app/WhisperCastConnect/
 #rm -r /system/priv-app/DefaultContainerService/
 #rm -r /system/priv-app/DownloadProviderUi/
 #rm -r /system/priv-app/ExternalStorageProvider/
-#rm -r /system/priv-app/FireTVSystemUI/
 #rm -r /system/priv-app/MediaProvider/
 #rm -r /system/priv-app/MetricsApi/
 #rm -r /system/priv-app/MetricsService/
@@ -215,7 +215,7 @@ rm -r /data/data/FireOsMiddlewareDebugApp/
 rm -r /data/data/FireRecessProxy/
 rm -r /data/data/FireTVDefaultMediaReceiver/
 rm -r /data/data/FireTvNotificationService/
-#rm -r /data/data/FireTVSystemUI/
+rm -r /data/data/FireTVSystemUI/
 rm -r /data/data/FusedLocation/
 rm -r /data/data/LogManager/
 rm -r /data/data/ManagedProvisioning/
