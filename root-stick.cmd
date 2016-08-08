@@ -1698,12 +1698,25 @@ echo.
 ::%shell% "su -c sh /data/local/tmp/bloat-remove.sh"
 
 cls
-%push% "%~dp0scripts\debloat\full-debloat.sh" /data/local/tmp/
-%shell% "su -c chmod 755 /data/local/tmp/full-debloat.sh"
-%shell% "su -c sh /data/local/tmp/full-debloat.sh"
+
+if %fullAutoMode%==1 (
+%push% "%~dp0scripts\debloat\bloat-disable.sh" /data/local/tmp/
+%shell% "su -c chmod 755 /data/local/tmp/bloat-disable.sh"
+%shell% "su -c sh /data/local/tmp/bloat-disable.sh"
+)
+
+if %fullAutoModeDG%==1 (
+%push% "%~dp0scripts\debloat\bloat-disable.sh" /data/local/tmp/
+%shell% "su -c chmod 755 /data/local/tmp/bloat-disable.sh"
+%shell% "su -c sh /data/local/tmp/bloat-disable.sh"
+)
 
 if %fullAutoMode%==1 goto clearCaches
 if %fullAutoModeDG%==1 goto clearCaches
+
+%push% "%~dp0scripts\debloat\full-debloat.sh" /data/local/tmp/
+%shell% "su -c chmod 755 /data/local/tmp/full-debloat.sh"
+%shell% "su -c sh /data/local/tmp/full-debloat.sh"
 
 cls
 echo Clear Caches and Reboot (Recommended) [Y/N]?
