@@ -443,18 +443,17 @@ echo.
 echo 3) Launch Android Event Keymap (Press Keys Over ADB)
 echo.
 echo 4) Remove Boot Animation (Leaves Stock FIRE Text)
-echo.
 echo 5) Replace Boot Animation (Replaces Stock Boot Animation)
-echo.
 echo 6) Restore Boot Animation (Restores Stock Boot Animation)
 echo.
 echo 7) Replace Boot Fallback Images (Replaces Stock FIRE Text)
-echo.
 echo 8) Restore Boot Fallback Images (Restores framework-res.apk)
 echo.
 echo 9) Launch Boot Animation Factory
 echo.
 echo 10) Accept Opera Mini License Agreement
+echo.
+echo 11) Reboot Stick
 echo.
 echo.
 echo.
@@ -478,6 +477,7 @@ if %fchoice%==7 goto bootanimReplaceFBI
 if %fchoice%==8 goto bootanimRestoreFBI
 if %fchoice%==9 "%~dp0bin\boot-animation-factory.exe"
 if %fchoice%==10 %tap% 20 1030
+if %fchoice%==11 %adb% reboot
 if %fchoice%==B goto menu
 if %fchoice%==b goto menu
 if %fchoice%==X goto end
@@ -746,12 +746,12 @@ echo.
 echo If the hash is displayed, you may close the window and continue
 echo.
 echo.
-echo.%_color% 0b
+%_color% 0b
 echo *** IF THE USB CONNECTION IS LOST, NAVIGATE ON THE FIRESTICK
 echo TO SETTINGS - SYSTEM - DEVELOPER OPTIONS - ADB DEBUGGING AND TURN
 echo THIS OPTION OFF AND BACK ON AGAIN TO CONTINUE ***
 echo.
-echo.%_color% 0e
+%_color% 0e
 echo.
 echo.
 echo Press ENTER when you are ready to continue....
