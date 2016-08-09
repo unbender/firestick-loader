@@ -14,6 +14,8 @@ Current Project Testing Status:
 
     * During a Factory Reset, You Will Be Brought To The Amazon HOME Menu Briefly, Then FireStopper Will Load
 
+    * Running The Disable Amazon Bloat Script After Factory Reset Will Also Stop Amazon HOME Menu From Loading Completely
+
 - Amazon Settings Menu Available (Parental Controls, Help, and My Account DISABLED)
 
 - Hold HOME Button Function To Sleep Available
@@ -95,6 +97,8 @@ Current Project Testing Status:
 
 
 TO-DO List
+
+- Hook a System Shell Script To Run "pm disable" Commands On Boot or First Boot
 
 - Get Google Play Store Working Properly
 
