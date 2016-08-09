@@ -93,6 +93,31 @@ Current Project Testing Status:
     - /system/priv-app/WhisperCastConnect/
     
 	- /system/framework/android.amazon.perm/
+	
+	
+List of Amazon Bloat Left Alone
+
+- Amazon Remote Android App
+    - /system/priv-app/com.amazon.storm.lightning.services/
+    - /system/priv-app/com.amazon.storm.lightning.tutorial/
+    - /system/priv-app/WhisperlinkSdk/
+    - /system/priv-app/WhisperplayCore/
+    - /system/priv-app/WhisperplayInstall/
+
+
+- Captive Portal Launcher
+    - /system/priv-app/CaptivePortalLauncher/
+    - /system/app/CaptivePortalLogin/
+
+
+- Amazon Voice Support
+    - /system/priv-app/com.amazon.vizzini/
+
+
+- Needed For Amazon Settings UI (Removal Will Break Stock Settings)
+    - /system/priv-app/DeviceSoftwareOTAContracts/
+    - /system/priv-app/RemoteSettingsAndroid/
+    - /system/priv-app/RemoteSettingsInternalSDK/
 
 
 
