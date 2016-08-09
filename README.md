@@ -27,7 +27,7 @@ Current Project Testing Status:
     - /system/app/UnifiedSettingsProvider/
     - /system/app/WebCryptoTZService/
     - /system/app/WhiteListedUrlProvider/
-
+	
     - /system/priv-app/amazon.jackson-19/
     - /system/priv-app/AmazonKKWebViewLib/
     - /system/priv-app/AmazonNetworkMonitor/
@@ -89,7 +89,7 @@ Current Project Testing Status:
     - /system/priv-app/UnifiedShareActivityChooser/
     - /system/priv-app/WallpaperCropper/
     - /system/priv-app/WhisperCastConnect/
-
+    
 	- /system/framework/android.amazon.perm/
 
 
