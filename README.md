@@ -1,4 +1,4 @@
-Amazon FireTV Stick Loader
+#Amazon FireTV Stick Loader
 
 FREE YOUR FIRESTICK!!!
 
