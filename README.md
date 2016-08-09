@@ -107,3 +107,5 @@ TO-DO List
 - Replace Amazon Settings With Stock Lollipop 5.1 Settings APK
 
 - Remove The Rest of Amazon Bloat (TV Launcher, Amazon Settings, etc)
+
+    * Stock Lollipop or Equivalent Settings APK Required To Remove "com.amazon.tv.*" Packages
