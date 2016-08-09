@@ -3,7 +3,7 @@
 FREE YOUR FIRESTICK!!!
 
 
-Scripting To Root, Downgrade, Load Apps and Settings Onto Amazon Firestick and Other Android Devices
+Scripting To Root, Downgrade, Load Apps and Settings Onto Amazon FireTV and FireStick
 
 
 Current Project Testing Status:
