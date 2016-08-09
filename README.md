@@ -1,4 +1,8 @@
-# firestick-loader
+Amazon FireTV Stick Loader
+
+FREE YOUR FIRESTICK!!!
+
+
 Scripting To Root, Downgrade, Load Apps and Settings Onto Amazon Firestick and Other Android Devices
 
 
