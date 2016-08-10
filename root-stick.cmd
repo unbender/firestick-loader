@@ -145,6 +145,8 @@ set launchSopCast=%shell% am start -a android.intent.action.MAIN -n org.acestrea
 
 ::set usbPowerWarning=Window{24f60778 u0 com.amazon.tv.settings/com.amazon.tv.settings.tv.BuellerAboutSettingsActivity
 
+set launchScreenSaver=%shell% am start -a android.intent.action.MAIN -n com.amazon.bueller.photos/com.amazon.bueller.photos.daydream.ScreenSaverService
+
 set removeSuperSU=%uninstall% eu.chainfire.supersu
 
 

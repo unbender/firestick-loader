@@ -15,7 +15,6 @@ rm -r /system/priv-app/BackupRestoreConfirmation/
 rm -r /system/priv-app/com.amazon.ags.app/
 rm -r /system/priv-app/com.amazon.avod/
 rm -r /system/priv-app/com.amazon.bueller.music/
-rm -r /system/priv-app/com.amazon.bueller.photos/
 rm -r /system/priv-app/com.amazon.communication/
 rm -r /system/priv-app/com.amazon.communication.discovery/
 rm -r /system/priv-app/com.amazon.device.sync/
@@ -104,6 +103,9 @@ rm -r /system/priv-app/com.amazon.device.bluetoothdfu/
 
 # Other Apps That May Be Wanted/Needed For Different People/Operations
 
+# Amazon Screensaver
+#rm -r /system/priv-app/com.amazon.bueller.photos/
+
 
 # Amazon Remote Android App
 #rm -r /system/priv-app/com.amazon.storm.lightning.services/
@@ -166,7 +168,7 @@ rm -r /data/data/BackupRestoreConfirmation/
 rm -r /data/data/com.amazon.ags.app/
 rm -r /data/data/com.amazon.avod/
 rm -r /data/data/com.amazon.bueller.music/
-rm -r /data/data/com.amazon.bueller.photos/
+#rm -r /data/data/com.amazon.bueller.photos/
 rm -r /data/data/com.amazon.communication/
 rm -r /data/data/com.amazon.communication.discovery/
 rm -r /data/data/com.amazon.device.bluetoothdfu/

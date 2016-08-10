@@ -18,7 +18,6 @@ pm disable com.amazon.avod
 pm disable com.amazon.awvflingreceiver
 pm disable com.amazon.bueller.music
 pm disable com.amazon.bueller.notification
-pm disable com.amazon.bueller.photos
 pm disable com.amazon.client.metrics
 pm disable com.amazon.client.metrics.api
 pm disable com.amazon.communication.discovery
@@ -85,6 +84,9 @@ pm disable com.amazon.venezia
 pm disable com.amazon.videoads.app
 pm disable com.amazon.visualonawv
 
+
+# Amazon Screensaver
+pm disable com.amazon.bueller.photos
 
 # Possibe Remote Update??
 pm disable com.amazon.device.bluetoothdfu
