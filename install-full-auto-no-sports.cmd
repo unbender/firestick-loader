@@ -298,7 +298,7 @@ echo Installing %appName%...
 echo.
 
 %shell% "rm /data/local/tmp/bootanimation.zip"
-%push% "%~dp0custom\bootanimation\stock-blue\bootanimation.zip" /data/local/tmp/
+%push% "%~dp0bootanimation\stock-blue\bootanimation.zip" /data/local/tmp/
 %push% "%~dp0scripts\replace-bootanimation.sh" /data/local/tmp/
 %shell% "su -c chmod 755 /data/local/tmp/replace-bootanimation.sh"
 %shell% "su -c sh /data/local/tmp/replace-bootanimation.sh"
