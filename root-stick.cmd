@@ -65,6 +65,8 @@ set sdcard=sdcard
 ::set sdcard=external_sd
 ::set sdcard=extSdCard
 
+set bootAnimationPath=%~dp0custom\bootanimation
+
 set fireOsVersion=0.0.0.0
 
 set buildDotProp=/system/build.prop
@@ -161,6 +163,16 @@ set dgVersion=5.0.5
 ::set dgVersion=5.0.5.1
 ::set dgVersion=5.2.1.0
 
+set writeFreeMemFireStick=%shell% "cat proc/meminfo | grep MemAvailable>/sdcard/freeMemory.txt"
+set pullFreeMemFireStick=%pull% /sdcard/freeMemory.txt %temp%
+::set showFreeMemFireStick=%runShellTerminate% notepad.exe "%temp%\freeMemory.txt"
+::set /p readFreeMemFireStick=<"%temp%\freeMemory.txt"
+
+set writeFreeStorageDataFireStick=%shell% "df /data/ | grep G>/sdcard/freeStorageData.txt"
+set pullFreeStorageDataFireStick=%pull% /sdcard/freeStorageData.txt %temp%
+
+set writeFreeStorageSystemFireStick=%shell% "df /system/ | grep M>/sdcard/freeStorageSystem.txt"
+set pullFreeStorageSystemFireStick=%pull% /sdcard/freeStorageSystem.txt %temp%
 
 set fullAutoMode=0
 set fullAutoModeDG=0
@@ -178,20 +190,50 @@ set returnTo=menu
 
 :menu
 
-%adbKill%
-
 %_color% 0e
+cls
+echo Getting Device Stats and Loading Main Menu....
+echo.
+echo.
+
+del /f /s /q "%temp%\freeMemory.txt">nul
+del /f /s /q "%temp%\freeStorageData.txt">nul
+del /f /s /q "%temp%\freeStorageSystem.txt">nul
+
+
+:: Get Memory Available From FireStick
+%writeFreeMemFireStick%>nul
+%pullFreeMemFireStick%>nul
+for /f "tokens=2 delims= " %%f in ('type "%temp%\freeMemory.txt"') do set readFreeMemFireStick=%%f
+
+
+:: Get Storage Space Available From FireStick
+%writeFreeStorageDataFireStick%>nul
+%pullFreeStorageDataFireStick%>nul
+
+%writeFreeStorageSystemFireStick%>nul
+%pullFreeStorageSystemFireStick%>nul
+
+for /f "tokens=4 delims= " %%f in ('type "%temp%\freeStorageData.txt"') do set readStorageDataFireStick=%%f
+
+for /f "tokens=4 delims= " %%f in ('type "%temp%\freeStorageSystem.txt"') do set readStorageSystemFireStick=%%f
+
 
 set dgchoice=m
 
 ::if %firstCheck%==0 goto checkCanRoot
 
+%adbKill%
+
 cls
+%_color% 0e
 echo Rooting/Downgrade Menu [FireTV Stick]
 echo.
-echo.
-echo.
 %_color% 0b
+echo [Free Memory: %readFreeMemFireStick%KB] [Free Space (/data/): %readStorageDataFireStick% (/system/): %readStorageSystemFireStick%]
+echo.
+echo.
+%_color% 0a
 echo Press Y To Use Full Automatic Mode (also use YD to include downgrade)
 ::if %rootable%==0 %_color% 0c
 ::if %rootable%==1 %_color% 0a
@@ -205,8 +247,8 @@ echo Press R to root (also use R1 to Skip Wait or R2 to Skip Wait/Swipe)
 echo.
 echo Press S to issue an "su" request to the device
 echo.
-echo Press P to replace kingroot with SuperSU (Not Working Correctly!)
-echo.
+::echo Press P to replace kingroot with SuperSU (Not Working Correctly!)
+::echo.
 echo Press D to downgrade to stock 5.0.5 firmware
 echo.
 echo Press B to install busybox
