@@ -675,23 +675,24 @@ echo.
 set /p choice=
 if %choice%==1 (
 
+%_color% 0e
 cls
 echo Choose Color and Press ENTER [Default: Blue]:
 echo.
 echo.
-echo B) Blue
+echo B: Blue
 echo.
-echo R) Red
+echo R: Red
 echo.
-echo G) Green
+echo G: Green
 echo.
-echo Y) Yellow
+echo Y: Yellow
 echo.
-echo P1) Pink
+echo P1: Pink
 echo.
-echo P2) Purple
+echo P2: Purple
 echo.
-echo O) Original Stock
+echo O: Original Stock
 echo.
 echo.
 
