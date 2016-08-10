@@ -227,7 +227,7 @@ set dgchoice=m
 
 cls
 %_color% 0e
-echo Rooting/Downgrade Menu [FireTV Stick]
+echo FireTV Stick Multi Menu (Rooting, Downgrade, Bloat Remove, and More)
 echo.
 echo.
 %_color% 0b
@@ -265,7 +265,7 @@ echo Press F to run fixes, tweaks, and misc options
 echo.
 echo Press Z to directly invoke Amazon Settings menu items
 echo.
-echo Press X to exit
+echo Press X to exit (also use XR to reload main menu)
 echo.
 echo.
 echo Make a choice and press ENTER....
@@ -325,6 +325,10 @@ if %dgchoice%==yd set fullAutoModeDG=1&&goto fullAuto
 if %dgchoice%==yD set fullAutoModeDG=1&&goto fullAuto
 if %dgchoice%==X goto end
 if %dgchoice%==x goto end
+if %dgchoice%==XR goto menu
+if %dgchoice%==Xr goto menu
+if %dgchoice%==xr goto menu
+if %dgchoice%==xR goto menu
 if %dgchoice%==M goto menu
 if %dgchoice%==m goto menu
 
