@@ -139,3 +139,5 @@ TO-DO List
 - Remove The Rest of Amazon Bloat (TV Launcher, Amazon Settings, etc)
 
     * Stock Lollipop or Equivalent Settings APK Required To Remove "com.amazon.tv.*" Packages
+	
+- Disable Opera Mini Update (Newer Versions Do Not Support FireStick Remote For Mouse Anymore)
