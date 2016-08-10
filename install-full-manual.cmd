@@ -360,7 +360,7 @@ echo Installing %appName%...
 echo.
 
 %install% "apps\media\amazon-underground.apk"
-::)
+)
 
 
 cls
@@ -385,7 +385,7 @@ echo Installing %appName%...
 echo.
 
 %install% "apps\media\amazon-video.apk"
-::)
+)
 
 
 cls
