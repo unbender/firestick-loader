@@ -188,6 +188,8 @@ set rebootAfterBloatRemoval=0
 set returnTo=menu
 
 
+
+
 :menu
 
 %adbKill%
