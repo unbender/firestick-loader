@@ -248,13 +248,13 @@ echo.
 echo [Free Memory: %readFreeMemFireStick%KB]   [Free Space (/data/): %readStorageDataFireStick%  (/system/): %readStorageSystemFireStick%]
 echo.
 echo.
+echo.
 %_color% 0a
 echo Press Y To Use Full Automatic Mode (also use YD to include downgrade)
 ::if %rootable%==0 %_color% 0c
 ::if %rootable%==1 %_color% 0a
 ::echo Device is currently %rootableText%
 %_color% 0e
-echo.
 echo.
 echo.
 echo Press I to install kingroot (also use IR to install and root)
