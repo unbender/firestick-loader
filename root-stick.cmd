@@ -245,7 +245,7 @@ echo FireTV Stick Multi Menu (Rooting, Downgrade, Bloat Remove, and More)
 echo.
 echo.
 %_color% 0b
-echo [Free Memory: %readFreeMemFireStick%KB]   [Free Space (/data/): %readStorageDataFireStick% (/system/): %readStorageSystemFireStick%]
+echo [Free Memory: %readFreeMemFireStick%KB]   [Free Space (/data/): %readStorageDataFireStick%  (/system/): %readStorageSystemFireStick%]
 echo.
 echo.
 %_color% 0a
