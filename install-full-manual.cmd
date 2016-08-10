@@ -696,7 +696,7 @@ echo O: Original Stock
 echo.
 echo.
 
-set /p bootAniColor=
+set /p bootAniColorChoice=
 
 if %bootAniColorChoice%==B set bootAniColor=blue
 if %bootAniColorChoice%==b set bootAniColor=blue
