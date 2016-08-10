@@ -616,7 +616,7 @@ echo 1) Yes   2) No
 echo.
 echo.
 %_color% 0b
-echo Requirements: Root Access
+echo Requirements: *ROOT*
 echo.
 echo Info: Enables Always-On Root Shell Over ADB
 echo.
@@ -651,6 +651,75 @@ echo.
 echo Installing %appName%...
 echo.
 %push% "wallpaper" "/%sdcard%/wallpaper"
+)
+
+
+:bootAni
+
+set bootAniColorChoice=b
+set bootAniColor=blue
+
+cls
+%_color% 0e
+set appName=Custom Boot Animation
+echo Install %appName%?
+echo.
+echo 1) Yes   2) No
+echo.
+echo.
+%_color% 0b
+echo Requirements: *ROOT*
+echo.
+echo Info: Custom Boot Animation
+echo.
+set /p choice=
+if %choice%==1 (
+
+cls
+echo Choose Color and Press ENTER [Default: Blue]:
+echo.
+echo.
+echo B) Blue
+echo.
+echo R) Red
+echo.
+echo G) Green
+echo.
+echo Y) Yellow
+echo.
+echo P1) Pink
+echo.
+echo P2) Purple
+echo.
+echo O) Original Stock
+echo.
+echo.
+
+set /p bootAniColor=
+
+if %bootAniColorChoice%==B set bootAniColor=blue
+if %bootAniColorChoice%==b set bootAniColor=blue
+if %bootAniColorChoice%==R set bootAniColor=red
+if %bootAniColorChoice%==r set bootAniColor=red
+if %bootAniColorChoice%==G set bootAniColor=green
+if %bootAniColorChoice%==g set bootAniColor=green
+if %bootAniColorChoice%==Y set bootAniColor=yellow
+if %bootAniColorChoice%==y set bootAniColor=yellow
+if %bootAniColorChoice%==P1 set bootAniColor=pink
+if %bootAniColorChoice%==p1 set bootAniColor=pink
+if %bootAniColorChoice%==P2 set bootAniColor=purple
+if %bootAniColorChoice%==p2 set bootAniColor=purple
+if %bootAniColorChoice%==O set bootAniColor=original
+if %bootAniColorChoice%==o set bootAniColor=original
+
+cls
+echo Installing %appName%...
+echo.
+%shell% "rm /data/local/tmp/bootanimation.zip"
+%push% "%~dp0custom\bootanimation\stock-%bootAniColor%\bootanimation.zip" /data/local/tmp/
+%push% "%~dp0scripts\replace-bootanimation.sh" /data/local/tmp/
+%shell% "su -c chmod 755 /data/local/tmp/replace-bootanimation.sh"
+%shell% "su -c sh /data/local/tmp/replace-bootanimation.sh"
 )
 
 
