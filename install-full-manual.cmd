@@ -673,7 +673,7 @@ echo.
 echo Info: Custom Boot Animation
 echo.
 set /p choice=
-if %choice%==1 (
+if %choice%==2 goto end
 
 %_color% 0e
 cls
@@ -713,15 +713,18 @@ if %bootAniColorChoice%==p2 set bootAniColor=purple
 if %bootAniColorChoice%==O set bootAniColor=original
 if %bootAniColorChoice%==o set bootAniColor=original
 
+echo %push% "%~dp0bootanimation\stock-%bootAniColor%\bootanimation.zip" /data/local/tmp/bootanimation.zip
+pause
+
 cls
 echo Installing %appName%...
 echo.
 %shell% "rm /data/local/tmp/bootanimation.zip"
-%push% "%~dp0bootanimation\stock-%bootAniColor%\bootanimation.zip" /data/local/tmp/
+%push% "%~dp0bootanimation\stock-%bootAniColor%\bootanimation.zip" /data/local/tmp/bootanimation.zip
 %push% "%~dp0scripts\replace-bootanimation.sh" /data/local/tmp/
 %shell% "su -c chmod 755 /data/local/tmp/replace-bootanimation.sh"
 %shell% "su -c sh /data/local/tmp/replace-bootanimation.sh"
-)
+
 
 
 goto end
