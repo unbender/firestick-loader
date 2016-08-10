@@ -27,7 +27,6 @@ pm disable com.amazon.connectivitydiag
 pm disable com.amazon.dcp
 pm disable com.amazon.dcp.contracts.framework.library
 pm disable com.amazon.dcp.contracts.library
-#pm disable com.amazon.device.bluetoothdfu
 #pm disable com.amazon.device.controllermanager
 pm disable com.amazon.device.crashmanager
 pm disable com.amazon.device.logmanager
@@ -85,6 +84,10 @@ pm disable com.amazon.tz.webcryptotzservice
 pm disable com.amazon.venezia
 pm disable com.amazon.videoads.app
 pm disable com.amazon.visualonawv
+
+
+# Possibe Remote Update??
+pm disable com.amazon.device.bluetoothdfu
 
 # Captive Portal Launcher
 #pm disable com.amazon.cpl

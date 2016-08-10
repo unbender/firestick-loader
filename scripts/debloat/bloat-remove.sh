@@ -71,9 +71,14 @@ rm -r /system/priv-app/WallpaperCropper/
 rm -r /system/priv-app/WhisperCastConnect/
 
 
+# Tested Removal OK (Part 2)
+
+# Possibe Remote Update??
+rm -r /system/priv-app/com.amazon.device.bluetoothdfu/
+
+
 # Still Needs Testing
 
-#rm -r /system/priv-app/com.amazon.device.bluetoothdfu/
 #rm -r /system/priv-app/com.amazon.dp.logger/
 #rm -r /system/priv-app/com.amazon.fireinputdevices/
 #rm -r /system/priv-app/com.amazon.kindleautomatictimezone/
@@ -164,7 +169,7 @@ rm -r /data/data/com.amazon.bueller.music/
 rm -r /data/data/com.amazon.bueller.photos/
 rm -r /data/data/com.amazon.communication/
 rm -r /data/data/com.amazon.communication.discovery/
-#rm -r /data/data/com.amazon.device.bluetoothdfu/
+rm -r /data/data/com.amazon.device.bluetoothdfu/
 rm -r /data/data/com.amazon.device.sync/
 rm -r /data/data/com.amazon.device.sync.sdk.internal/
 #rm -r /data/data/com.amazon.dp.logger/
