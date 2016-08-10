@@ -713,8 +713,8 @@ if %bootAniColorChoice%==p2 set bootAniColor=purple
 if %bootAniColorChoice%==O set bootAniColor=original
 if %bootAniColorChoice%==o set bootAniColor=original
 
-echo %push% "%~dp0bootanimation\stock-%bootAniColor%\bootanimation.zip" /data/local/tmp/bootanimation.zip
-pause
+::echo %push% "%~dp0bootanimation\stock-%bootAniColor%\bootanimation.zip" /data/local/tmp/bootanimation.zip
+::pause
 
 cls
 echo Installing %appName%...
