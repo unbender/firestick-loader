@@ -190,6 +190,8 @@ set returnTo=menu
 
 :menu
 
+%adbKill%
+
 %_color% 0e
 cls
 echo Getting Device Stats and Loading Main Menu....
@@ -222,12 +224,10 @@ for /f "tokens=2 delims= " %%f in ('type "%temp%\freeMemory.txt"') do set readFr
 :: Get Storage Space Available From FireStick
 %writeFreeStorageDataFireStick%>nul
 %pullFreeStorageDataFireStick%>nul
+for /f "tokens=4 delims= " %%f in ('type "%temp%\freeStorageData.txt"') do set readStorageDataFireStick=%%f
 
 %writeFreeStorageSystemFireStick%>nul
 %pullFreeStorageSystemFireStick%>nul
-
-for /f "tokens=4 delims= " %%f in ('type "%temp%\freeStorageData.txt"') do set readStorageDataFireStick=%%f
-
 for /f "tokens=4 delims= " %%f in ('type "%temp%\freeStorageSystem.txt"') do set readStorageSystemFireStick=%%f
 
 
