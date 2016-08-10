@@ -27,7 +27,6 @@ pm disable com.amazon.connectivitydiag
 pm disable com.amazon.dcp
 pm disable com.amazon.dcp.contracts.framework.library
 pm disable com.amazon.dcp.contracts.library
-#pm disable com.amazon.device.bluetoothdfu
 #pm disable com.amazon.device.controllermanager
 pm disable com.amazon.device.crashmanager
 pm disable com.amazon.device.logmanager
@@ -85,6 +84,10 @@ pm disable com.amazon.tz.webcryptotzservice
 pm disable com.amazon.venezia
 pm disable com.amazon.videoads.app
 pm disable com.amazon.visualonawv
+
+
+# Possibe Remote Update??
+pm disable com.amazon.device.bluetoothdfu
 
 # Captive Portal Launcher
 #pm disable com.amazon.cpl
@@ -229,9 +232,14 @@ rm -r /system/priv-app/WallpaperCropper/
 rm -r /system/priv-app/WhisperCastConnect/
 
 
+# Tested Removal OK (Part 2)
+
+# Possibe Remote Update??
+rm -r /system/priv-app/com.amazon.device.bluetoothdfu/
+
+
 # Still Needs Testing
 
-#rm -r /system/priv-app/com.amazon.device.bluetoothdfu/
 #rm -r /system/priv-app/com.amazon.dp.logger/
 #rm -r /system/priv-app/com.amazon.fireinputdevices/
 #rm -r /system/priv-app/com.amazon.kindleautomatictimezone/
@@ -322,7 +330,7 @@ rm -r /data/data/com.amazon.bueller.music/
 rm -r /data/data/com.amazon.bueller.photos/
 rm -r /data/data/com.amazon.communication/
 rm -r /data/data/com.amazon.communication.discovery/
-#rm -r /data/data/com.amazon.device.bluetoothdfu/
+rm -r /data/data/com.amazon.device.bluetoothdfu/
 rm -r /data/data/com.amazon.device.sync/
 rm -r /data/data/com.amazon.device.sync.sdk.internal/
 #rm -r /data/data/com.amazon.dp.logger/
