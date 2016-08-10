@@ -1,7 +1,6 @@
 #!/system/bin/sh
 
-temp="$1"
-name="$2"
+name="$1"
 
 mount -o rw,remount /system
 
