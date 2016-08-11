@@ -759,6 +759,8 @@ if %check%==s goto rootActive
 
 if %check%==R %shell% am start -a android.intent.action.MAIN -n com.kingroot.kinguser/.activitys.SliderMainActivity
 if %check%==r %shell% am start -a android.intent.action.MAIN -n com.kingroot.kinguser/.activitys.SliderMainActivity
+if %check%==R %sleep% 5
+if %check%==r %sleep% 5
 if %check%==R goto root2
 if %check%==r goto root2
 
