@@ -86,7 +86,7 @@ pm disable com.amazon.visualonawv
 
 
 # Amazon Screensaver
-pm disable com.amazon.bueller.photos
+#pm disable com.amazon.bueller.photos
 
 # Possibe Remote Update??
 pm disable com.amazon.device.bluetoothdfu

@@ -135,6 +135,17 @@ set showSettingsMyAccount=%shell% am start -a android.intent.action.MAIN -n com.
 :: Misc Invokes
 set showDeviceNotifications=%shell% am start -a android.intent.action.MAIN -n com.amazon.bueller.notification/com.amazon.bueller.notification.BuellerDeviceService
 
+set deregisterAmazonAccount=%shell% am start -a com.amazon.tv.oobe/.DeregistrationActivity -n com.amazon.tv.oobe/.DeregistrationActivity
+
+
+:: android.content.ContextWrapper.startService
+
+:: com.amazon.tv.settings.tv.accounts.AccountHelpers.startOOBEDeregistrationForFactoryReset
+
+:: com.amazon.tv.settings.tv.FactoryResetService.deregisterAccount
+
+:: com.amazon.tv.settings.tv.FactoryResetActivity.factoryReset
+
 
 :: Launch Different Apps
 set launchSuperSU=%shell% am start -a android.intent.action.MAIN -n com.koushikdutta.superuser/.MainActivity
