@@ -41,7 +41,6 @@ Current Project Testing Status:
     - /system/priv-app/com.amazon.ags.app/
     - /system/priv-app/com.amazon.avod/
     - /system/priv-app/com.amazon.bueller.music/
-    - /system/priv-app/com.amazon.bueller.photos/
     - /system/priv-app/com.amazon.communication/
     - /system/priv-app/com.amazon.communication.discovery/
     - /system/priv-app/com.amazon.device.sync/
@@ -101,6 +100,9 @@ Current Project Testing Status:
 	
 	
 List of Amazon Bloat Left Alone
+
+- Screensaver Config
+    - /system/priv-app/com.amazon.bueller.photos/
 
 - Amazon Remote Android App
     - /system/priv-app/com.amazon.storm.lightning.services/
