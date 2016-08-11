@@ -257,7 +257,7 @@ echo.
 echo.
 echo Installing %emuName% Emulator...
 echo.
-%adb% install "emulators\atari2600.apk"
+%adb% install "emulators\2600.apk"
 )
 
 cls
@@ -272,14 +272,14 @@ echo.
 echo Copying %emuName% Roms...
 echo.
 
-md "%cd%\emulators\roms\atari2600"
+md "%cd%\emulators\roms\2600"
 
-"%cd%\bin\unzip.exe" -o "%cd%\emulators\roms\atari2600.zip" -d "%cd%\emulators\roms\atari2600"
+"%cd%\bin\unzip.exe" -o "%cd%\emulators\roms\2600.zip" -d "%cd%\emulators\roms\2600"
 
-%adb% push "emulators\roms\atari2600" "/sdcard/roms/atari2600"
+%adb% push "emulators\roms\2600" "/sdcard/roms/2600"
 
-del /f /q "%cd%\emulators\roms\atari2600\*.*"
-rd "%cd%\emulators\roms\atari2600"
+del /f /q "%cd%\emulators\roms\2600\*.*"
+rd "%cd%\emulators\roms\2600"
 )
 
 
